@@ -2658,7 +2658,6 @@
     <Compile Include="Skills\TasteID.cs" />
     <Compile Include="Skills\Tracking.cs" />
     <Compile Include="SpecialSystems\Engines\GiftGiving.cs" />
-    <Compile Include="SpecialSystems\Engines\TestCenter.cs" />
     <Compile Include="SpecialSystems\Items\Ressurection\ResGate.cs" />
     <Compile Include="SpecialSystems\Items\Stones\AlchemyStone.cs" />
     <Compile Include="SpecialSystems\Items\Stones\GamblingStone.cs" />
