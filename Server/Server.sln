@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{39BC2A69-24B5-4D84-9528-972781A877FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripts", "Scripts\Scripts.csproj", "{BDB2CCDD-EE34-49F9-88EC-83BAD381050E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{39BC2A69-24B5-4D84-9528-972781A877FB} = {39BC2A69-24B5-4D84-9528-972781A877FB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
