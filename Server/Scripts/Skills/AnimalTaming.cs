@@ -155,10 +155,10 @@ namespace Server.SkillHandlers
 						{
 							creature.PrivateOverheadMessage( MessageType.Regular, 0x3B2, 502801, from.NetState ); // You can't tame that!
 						}
-						else if ( from.Followers + creature.ControlSlots > from.FollowersMax )
-						{
-							from.SendLocalizedMessage( 1049611 ); // You have too many followers to tame that creature.
-						}
+						//else if ( from.Followers + creature.ControlSlots > from.FollowersMax )
+						//{
+						//	from.SendLocalizedMessage( 1049611 ); // You have too many followers to tame that creature.
+						//}
 						else if ( creature.Owners.Count >= BaseCreature.MaxOwners && !creature.Owners.Contains( from ) )
 						{
 							creature.PrivateOverheadMessage( MessageType.Regular, 0x3B2, 1005615, from.NetState ); // This animal has had too many owners and is too upset for you to tame.
