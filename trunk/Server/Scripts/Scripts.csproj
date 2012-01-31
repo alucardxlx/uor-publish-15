@@ -112,6 +112,8 @@
     <Compile Include="Context Menus\EjectPlayer.cs" />
     <Compile Include="Context Menus\OpenBankEntry.cs" />
     <Compile Include="Context Menus\TeachEntry.cs" />
+    <Compile Include="Custom\Economy Throttling\Check Book.cs" />
+    <Compile Include="Custom\Economy Throttling\globalCountGold.cs" />
     <Compile Include="Custom\Premium Spawner\PremiumSpawner.cs" />
     <Compile Include="Custom\Premium Spawner\PremiumSpawnerGump.cs" />
     <Compile Include="Custom\Premium Spawner\SpawnsOverseer.cs" />

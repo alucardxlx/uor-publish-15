@@ -917,14 +917,26 @@ namespace Server
 			set{ m_Bonus = value; }
 		}
 
-		public int Roll()
+	public int Roll()
 		{
 			int v = m_Bonus;
+			double eco_Modifier = 100;
+			double w;
 
 			for ( int i = 0; i < m_Count; ++i )
 				v += Utility.Random( 1, m_Sides );
+            foreach (Item item in World.Items.Values)
+            {
 
-			return v;
+                if (item is StoneGoldCounter)
+                {
+                    StoneGoldCounter GC = (StoneGoldCounter)item;
+                    eco_Modifier = GC.EconomyMultiplier;
+                }
+            }
+
+			w = v * (eco_Modifier * .01);
+			return (int)w;
 		}
 
 		public LootPackDice( string str )
