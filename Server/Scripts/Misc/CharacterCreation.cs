@@ -686,9 +686,6 @@ namespace Server.Misc
 				AddShoes( newChar );
 			}
 
-			if( TestCenter.Enabled )
-				FillBankbox( newChar );
-
 			if ( young )
 			{
 				NewPlayerTicket ticket = new NewPlayerTicket();
@@ -698,7 +695,9 @@ namespace Server.Misc
 
 			CityInfo city = GetStartLocation( args, young );
 
-			newChar.MoveToWorld( city.Location, city.Map );
+			newChar.MoveToWorld( city.Location, Map.Felucca );
+            newChar.FollowersMax = 1000;
+
 
 			Console.WriteLine( "Login: {0}: New character being created (account={1})", state, args.Account.Username );
 			Console.WriteLine( " - Character: {0} (serial={1})", newChar.Name, newChar.Serial );

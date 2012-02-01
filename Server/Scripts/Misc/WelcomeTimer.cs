@@ -14,7 +14,7 @@ namespace Server.Misc
 		private static string[] m_Messages =
 			new string[]
 				{	//Yes, this message is a pathetic message, It's suggested that you change it.
-					"Welcome to UO:R Nostalgia",
+					"Welcome to UO:R Factions",
 					"The Publish 15 Project!"
 				};
 
