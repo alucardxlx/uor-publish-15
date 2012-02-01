@@ -123,7 +123,7 @@ namespace Server.SkillHandlers
 							{
 								from.SendLocalizedMessage( 500612 ); // You play poorly, and there is no effect.
 								m_Instrument.PlayInstrumentBadly( from );
-								m_Instrument.ConsumeUse( from );
+								//m_Instrument.ConsumeUse( from );
 							}
 							else
 							{
@@ -134,13 +134,13 @@ namespace Server.SkillHandlers
 								{
 									from.SendLocalizedMessage( 501599 ); // Your music fails to incite enough anger.
 									m_Instrument.PlayInstrumentBadly( from );
-									m_Instrument.ConsumeUse( from );
+									//m_Instrument.ConsumeUse( from );
 								}
 								else
 								{
 									from.SendLocalizedMessage( 501602 ); // Your music succeeds, as you start a fight.
 									m_Instrument.PlayInstrumentWell( from );
-									m_Instrument.ConsumeUse( from );
+									//m_Instrument.ConsumeUse( from );
 									m_Creature.Provoke( from, targ, true );
 								}
 							}

@@ -27,18 +27,18 @@ namespace Server.SkillHandlers
 			{
 				from.SendLocalizedMessage( 500612 ); // You play poorly, and there is no effect.
 				instrument.PlayInstrumentBadly( from );
-				instrument.ConsumeUse( from );
+				//instrument.ConsumeUse( from );
 			}
 			else if ( !from.CheckSkill( SkillName.Peacemaking, 0.0, 100.0 ) )
 			{
 				from.SendLocalizedMessage( 500613 ); // You attempt to calm everyone, but fail.
 				instrument.PlayInstrumentBadly( from );
-				instrument.ConsumeUse( from );
+				//instrument.ConsumeUse( from );
 			}
 			else
 			{
 				instrument.PlayInstrumentWell( from );
-				instrument.ConsumeUse( from );
+				//instrument.ConsumeUse( from );
 
 				Map map = from.Map;
 
