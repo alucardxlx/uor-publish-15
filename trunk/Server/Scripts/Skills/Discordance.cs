@@ -146,12 +146,12 @@ namespace Server.SkillHandlers
 						{
 							from.SayTo( from, 500612 ); // You play poorly, and there is no effect.
 							m_Instrument.PlayInstrumentBadly( from );
-							m_Instrument.ConsumeUse( from );
+							//m_Instrument.ConsumeUse( from );
 						}
 						else if ( from.CheckTargetSkill( SkillName.Discordance, target, 0, 100 ) )
 						{
 							m_Instrument.PlayInstrumentWell( from );
-							m_Instrument.ConsumeUse( from );
+							//m_Instrument.ConsumeUse( from );
 							
 							if ( targ.Player )
 							{
@@ -180,7 +180,7 @@ namespace Server.SkillHandlers
 							targ.SayTo( targ, true, "You hear lovely music, and for a moment are drawn towards it..." );
 							targ.SayTo( from, true, "Your music fails to attract them." );
 							m_Instrument.PlayInstrumentBadly( from );
-							m_Instrument.ConsumeUse( from );
+							//m_Instrument.ConsumeUse( from );
 						}
 					}
 				}
