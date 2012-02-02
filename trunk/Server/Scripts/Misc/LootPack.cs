@@ -136,6 +136,21 @@ namespace Server
 				new LootPackItem( typeof( LesserPoisonPotion ), 1 )
 			};
 
+        public static readonly LootPackItem[] MagicWands = new LootPackItem[]
+			{
+				new LootPackItem( typeof( ClumsyWand ), 1 ),
+                new LootPackItem( typeof( GreaterHealWand ), 1 ),
+                new LootPackItem( typeof( IDWand ), 1 ),
+                new LootPackItem( typeof( ManaDrainWand ), 1 ),
+                new LootPackItem( typeof( FeebleWand ), 1 ),
+                new LootPackItem( typeof( FireballWand ), 1 ),
+                new LootPackItem( typeof( HarmWand ), 1 ),
+                new LootPackItem( typeof( LightningWand ), 1 ),
+                new LootPackItem( typeof( WeaknessWand ), 1 ),
+                new LootPackItem( typeof( HealWand ), 1 ),
+                new LootPackItem( typeof( MagicArrowWand ), 1 ),
+			};
+
 		#region Old Magic Items
 		public static readonly LootPackItem[] OldMagicItems = new LootPackItem[]
 			{
@@ -399,21 +414,22 @@ namespace Server
 		public static readonly LootPack OldPoor = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "1d25" ),
-				new LootPackEntry( false, Instruments,	  0.02, 1 )
+				//new LootPackEntry( false, Instruments,	  0.02, 1 )
 			} );
 
 		public static readonly LootPack OldMeager = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "5d10+25" ),
-				new LootPackEntry( false, Instruments,	  0.10, 1 ),
+				//new LootPackEntry( false, Instruments,	  0.10, 1 ),
 				new LootPackEntry( false, OldMagicItems,  1.00, 1, 1, 0, 60 ),
-				new LootPackEntry( false, OldMagicItems,  0.20, 1, 1, 10, 70 )
+				new LootPackEntry( false, OldMagicItems,  0.20, 1, 1, 10, 70 ),
+                //new LootPackEntry( false, MagicWands,      0.20, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldAverage = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "10d10+50" ),
-				new LootPackEntry( false, Instruments,	  0.40, 1 ),
+				//new LootPackEntry( false, Instruments,	  0.40, 1 ),
 				new LootPackEntry( false, OldMagicItems,  5.00, 1, 1, 20, 80 ),
 				new LootPackEntry( false, OldMagicItems,  2.00, 1, 1, 30, 90 ),
 				new LootPackEntry( false, OldMagicItems,  0.50, 1, 1, 40, 100 )
@@ -422,38 +438,41 @@ namespace Server
 		public static readonly LootPack OldRich = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "10d10+250" ),
-				new LootPackEntry( false, Instruments,	  1.00, 1 ),
+				//new LootPackEntry( false, Instruments,	  1.00, 1 ),
 				new LootPackEntry( false, OldMagicItems, 20.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems, 10.00, 1, 1, 65, 100 ),
-				new LootPackEntry( false, OldMagicItems,  1.00, 1, 1, 70, 100 )
+				new LootPackEntry( false, OldMagicItems,  1.00, 1, 1, 70, 100 ),
+                new LootPackEntry( false, MagicWands,     10.00, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldFilthyRich = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "2d125+400" ),
-				new LootPackEntry( false, Instruments,	  2.00, 1 ),
+				//new LootPackEntry( false, Instruments,	  2.00, 1 ),
 				new LootPackEntry( false, OldMagicItems, 33.00, 1, 1, 50, 100 ),
 				new LootPackEntry( false, OldMagicItems, 33.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems, 20.00, 1, 1, 70, 100 ),
-				new LootPackEntry( false, OldMagicItems,  5.00, 1, 1, 80, 100 )
+				new LootPackEntry( false, OldMagicItems,  5.00, 1, 1, 80, 100 ),
+                new LootPackEntry( false, MagicWands,     10.00, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldUltraRich = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "5d100+500" ),
-				new LootPackEntry( false, Instruments,	  2.00, 1 ),
+				//new LootPackEntry( false, Instruments,	  2.00, 1 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 40, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 40, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 50, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 50, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
-				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 )
+				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
+                new LootPackEntry( false, MagicWands,       10.00, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldSuperBoss = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "5d100+500" ),
-				new LootPackEntry( false, Instruments,	  2.00, 1 ),
+				//new LootPackEntry( false, Instruments,	  2.00, 1 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 40, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 40, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 40, 100 ),
@@ -463,7 +482,8 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
-				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 70, 100 )
+				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 70, 100 ),
+                new LootPackEntry( false, MagicWands,       10.00, 1, 1, 10, 70)
 			} );
 		#endregion
 
@@ -501,6 +521,10 @@ namespace Server
 			{
 				new LootPackEntry( false, PotionItems,		100.00, 1 )
 			} );
+        public static readonly LootPack Wands = new LootPack(new LootPackEntry[]
+            {
+                new LootPackEntry ( false, MagicWands,       100.00, 1)
+            });
 	}
 
 	public class LootPackEntry
