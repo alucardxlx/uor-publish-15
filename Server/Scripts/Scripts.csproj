@@ -1134,6 +1134,12 @@
     <Compile Include="Items\Lights\WallSconce.cs" />
     <Compile Include="Items\Lights\WallTorch.cs" />
     <Compile Include="Items\Lights\WhiteHangingLantern.cs" />
+    <Compile Include="Items\Magical Jewelry\BaseJewelry.cs" />
+    <Compile Include="Items\Magical Jewelry\JewelryBracers.cs" />
+    <Compile Include="Items\Magical Jewelry\JewelryEarRings.cs" />
+    <Compile Include="Items\Magical Jewelry\JewelryPendants.cs" />
+    <Compile Include="Items\Magical Jewelry\JewelryRings.cs" />
+    <Compile Include="Items\Magical Jewelry\PVPHelpers.cs" />
     <Compile Include="Items\Maps\BlankMap.cs" />
     <Compile Include="Items\Maps\CityMap.cs" />
     <Compile Include="Items\Maps\IndecipherableMap.cs" />
