@@ -399,7 +399,10 @@ namespace Server.Spells
 			if ( resistable && m_Scroll is BaseWand )
 				return false;
 
-			return true;
+            if (resistable && m_Scroll is BaseJewelry)
+                return false;
+
+            return true;
 		}
 
 		public void Disturb( DisturbType type, bool firstCircle, bool resistable )
@@ -467,7 +470,10 @@ namespace Server.Spells
 			if ( m_Scroll is BaseWand )
 				return;
 
-			if ( m_Info.Mantra != null && m_Info.Mantra.Length > 0 && m_Caster.Player )
+            if (m_Scroll is BaseJewelry)
+                return;
+
+            if (m_Info.Mantra != null && m_Info.Mantra.Length > 0 && m_Caster.Player)
 				m_Caster.PublicOverheadMessage( MessageType.Spell, m_Caster.SpeechHue, true, m_Info.Mantra, false );
 		}
 
@@ -500,7 +506,11 @@ namespace Server.Spells
 			{
 				m_Caster.SendLocalizedMessage( 502643 ); // You can not cast a spell while frozen.
 			}
-			else if ( CheckNextSpellTime && DateTime.Now < m_Caster.NextSpellTime )
+            else if (!(m_Scroll is BaseJewelry) && (m_Caster.Paralyzed || m_Caster.Frozen))// Added BaseJewelry
+            {
+                m_Caster.SendLocalizedMessage(502643); // You can not cast a spell while frozen.
+            }
+            else if (CheckNextSpellTime && DateTime.Now < m_Caster.NextSpellTime)
 			{
 				m_Caster.SendLocalizedMessage( 502644 ); // You have not yet recovered from casting a spell.
 			}
@@ -581,7 +591,10 @@ namespace Server.Spells
 			if ( m_Scroll is BaseWand )
 				return true;
 
-			double minSkill, maxSkill;
+            if (m_Scroll is BaseJewelry)
+                return true;
+
+            double minSkill, maxSkill;
 
 			GetCastSkills( out minSkill, out maxSkill );
 
@@ -665,7 +678,10 @@ namespace Server.Spells
 			if ( m_Scroll is BaseWand )
 				return TimeSpan.Zero;
 
-			// Faster casting cap of 2 (if not using the protection spell) 
+            if (m_Scroll is BaseJewelry)
+                return TimeSpan.Zero;
+
+            // Faster casting cap of 2 (if not using the protection spell) 
 			// Faster casting cap of 0 (if using the protection spell) 
 			// Paladin spells are subject to a faster casting cap of 4 
 			// Paladins with magery of 70.0 or above are subject to a faster casting cap of 2 

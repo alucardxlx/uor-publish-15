@@ -30,7 +30,10 @@ namespace Server.Spells
 		{
 			int circle = (int)Circle;
 
-			if( Scroll != null )
+            if (Scroll is BaseJewelry)  // Jewelry Use
+                circle -= 8;
+
+            if (Scroll != null)
 				circle -= 2;
 
 			double avg = ChanceLength * circle;
@@ -45,6 +48,9 @@ namespace Server.Spells
 		{
 			if( Scroll is BaseWand )
 				return 0;
+
+            if (Scroll is BaseJewelry)  // Jewelry Use
+                return 0;
 
 			return m_ManaTable[(int)Circle];
 		}
@@ -98,6 +104,9 @@ namespace Server.Spells
 		{
 			if( Scroll is BaseWand )
 				return TimeSpan.Zero;
+
+            if (Scroll is BaseJewelry)  // Jewelry Use
+                return TimeSpan.Zero;
 
 			if( !Core.AOS )
 				return TimeSpan.FromSeconds( 0.5 + (0.25 * (int)Circle) );
