@@ -23,7 +23,7 @@ namespace Server.Items
         public MEarringsOfClumsy()
             : base(JewelryEffect.Clumsy, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of Clumsy";
+             //Name = "Mystic Earrings Of Clumsy";
         }
 
         public MEarringsOfClumsy(Serial serial)
@@ -58,7 +58,7 @@ namespace Server.Items
         public MEarringsOfHeal()
             : base(JewelryEffect.Heal, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of Heal";
+             //Name = "Mystic Earrings Of Heal";
         }
 
         public MEarringsOfHeal(Serial serial)
@@ -93,7 +93,7 @@ namespace Server.Items
         public MEarringsOfMagicArrow()
             : base(JewelryEffect.MagicArrow, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of Magic Arrow";
+             //Name = "Mystic Earrings Of Magic Arrow";
         }
 
         public MEarringsOfMagicArrow(Serial serial)
@@ -128,7 +128,7 @@ namespace Server.Items
         public MEarringsOfFeeblemind()
             : base(JewelryEffect.Feeblemind, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of Feeblemind";
+             //Name = "Mystic Earrings Of Feeblemind";
         }
 
         public MEarringsOfFeeblemind(Serial serial)
@@ -163,7 +163,7 @@ namespace Server.Items
         public MEarringsOfWeaken()
             : base(JewelryEffect.Weaken, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of Weaken";
+             //Name = "Mystic Earrings Of Weaken";
         }
 
         public MEarringsOfWeaken(Serial serial)
@@ -198,7 +198,7 @@ namespace Server.Items
         public MEarringsOfCreateFood()
             : base(JewelryEffect.CreateFood, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of Create Food";
+             //Name = "Mystic Earrings Of Create Food";
         }
 
         public MEarringsOfCreateFood(Serial serial)
@@ -233,7 +233,7 @@ namespace Server.Items
         public MEarringsOfNightSight()
             : base(JewelryEffect.NightSight, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of Night Sight";
+             //Name = "Mystic Earrings Of Night Sight";
         }
 
         public MEarringsOfNightSight(Serial serial)
@@ -268,7 +268,7 @@ namespace Server.Items
         public MEarringsOfReactiveArmor()
             : base(JewelryEffect.ReactiveArmor, Layer.Earrings, 0x1087, 51, 61)
         {
-            Name = "Mystic Earrings Of ReactiveArmor";
+             //Name = "Mystic Earrings Of ReactiveArmor";
         }
 
         public MEarringsOfReactiveArmor(Serial serial)
@@ -305,7 +305,7 @@ namespace Server.Items
         public MEarringsOfCure()
             : base(JewelryEffect.Cure, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Cure";
+             //Name = "Mystic Earrings Of Cure";
         }
 
         public MEarringsOfCure(Serial serial)
@@ -340,7 +340,7 @@ namespace Server.Items
         public MEarringsOfRemoveTrap()
             : base(JewelryEffect.RemoveTrap, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Remove Trap";
+             //Name = "Mystic Earrings Of Remove Trap";
         }
 
         public MEarringsOfRemoveTrap(Serial serial)
@@ -375,7 +375,7 @@ namespace Server.Items
         public MEarringsOfMagicTrap()
             : base(JewelryEffect.MagicTrap, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Magic Trap";
+             //Name = "Mystic Earrings Of Magic Trap";
         }
 
         public MEarringsOfMagicTrap(Serial serial)
@@ -410,7 +410,7 @@ namespace Server.Items
         public MEarringsOfHarm()
             : base(JewelryEffect.Harm, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Harm";
+             //Name = "Mystic Earrings Of Harm";
         }
 
         public MEarringsOfHarm(Serial serial)
@@ -445,7 +445,7 @@ namespace Server.Items
         public MEarringsOfAgility()
             : base(JewelryEffect.Agility, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Agility";
+             //Name = "Mystic Earrings Of Agility";
         }
 
         public MEarringsOfAgility(Serial serial)
@@ -480,7 +480,7 @@ namespace Server.Items
         public MEarringsOfCunning()
             : base(JewelryEffect.Cunning, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Cunning";
+             //Name = "Mystic Earrings Of Cunning";
         }
 
         public MEarringsOfCunning(Serial serial)
@@ -515,7 +515,7 @@ namespace Server.Items
         public MEarringsOfStrength()
             : base(JewelryEffect.Strength, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Strength";
+             //Name = "Mystic Earrings Of Strength";
         }
 
         public MEarringsOfStrength(Serial serial)
@@ -550,7 +550,7 @@ namespace Server.Items
         public MEarringsOfProtection()
             : base(JewelryEffect.Protection, Layer.Earrings, 0x1087, 46, 56)
         {
-            Name = "Mystic Earrings Of Protection";
+             //Name = "Mystic Earrings Of Protection";
         }
 
         public MEarringsOfProtection(Serial serial)
@@ -587,7 +587,7 @@ namespace Server.Items
         public MEarringsOfTeleport()
             : base(JewelryEffect.Teleport, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Teleport";
+             //Name = "Mystic Earrings Of Teleport";
         }
 
         public MEarringsOfTeleport(Serial serial)
@@ -622,7 +622,7 @@ namespace Server.Items
         public MEarringsOfTelekinesis()
             : base(JewelryEffect.Telekinesis, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Telekinesis";
+             //Name = "Mystic Earrings Of Telekinesis";
         }
 
         public MEarringsOfTelekinesis(Serial serial)
@@ -657,7 +657,7 @@ namespace Server.Items
         public MEarringsOfWallOfStone()
             : base(JewelryEffect.WallOfStone, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Wall Of Stone";
+             //Name = "Mystic Earrings Of Wall Of Stone";
         }
 
         public MEarringsOfWallOfStone(Serial serial)
@@ -697,7 +697,7 @@ namespace Server.Items
         public MEarringsOfMagicLock()
             : base(JewelryEffect.MagicLock, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Magic Lock";
+             //Name = "Mystic Earrings Of Magic Lock";
         }
 
         public MEarringsOfMagicLock(Serial serial)
@@ -732,7 +732,7 @@ namespace Server.Items
         public MEarringsOfUnlock()
             : base(JewelryEffect.Unlock, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Unlock";
+             //Name = "Mystic Earrings Of Unlock";
         }
 
         public MEarringsOfUnlock(Serial serial)
@@ -767,7 +767,7 @@ namespace Server.Items
         public MEarringsOfBless()
             : base(JewelryEffect.Bless, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Bless";
+             //Name = "Mystic Earrings Of Bless";
         }
 
         public MEarringsOfBless(Serial serial)
@@ -802,7 +802,7 @@ namespace Server.Items
         public MEarringsOfFireball()
             : base(JewelryEffect.Fireball, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Fireball";
+             //Name = "Mystic Earrings Of Fireball";
         }
 
         public MEarringsOfFireball(Serial serial)
@@ -837,7 +837,7 @@ namespace Server.Items
         public MEarringsOfPoison()
             : base(JewelryEffect.Poison, Layer.Earrings, 0x1087, 41, 51)
         {
-            Name = "Mystic Earrings Of Poison";
+             //Name = "Mystic Earrings Of Poison";
         }
 
         public MEarringsOfPoison(Serial serial)
@@ -874,7 +874,7 @@ namespace Server.Items
         public MEarringsOfFireField()
             : base(JewelryEffect.FireField, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Fire Field";
+             //Name = "Mystic Earrings Of Fire Field";
         }
 
         public MEarringsOfFireField(Serial serial)
@@ -914,7 +914,7 @@ namespace Server.Items
         public MEarringsOfManaDrain()
             : base(JewelryEffect.ManaDrain, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Mana Drain";
+             //Name = "Mystic Earrings Of Mana Drain";
         }
 
         public MEarringsOfManaDrain(Serial serial)
@@ -949,7 +949,7 @@ namespace Server.Items
         public MEarringsOfGreaterHeal()
             : base(JewelryEffect.GreaterHeal, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Greater Heal";
+             //Name = "Mystic Earrings Of Greater Heal";
         }
 
         public MEarringsOfGreaterHeal(Serial serial)
@@ -984,7 +984,7 @@ namespace Server.Items
         public MEarringsOfCurse()
             : base(JewelryEffect.Curse, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Curse";
+             //Name = "Mystic Earrings Of Curse";
         }
 
         public MEarringsOfCurse(Serial serial)
@@ -1019,7 +1019,7 @@ namespace Server.Items
         public MEarringsOfLightning()
             : base(JewelryEffect.Lightning, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Lightning";
+             //Name = "Mystic Earrings Of Lightning";
         }
 
         public MEarringsOfLightning(Serial serial)
@@ -1054,7 +1054,7 @@ namespace Server.Items
         public MEarringsOfRecall()
             : base(JewelryEffect.Recall, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Recall";
+             //Name = "Mystic Earrings Of Recall";
         }
 
         public MEarringsOfRecall(Serial serial)
@@ -1089,7 +1089,7 @@ namespace Server.Items
         public MEarringsOfArchProtection()
             : base(JewelryEffect.ArchProtection, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Arch Protection";
+             //Name = "Mystic Earrings Of Arch Protection";
         }
 
         public MEarringsOfArchProtection(Serial serial)
@@ -1124,7 +1124,7 @@ namespace Server.Items
         public MEarringsOfArchCure()
             : base(JewelryEffect.ArchCure, Layer.Earrings, 0x1087, 36, 46)
         {
-            Name = "Mystic Earrings Of Arch Cure";
+             //Name = "Mystic Earrings Of Arch Cure";
         }
 
         public MEarringsOfArchCure(Serial serial)
@@ -1161,7 +1161,7 @@ namespace Server.Items
         public MEarringsOfParalyze()
             : base(JewelryEffect.Paralyze, Layer.Earrings, 0x1087, 31, 41)
         {
-            Name = "Mystic Earrings Of Paralyze";
+             //Name = "Mystic Earrings Of Paralyze";
         }
 
         public MEarringsOfParalyze(Serial serial)
@@ -1196,7 +1196,7 @@ namespace Server.Items
         public MEarringsOfMindBlast()
             : base(JewelryEffect.MindBlast, Layer.Earrings, 0x1087, 31, 41)
         {
-            Name = "Mystic Earrings Of Mind Blast";
+             //Name = "Mystic Earrings Of Mind Blast";
         }
 
         public MEarringsOfMindBlast(Serial serial)
@@ -1231,7 +1231,7 @@ namespace Server.Items
         public MEarringsOfDispelField()
             : base(JewelryEffect.DispelField, Layer.Earrings, 0x1087, 31, 41)
         {
-            Name = "Mystic Earrings Of Dispel Field";
+             //Name = "Mystic Earrings Of Dispel Field";
         }
 
         public MEarringsOfDispelField(Serial serial)
@@ -1266,7 +1266,7 @@ namespace Server.Items
         public MEarringsOfPoisonField()
             : base(JewelryEffect.PoisonField, Layer.Earrings, 0x1087, 31, 41)
         {
-            Name = "Mystic Earrings Of Poison Field";
+             //Name = "Mystic Earrings Of Poison Field";
         }
 
         public MEarringsOfPoisonField(Serial serial)
@@ -1306,7 +1306,7 @@ namespace Server.Items
         public MEarringsOfBladeSpirits()
             : base(JewelryEffect.BladeSpirits, Layer.Earrings, 0x1087, 31, 41)
         {
-            Name = "Mystic Earrings Of Blade Spirits";
+             //Name = "Mystic Earrings Of Blade Spirits";
         }
 
         public MEarringsOfBladeSpirits(Serial serial)
@@ -1346,7 +1346,7 @@ namespace Server.Items
         public MEarringsOfMagicReflect()
             : base(JewelryEffect.MagicReflect, Layer.Earrings, 0x1087, 31, 41)
         {
-            Name = "Mystic Earrings Of Magic Reflect";
+             //Name = "Mystic Earrings Of Magic Reflect";
         }
 
         public MEarringsOfMagicReflect(Serial serial)
@@ -1381,7 +1381,7 @@ namespace Server.Items
         public MEarringsOfIncognito()
             : base(JewelryEffect.Incognito, Layer.Earrings, 0x1087, 31, 41)
         {
-            Name = "Mystic Earrings Of Incognito";
+             //Name = "Mystic Earrings Of Incognito";
         }
 
         public MEarringsOfIncognito(Serial serial)
@@ -1418,7 +1418,7 @@ namespace Server.Items
         public MEarringsOfEnergyBolt()
             : base(JewelryEffect.EnergyBolt, Layer.Earrings, 0x1087, 26, 36)
         {
-            Name = "Mystic Earrings Of Energy Bolt";
+             //Name = "Mystic Earrings Of Energy Bolt";
         }
 
         public MEarringsOfEnergyBolt(Serial serial)
@@ -1453,7 +1453,7 @@ namespace Server.Items
         public MEarringsOfExplosion()
             : base(JewelryEffect.Explosion, Layer.Earrings, 0x1087, 26, 36)
         {
-            Name = "Mystic Earrings Of Explosion";
+             //Name = "Mystic Earrings Of Explosion";
         }
 
         public MEarringsOfExplosion(Serial serial)
@@ -1488,7 +1488,7 @@ namespace Server.Items
         public MEarringsOfDispel()
             : base(JewelryEffect.Dispel, Layer.Earrings, 0x1087, 26, 36)
         {
-            Name = "Mystic Earrings Of Dispel";
+             //Name = "Mystic Earrings Of Dispel";
         }
 
         public MEarringsOfDispel(Serial serial)
@@ -1523,7 +1523,7 @@ namespace Server.Items
         public MEarringsOfReveal()
             : base(JewelryEffect.Reveal, Layer.Earrings, 0x1087, 26, 36)
         {
-            Name = "Mystic Earrings Of Reveal";
+             //Name = "Mystic Earrings Of Reveal";
         }
 
         public MEarringsOfReveal(Serial serial)
@@ -1558,7 +1558,7 @@ namespace Server.Items
         public MEarringsOfMark()
             : base(JewelryEffect.Mark, Layer.Earrings, 0x1087, 26, 36)
         {
-            Name = "Mystic Earrings Of Mark";
+             //Name = "Mystic Earrings Of Mark";
         }
 
         public MEarringsOfMark(Serial serial)
@@ -1603,7 +1603,7 @@ namespace Server.Items
         public MEarringsOfParalyzeField()
             : base(JewelryEffect.ParalyzeField, Layer.Earrings, 0x1087, 26, 36)
         {
-            Name = "Mystic Earrings Of Paralyze Field";
+             //Name = "Mystic Earrings Of Paralyze Field";
         }
 
         public MEarringsOfParalyzeField(Serial serial)
@@ -1643,7 +1643,7 @@ namespace Server.Items
         public MEarringsOfInvisibility()
             : base(JewelryEffect.Invisibility, Layer.Earrings, 0x1087, 26, 36)
         {
-            Name = "Mystic Earrings Of Invisibility";
+             //Name = "Mystic Earrings Of Invisibility";
         }
 
         public MEarringsOfInvisibility(Serial serial)
@@ -1680,7 +1680,7 @@ namespace Server.Items
         public MEarringsOfPolymorph()
             : base(JewelryEffect.Polymorph, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Polymorph";
+             //Name = "Mystic Earrings Of Polymorph";
         }
 
         public MEarringsOfPolymorph(Serial serial)
@@ -1715,7 +1715,7 @@ namespace Server.Items
         public MEarringsOfManaVampire()
             : base(JewelryEffect.ManaVampire, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Mana Vampire";
+             //Name = "Mystic Earrings Of Mana Vampire";
         }
 
         public MEarringsOfManaVampire(Serial serial)
@@ -1750,7 +1750,7 @@ namespace Server.Items
         public MEarringsOfMassDispel()
             : base(JewelryEffect.MassDispel, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Mass Dispel";
+             //Name = "Mystic Earrings Of Mass Dispel";
         }
 
         public MEarringsOfMassDispel(Serial serial)
@@ -1785,7 +1785,7 @@ namespace Server.Items
         public MEarringsOfMeteorSwarm()
             : base(JewelryEffect.MeteorSwarm, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Meteor Swarm";
+             //Name = "Mystic Earrings Of Meteor Swarm";
         }
 
         public MEarringsOfMeteorSwarm(Serial serial)
@@ -1825,7 +1825,7 @@ namespace Server.Items
         public MEarringsOfChainLightning()
             : base(JewelryEffect.ChainLightning, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Chain Lightning";
+             //Name = "Mystic Earrings Of Chain Lightning";
         }
 
         public MEarringsOfChainLightning(Serial serial)
@@ -1865,7 +1865,7 @@ namespace Server.Items
         public MEarringsOfFlameStrike()
             : base(JewelryEffect.FlameStrike, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Flame Strike";
+             //Name = "Mystic Earrings Of Flame Strike";
         }
 
         public MEarringsOfFlameStrike(Serial serial)
@@ -1901,7 +1901,7 @@ namespace Server.Items
         public MEarringsOfGateTravel()
             : base(JewelryEffect.GateTravel, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Gate Travel";
+             //Name = "Mystic Earrings Of Gate Travel";
         }
 
         public MEarringsOfGateTravel(Serial serial)
@@ -1937,7 +1937,7 @@ namespace Server.Items
         public MEarringsOfEnergyField()
             : base(JewelryEffect.EnergyField, Layer.Earrings, 0x1087, 21, 31)
         {
-            Name = "Mystic Earrings Of Energy Field";
+             //Name = "Mystic Earrings Of Energy Field";
         }
 
         public MEarringsOfEnergyField(Serial serial)
@@ -1979,7 +1979,7 @@ namespace Server.Items
         public MEarringsOfWaterElemental()
             : base(JewelryEffect.WaterElemental, Layer.Earrings, 0x1087, 16, 26)
         {
-            Name = "Mystic Earrings Of Water Elemental";
+             //Name = "Mystic Earrings Of Water Elemental";
         }
 
         public MEarringsOfWaterElemental(Serial serial)
@@ -2019,7 +2019,7 @@ namespace Server.Items
         public MEarringsOfAirElemental()
             : base(JewelryEffect.AirElemental, Layer.Earrings, 0x1087, 16, 26)
         {
-            Name = "Mystic Earrings Of Air Elemental";
+             //Name = "Mystic Earrings Of Air Elemental";
         }
 
         public MEarringsOfAirElemental(Serial serial)
@@ -2059,7 +2059,7 @@ namespace Server.Items
         public MEarringsOfFireElemental()
             : base(JewelryEffect.FireElemental, Layer.Earrings, 0x1087, 16, 26)
         {
-            Name = "Mystic Earrings Of Fire Elemental";
+             //Name = "Mystic Earrings Of Fire Elemental";
         }
 
         public MEarringsOfFireElemental(Serial serial)
@@ -2099,7 +2099,7 @@ namespace Server.Items
         public MEarringsOfEarthElemental()
             : base(JewelryEffect.EarthElemental, Layer.Earrings, 0x1087, 16, 26)
         {
-            Name = "Mystic Earrings Of Earth Elemental";
+             //Name = "Mystic Earrings Of Earth Elemental";
         }
 
         public MEarringsOfEarthElemental(Serial serial)
@@ -2139,7 +2139,7 @@ namespace Server.Items
         public MEarringsOfEnergyVortex()
             : base(JewelryEffect.EnergyVortex, Layer.Earrings, 0x1087, 16, 26)
         {
-            Name = "Mystic Earrings Of Energy Vortex";
+             //Name = "Mystic Earrings Of Energy Vortex";
         }
 
         public MEarringsOfEnergyVortex(Serial serial)
@@ -2179,7 +2179,7 @@ namespace Server.Items
         public MEarringsOfSummonDaemon()
             : base(JewelryEffect.SummonDaemon, Layer.Earrings, 0x1087, 16, 26)
         {
-            Name = "Mystic Earrings Of Summon Daemon";
+             //Name = "Mystic Earrings Of Summon Daemon";
         }
 
         public MEarringsOfSummonDaemon(Serial serial)
@@ -2219,7 +2219,7 @@ namespace Server.Items
         public MEarringsOfResurrection()
             : base(JewelryEffect.Resurrection, Layer.Earrings, 0x1087, 16, 26)
         {
-            Name = "Mystic Earrings Of Resurrection";
+             //Name = "Mystic Earrings Of Resurrection";
         }
 
         public MEarringsOfResurrection(Serial serial)
@@ -2255,7 +2255,7 @@ namespace Server.Items
         public MEarringsOfEarthquake()
             : base(JewelryEffect.Earthquake, Layer.Earrings, 0x1087, 4, 6)
         {
-            Name = "Mystic Earrings Of Earth Quake";
+             //Name = "Mystic Earrings Of Earth Quake";
         }
 
         public MEarringsOfEarthquake(Serial serial)

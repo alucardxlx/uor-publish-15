@@ -23,7 +23,7 @@ namespace Server.Items
         public MPendantOfClumsy()
             : base(JewelryEffect.Clumsy, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of Clumsy";
+             //Name = "Mystic Pendant Of Clumsy";
         }
 
         public MPendantOfClumsy(Serial serial)
@@ -58,7 +58,7 @@ namespace Server.Items
         public MPendantOfHeal()
             : base(JewelryEffect.Heal, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of Heal";
+             //Name = "Mystic Pendant Of Heal";
         }
 
         public MPendantOfHeal(Serial serial)
@@ -93,7 +93,7 @@ namespace Server.Items
         public MPendantOfMagicArrow()
             : base(JewelryEffect.MagicArrow, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of Magic Arrow";
+             //Name = "Mystic Pendant Of Magic Arrow";
         }
 
         public MPendantOfMagicArrow(Serial serial)
@@ -128,7 +128,7 @@ namespace Server.Items
         public MPendantOfFeeblemind()
             : base(JewelryEffect.Feeblemind, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of Feeblemind";
+             //Name = "Mystic Pendant Of Feeblemind";
         }
 
         public MPendantOfFeeblemind(Serial serial)
@@ -163,7 +163,7 @@ namespace Server.Items
         public MPendantOfWeaken()
             : base(JewelryEffect.Weaken, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of Weaken";
+             //Name = "Mystic Pendant Of Weaken";
         }
 
         public MPendantOfWeaken(Serial serial)
@@ -198,7 +198,7 @@ namespace Server.Items
         public MPendantOfCreateFood()
             : base(JewelryEffect.CreateFood, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of Create Food";
+             //Name = "Mystic Pendant Of Create Food";
         }
 
         public MPendantOfCreateFood(Serial serial)
@@ -233,7 +233,7 @@ namespace Server.Items
         public MPendantOfNightSight()
             : base(JewelryEffect.NightSight, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of Night Sight";
+             //Name = "Mystic Pendant Of Night Sight";
         }
 
         public MPendantOfNightSight(Serial serial)
@@ -268,7 +268,7 @@ namespace Server.Items
         public MPendantOfReactiveArmor()
             : base(JewelryEffect.ReactiveArmor, Layer.Neck, 0x1088, 51, 61)
         {
-            Name = "Mystic Pendant Of ReactiveArmor";
+             //Name = "Mystic Pendant Of ReactiveArmor";
         }
 
         public MPendantOfReactiveArmor(Serial serial)
@@ -305,7 +305,7 @@ namespace Server.Items
         public MPendantOfCure()
             : base(JewelryEffect.Cure, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Cure";
+             //Name = "Mystic Pendant Of Cure";
         }
 
         public MPendantOfCure(Serial serial)
@@ -340,7 +340,7 @@ namespace Server.Items
         public MPendantOfRemoveTrap()
             : base(JewelryEffect.RemoveTrap, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Remove Trap";
+             //Name = "Mystic Pendant Of Remove Trap";
         }
 
         public MPendantOfRemoveTrap(Serial serial)
@@ -375,7 +375,7 @@ namespace Server.Items
         public MPendantOfMagicTrap()
             : base(JewelryEffect.MagicTrap, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Magic Trap";
+             //Name = "Mystic Pendant Of Magic Trap";
         }
 
         public MPendantOfMagicTrap(Serial serial)
@@ -410,7 +410,7 @@ namespace Server.Items
         public MPendantOfHarm()
             : base(JewelryEffect.Harm, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Harm";
+             //Name = "Mystic Pendant Of Harm";
         }
 
         public MPendantOfHarm(Serial serial)
@@ -445,7 +445,7 @@ namespace Server.Items
         public MPendantOfAgility()
             : base(JewelryEffect.Agility, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Agility";
+             //Name = "Mystic Pendant Of Agility";
         }
 
         public MPendantOfAgility(Serial serial)
@@ -480,7 +480,7 @@ namespace Server.Items
         public MPendantOfCunning()
             : base(JewelryEffect.Cunning, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Cunning";
+             //Name = "Mystic Pendant Of Cunning";
         }
 
         public MPendantOfCunning(Serial serial)
@@ -515,7 +515,7 @@ namespace Server.Items
         public MPendantOfStrength()
             : base(JewelryEffect.Strength, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Strength";
+             //Name = "Mystic Pendant Of Strength";
         }
 
         public MPendantOfStrength(Serial serial)
@@ -550,7 +550,7 @@ namespace Server.Items
         public MPendantOfProtection()
             : base(JewelryEffect.Protection, Layer.Neck, 0x1088, 46, 56)
         {
-            Name = "Mystic Pendant Of Protection";
+             //Name = "Mystic Pendant Of Protection";
         }
 
         public MPendantOfProtection(Serial serial)
@@ -587,7 +587,7 @@ namespace Server.Items
         public MPendantOfTeleport()
             : base(JewelryEffect.Teleport, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Teleport";
+             //Name = "Mystic Pendant Of Teleport";
         }
 
         public MPendantOfTeleport(Serial serial)
@@ -622,7 +622,7 @@ namespace Server.Items
         public MPendantOfTelekinesis()
             : base(JewelryEffect.Telekinesis, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Telekinesis";
+             //Name = "Mystic Pendant Of Telekinesis";
         }
 
         public MPendantOfTelekinesis(Serial serial)
@@ -657,7 +657,7 @@ namespace Server.Items
         public MPendantOfWallOfStone()
             : base(JewelryEffect.WallOfStone, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Wall Of Stone";
+             //Name = "Mystic Pendant Of Wall Of Stone";
         }
 
         public MPendantOfWallOfStone(Serial serial)
@@ -697,7 +697,7 @@ namespace Server.Items
         public MPendantOfMagicLock()
             : base(JewelryEffect.MagicLock, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Magic Lock";
+             //Name = "Mystic Pendant Of Magic Lock";
         }
 
         public MPendantOfMagicLock(Serial serial)
@@ -732,7 +732,7 @@ namespace Server.Items
         public MPendantOfUnlock()
             : base(JewelryEffect.Unlock, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Unlock";
+             //Name = "Mystic Pendant Of Unlock";
         }
 
         public MPendantOfUnlock(Serial serial)
@@ -767,7 +767,7 @@ namespace Server.Items
         public MPendantOfBless()
             : base(JewelryEffect.Bless, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Bless";
+             //Name = "Mystic Pendant Of Bless";
         }
 
         public MPendantOfBless(Serial serial)
@@ -802,7 +802,7 @@ namespace Server.Items
         public MPendantOfFireball()
             : base(JewelryEffect.Fireball, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Fireball";
+             //Name = "Mystic Pendant Of Fireball";
         }
 
         public MPendantOfFireball(Serial serial)
@@ -837,7 +837,7 @@ namespace Server.Items
         public MPendantOfPoison()
             : base(JewelryEffect.Poison, Layer.Neck, 0x1088, 41, 51)
         {
-            Name = "Mystic Pendant Of Poison";
+             //Name = "Mystic Pendant Of Poison";
         }
 
         public MPendantOfPoison(Serial serial)
@@ -874,7 +874,7 @@ namespace Server.Items
         public MPendantOfFireField()
             : base(JewelryEffect.FireField, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Fire Field";
+             //Name = "Mystic Pendant Of Fire Field";
         }
 
         public MPendantOfFireField(Serial serial)
@@ -914,7 +914,7 @@ namespace Server.Items
         public MPendantOfManaDrain()
             : base(JewelryEffect.ManaDrain, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Mana Drain";
+             //Name = "Mystic Pendant Of Mana Drain";
         }
 
         public MPendantOfManaDrain(Serial serial)
@@ -949,7 +949,7 @@ namespace Server.Items
         public MPendantOfGreaterHeal()
             : base(JewelryEffect.GreaterHeal, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Greater Heal";
+             //Name = "Mystic Pendant Of Greater Heal";
         }
 
         public MPendantOfGreaterHeal(Serial serial)
@@ -984,7 +984,7 @@ namespace Server.Items
         public MPendantOfCurse()
             : base(JewelryEffect.Curse, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Curse";
+             //Name = "Mystic Pendant Of Curse";
         }
 
         public MPendantOfCurse(Serial serial)
@@ -1019,7 +1019,7 @@ namespace Server.Items
         public MPendantOfLightning()
             : base(JewelryEffect.Lightning, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Lightning";
+             //Name = "Mystic Pendant Of Lightning";
         }
 
         public MPendantOfLightning(Serial serial)
@@ -1054,7 +1054,7 @@ namespace Server.Items
         public MPendantOfRecall()
             : base(JewelryEffect.Recall, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Recall";
+             //Name = "Mystic Pendant Of Recall";
         }
 
         public MPendantOfRecall(Serial serial)
@@ -1089,7 +1089,7 @@ namespace Server.Items
         public MPendantOfArchProtection()
             : base(JewelryEffect.ArchProtection, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Arch Protection";
+             //Name = "Mystic Pendant Of Arch Protection";
         }
 
         public MPendantOfArchProtection(Serial serial)
@@ -1124,7 +1124,7 @@ namespace Server.Items
         public MPendantOfArchCure()
             : base(JewelryEffect.ArchCure, Layer.Neck, 0x1088, 36, 46)
         {
-            Name = "Mystic Pendant Of Arch Cure";
+             //Name = "Mystic Pendant Of Arch Cure";
         }
 
         public MPendantOfArchCure(Serial serial)
@@ -1161,7 +1161,7 @@ namespace Server.Items
         public MPendantOfParalyze()
             : base(JewelryEffect.Paralyze, Layer.Neck, 0x1088, 31, 41)
         {
-            Name = "Mystic Pendant Of Paralyze";
+             //Name = "Mystic Pendant Of Paralyze";
         }
 
         public MPendantOfParalyze(Serial serial)
@@ -1196,7 +1196,7 @@ namespace Server.Items
         public MPendantOfMindBlast()
             : base(JewelryEffect.MindBlast, Layer.Neck, 0x1088, 31, 41)
         {
-            Name = "Mystic Pendant Of Mind Blast";
+             //Name = "Mystic Pendant Of Mind Blast";
         }
 
         public MPendantOfMindBlast(Serial serial)
@@ -1231,7 +1231,7 @@ namespace Server.Items
         public MPendantOfDispelField()
             : base(JewelryEffect.DispelField, Layer.Neck, 0x1088, 31, 41)
         {
-            Name = "Mystic Pendant Of Dispel Field";
+             //Name = "Mystic Pendant Of Dispel Field";
         }
 
         public MPendantOfDispelField(Serial serial)
@@ -1266,7 +1266,7 @@ namespace Server.Items
         public MPendantOfPoisonField()
             : base(JewelryEffect.PoisonField, Layer.Neck, 0x1088, 31, 41)
         {
-            Name = "Mystic Pendant Of Poison Field";
+             //Name = "Mystic Pendant Of Poison Field";
         }
 
         public MPendantOfPoisonField(Serial serial)
@@ -1306,7 +1306,7 @@ namespace Server.Items
         public MPendantOfBladeSpirits()
             : base(JewelryEffect.BladeSpirits, Layer.Neck, 0x1088, 31, 41)
         {
-            Name = "Mystic Pendant Of Blade Spirits";
+             //Name = "Mystic Pendant Of Blade Spirits";
         }
 
         public MPendantOfBladeSpirits(Serial serial)
@@ -1346,7 +1346,7 @@ namespace Server.Items
         public MPendantOfMagicReflect()
             : base(JewelryEffect.MagicReflect, Layer.Neck, 0x1088, 31, 41)
         {
-            Name = "Mystic Pendant Of Magic Reflect";
+             //Name = "Mystic Pendant Of Magic Reflect";
         }
 
         public MPendantOfMagicReflect(Serial serial)
@@ -1381,7 +1381,7 @@ namespace Server.Items
         public MPendantOfIncognito()
             : base(JewelryEffect.Incognito, Layer.Neck, 0x1088, 31, 41)
         {
-            Name = "Mystic Pendant Of Incognito";
+             //Name = "Mystic Pendant Of Incognito";
         }
 
         public MPendantOfIncognito(Serial serial)
@@ -1418,7 +1418,7 @@ namespace Server.Items
         public MPendantOfEnergyBolt()
             : base(JewelryEffect.EnergyBolt, Layer.Neck, 0x1088, 26, 36)
         {
-            Name = "Mystic Pendant Of Energy Bolt";
+             //Name = "Mystic Pendant Of Energy Bolt";
         }
 
         public MPendantOfEnergyBolt(Serial serial)
@@ -1453,7 +1453,7 @@ namespace Server.Items
         public MPendantOfExplosion()
             : base(JewelryEffect.Explosion, Layer.Neck, 0x1088, 26, 36)
         {
-            Name = "Mystic Pendant Of Explosion";
+             //Name = "Mystic Pendant Of Explosion";
         }
 
         public MPendantOfExplosion(Serial serial)
@@ -1488,7 +1488,7 @@ namespace Server.Items
         public MPendantOfDispel()
             : base(JewelryEffect.Dispel, Layer.Neck, 0x1088, 26, 36)
         {
-            Name = "Mystic Pendant Of Dispel";
+             //Name = "Mystic Pendant Of Dispel";
         }
 
         public MPendantOfDispel(Serial serial)
@@ -1523,7 +1523,7 @@ namespace Server.Items
         public MPendantOfReveal()
             : base(JewelryEffect.Reveal, Layer.Neck, 0x1088, 26, 36)
         {
-            Name = "Mystic Pendant Of Reveal";
+             //Name = "Mystic Pendant Of Reveal";
         }
 
         public MPendantOfReveal(Serial serial)
@@ -1558,7 +1558,7 @@ namespace Server.Items
         public MPendantOfMark()
             : base(JewelryEffect.Mark, Layer.Neck, 0x1088, 26, 36)
         {
-            Name = "Mystic Pendant Of Mark";
+             //Name = "Mystic Pendant Of Mark";
         }
 
         public MPendantOfMark(Serial serial)
@@ -1603,7 +1603,7 @@ namespace Server.Items
         public MPendantOfParalyzeField()
             : base(JewelryEffect.ParalyzeField, Layer.Neck, 0x1088, 26, 36)
         {
-            Name = "Mystic Pendant Of Paralyze Field";
+             //Name = "Mystic Pendant Of Paralyze Field";
         }
 
         public MPendantOfParalyzeField(Serial serial)
@@ -1643,7 +1643,7 @@ namespace Server.Items
         public MPendantOfInvisibility()
             : base(JewelryEffect.Invisibility, Layer.Neck, 0x1088, 26, 36)
         {
-            Name = "Mystic Pendant Of Invisibility";
+             //Name = "Mystic Pendant Of Invisibility";
         }
 
         public MPendantOfInvisibility(Serial serial)
@@ -1680,7 +1680,7 @@ namespace Server.Items
         public MPendantOfPolymorph()
             : base(JewelryEffect.Polymorph, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Polymorph";
+             //Name = "Mystic Pendant Of Polymorph";
         }
 
         public MPendantOfPolymorph(Serial serial)
@@ -1715,7 +1715,7 @@ namespace Server.Items
         public MPendantOfManaVampire()
             : base(JewelryEffect.ManaVampire, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Mana Vampire";
+             //Name = "Mystic Pendant Of Mana Vampire";
         }
 
         public MPendantOfManaVampire(Serial serial)
@@ -1750,7 +1750,7 @@ namespace Server.Items
         public MPendantOfMassDispel()
             : base(JewelryEffect.MassDispel, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Mass Dispel";
+             //Name = "Mystic Pendant Of Mass Dispel";
         }
 
         public MPendantOfMassDispel(Serial serial)
@@ -1785,7 +1785,7 @@ namespace Server.Items
         public MPendantOfMeteorSwarm()
             : base(JewelryEffect.MeteorSwarm, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Meteor Swarm";
+             //Name = "Mystic Pendant Of Meteor Swarm";
         }
 
         public MPendantOfMeteorSwarm(Serial serial)
@@ -1825,7 +1825,7 @@ namespace Server.Items
         public MPendantOfChainLightning()
             : base(JewelryEffect.ChainLightning, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Chain Lightning";
+             //Name = "Mystic Pendant Of Chain Lightning";
         }
 
         public MPendantOfChainLightning(Serial serial)
@@ -1865,7 +1865,7 @@ namespace Server.Items
         public MPendantOfFlameStrike()
             : base(JewelryEffect.FlameStrike, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Flame Strike";
+             //Name = "Mystic Pendant Of Flame Strike";
         }
 
         public MPendantOfFlameStrike(Serial serial)
@@ -1901,7 +1901,7 @@ namespace Server.Items
         public MPendantOfGateTravel()
             : base(JewelryEffect.GateTravel, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Gate Travel";
+             //Name = "Mystic Pendant Of Gate Travel";
         }
 
         public MPendantOfGateTravel(Serial serial)
@@ -1937,7 +1937,7 @@ namespace Server.Items
         public MPendantOfEnergyField()
             : base(JewelryEffect.EnergyField, Layer.Neck, 0x1088, 21, 31)
         {
-            Name = "Mystic Pendant Of Energy Field";
+             //Name = "Mystic Pendant Of Energy Field";
         }
 
         public MPendantOfEnergyField(Serial serial)
@@ -1979,7 +1979,7 @@ namespace Server.Items
         public MPendantOfWaterElemental()
             : base(JewelryEffect.WaterElemental, Layer.Neck, 0x1088, 16, 26)
         {
-            Name = "Mystic Pendant Of Water Elemental";
+             //Name = "Mystic Pendant Of Water Elemental";
         }
 
         public MPendantOfWaterElemental(Serial serial)
@@ -2019,7 +2019,7 @@ namespace Server.Items
         public MPendantOfAirElemental()
             : base(JewelryEffect.AirElemental, Layer.Neck, 0x1088, 16, 26)
         {
-            Name = "Mystic Pendant Of Air Elemental";
+             //Name = "Mystic Pendant Of Air Elemental";
         }
 
         public MPendantOfAirElemental(Serial serial)
@@ -2059,7 +2059,7 @@ namespace Server.Items
         public MPendantOfFireElemental()
             : base(JewelryEffect.FireElemental, Layer.Neck, 0x1088, 16, 26)
         {
-            Name = "Mystic Pendant Of Fire Elemental";
+             //Name = "Mystic Pendant Of Fire Elemental";
         }
 
         public MPendantOfFireElemental(Serial serial)
@@ -2099,7 +2099,7 @@ namespace Server.Items
         public MPendantOfEarthElemental()
             : base(JewelryEffect.EarthElemental, Layer.Neck, 0x1088, 16, 26)
         {
-            Name = "Mystic Pendant Of Earth Elemental";
+             //Name = "Mystic Pendant Of Earth Elemental";
         }
 
         public MPendantOfEarthElemental(Serial serial)
@@ -2139,7 +2139,7 @@ namespace Server.Items
         public MPendantOfEnergyVortex()
             : base(JewelryEffect.EnergyVortex, Layer.Neck, 0x1088, 16, 26)
         {
-            Name = "Mystic Pendant Of Energy Vortex";
+             //Name = "Mystic Pendant Of Energy Vortex";
         }
 
         public MPendantOfEnergyVortex(Serial serial)
@@ -2179,7 +2179,7 @@ namespace Server.Items
         public MPendantOfSummonDaemon()
             : base(JewelryEffect.SummonDaemon, Layer.Neck, 0x1088, 16, 26)
         {
-            Name = "Mystic Pendant Of Summon Daemon";
+             //Name = "Mystic Pendant Of Summon Daemon";
         }
 
         public MPendantOfSummonDaemon(Serial serial)
@@ -2219,7 +2219,7 @@ namespace Server.Items
         public MPendantOfResurrection()
             : base(JewelryEffect.Resurrection, Layer.Neck, 0x1088, 16, 26)
         {
-            Name = "Mystic Pendant Of Resurrection";
+             //Name = "Mystic Pendant Of Resurrection";
         }
 
         public MPendantOfResurrection(Serial serial)
@@ -2255,7 +2255,7 @@ namespace Server.Items
         public MPendantOfEarthquake()
             : base(JewelryEffect.Earthquake, Layer.Neck, 0x1088, 4, 6)
         {
-            Name = "Mystic Pendant Of Earth Quake";
+             //Name = "Mystic Pendant Of Earth Quake";
         }
 
         public MPendantOfEarthquake(Serial serial)
