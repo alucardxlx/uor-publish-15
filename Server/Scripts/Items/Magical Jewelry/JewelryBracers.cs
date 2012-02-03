@@ -23,7 +23,6 @@ namespace Server.Items
         public MBracerOfClumsy()
             : base(JewelryEffect.Clumsy, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of Clumsy";
         }
 
         public MBracerOfClumsy(Serial serial)
@@ -58,7 +57,6 @@ namespace Server.Items
         public MBracerOfHeal()
             : base(JewelryEffect.Heal, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of Heal";
         }
 
         public MBracerOfHeal(Serial serial)
@@ -93,7 +91,6 @@ namespace Server.Items
         public MBracerOfMagicArrow()
             : base(JewelryEffect.MagicArrow, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of Magic Arrow";
         }
 
         public MBracerOfMagicArrow(Serial serial)
@@ -128,7 +125,7 @@ namespace Server.Items
         public MBracerOfFeeblemind()
             : base(JewelryEffect.Feeblemind, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of Feeblemind";
+//Name= " Bracer Of Feeblemind";
         }
 
         public MBracerOfFeeblemind(Serial serial)
@@ -163,7 +160,6 @@ namespace Server.Items
         public MBracerOfWeaken()
             : base(JewelryEffect.Weaken, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of Weaken";
         }
 
         public MBracerOfWeaken(Serial serial)
@@ -198,7 +194,6 @@ namespace Server.Items
         public MBracerOfCreateFood()
             : base(JewelryEffect.CreateFood, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of Create Food";
         }
 
         public MBracerOfCreateFood(Serial serial)
@@ -233,7 +228,6 @@ namespace Server.Items
         public MBracerOfNightSight()
             : base(JewelryEffect.NightSight, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of Night Sight";
         }
 
         public MBracerOfNightSight(Serial serial)
@@ -268,7 +262,6 @@ namespace Server.Items
         public MBracerOfReactiveArmor()
             : base(JewelryEffect.ReactiveArmor, Layer.Bracelet, 0x1086, 51, 61)
         {
-            Name = "Mystic Bracer Of ReactiveArmor";
         }
 
         public MBracerOfReactiveArmor(Serial serial)
@@ -305,7 +298,6 @@ namespace Server.Items
         public MBracerOfCure()
             : base(JewelryEffect.Cure, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Cure";
         }
 
         public MBracerOfCure(Serial serial)
@@ -340,7 +332,6 @@ namespace Server.Items
         public MBracerOfRemoveTrap()
             : base(JewelryEffect.RemoveTrap, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Remove Trap";
         }
 
         public MBracerOfRemoveTrap(Serial serial)
@@ -375,7 +366,6 @@ namespace Server.Items
         public MBracerOfMagicTrap()
             : base(JewelryEffect.MagicTrap, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Magic Trap";
         }
 
         public MBracerOfMagicTrap(Serial serial)
@@ -410,7 +400,6 @@ namespace Server.Items
         public MBracerOfHarm()
             : base(JewelryEffect.Harm, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Harm";
         }
 
         public MBracerOfHarm(Serial serial)
@@ -445,7 +434,6 @@ namespace Server.Items
         public MBracerOfAgility()
             : base(JewelryEffect.Agility, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Agility";
         }
 
         public MBracerOfAgility(Serial serial)
@@ -480,7 +468,6 @@ namespace Server.Items
         public MBracerOfCunning()
             : base(JewelryEffect.Cunning, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Cunning";
         }
 
         public MBracerOfCunning(Serial serial)
@@ -515,7 +502,6 @@ namespace Server.Items
         public MBracerOfStrength()
             : base(JewelryEffect.Strength, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Strength";
         }
 
         public MBracerOfStrength(Serial serial)
@@ -550,7 +536,6 @@ namespace Server.Items
         public MBracerOfProtection()
             : base(JewelryEffect.Protection, Layer.Bracelet, 0x1086, 46, 56)
         {
-            Name = "Mystic Bracer Of Protection";
         }
 
         public MBracerOfProtection(Serial serial)
@@ -587,7 +572,6 @@ namespace Server.Items
         public MBracerOfTeleport()
             : base(JewelryEffect.Teleport, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Teleport";
         }
 
         public MBracerOfTeleport(Serial serial)
@@ -622,7 +606,6 @@ namespace Server.Items
         public MBracerOfTelekinesis()
             : base(JewelryEffect.Telekinesis, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Telekinesis";
         }
 
         public MBracerOfTelekinesis(Serial serial)
@@ -657,7 +640,6 @@ namespace Server.Items
         public MBracerOfWallOfStone()
             : base(JewelryEffect.WallOfStone, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Wall Of Stone";
         }
 
         public MBracerOfWallOfStone(Serial serial)
@@ -697,7 +679,6 @@ namespace Server.Items
         public MBracerOfMagicLock()
             : base(JewelryEffect.MagicLock, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Magic Lock";
         }
 
         public MBracerOfMagicLock(Serial serial)
@@ -732,7 +713,6 @@ namespace Server.Items
         public MBracerOfUnlock()
             : base(JewelryEffect.Unlock, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Unlock";
         }
 
         public MBracerOfUnlock(Serial serial)
@@ -767,7 +747,6 @@ namespace Server.Items
         public MBracerOfBless()
             : base(JewelryEffect.Bless, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Bless";
         }
 
         public MBracerOfBless(Serial serial)
@@ -802,7 +781,6 @@ namespace Server.Items
         public MBracerOfFireball()
             : base(JewelryEffect.Fireball, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Fireball";
         }
 
         public MBracerOfFireball(Serial serial)
@@ -837,7 +815,6 @@ namespace Server.Items
         public MBracerOfPoison()
             : base(JewelryEffect.Poison, Layer.Bracelet, 0x1086, 41, 51)
         {
-            Name = "Mystic Bracer Of Poison";
         }
 
         public MBracerOfPoison(Serial serial)
@@ -874,7 +851,6 @@ namespace Server.Items
         public MBracerOfFireField()
             : base(JewelryEffect.FireField, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Fire Field";
         }
 
         public MBracerOfFireField(Serial serial)
@@ -914,7 +890,6 @@ namespace Server.Items
         public MBracerOfManaDrain()
             : base(JewelryEffect.ManaDrain, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Mana Drain";
         }
 
         public MBracerOfManaDrain(Serial serial)
@@ -949,7 +924,6 @@ namespace Server.Items
         public MBracerOfGreaterHeal()
             : base(JewelryEffect.GreaterHeal, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Greater Heal";
         }
 
         public MBracerOfGreaterHeal(Serial serial)
@@ -984,7 +958,6 @@ namespace Server.Items
         public MBracerOfCurse()
             : base(JewelryEffect.Curse, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Curse";
         }
 
         public MBracerOfCurse(Serial serial)
@@ -1019,7 +992,7 @@ namespace Server.Items
         public MBracerOfLightning()
             : base(JewelryEffect.Lightning, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Lightning";
+//Name= " Bracer Of Lightning";
         }
 
         public MBracerOfLightning(Serial serial)
@@ -1054,7 +1027,7 @@ namespace Server.Items
         public MBracerOfRecall()
             : base(JewelryEffect.Recall, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Recall";
+//Name= " Bracer Of Recall";
         }
 
         public MBracerOfRecall(Serial serial)
@@ -1089,7 +1062,7 @@ namespace Server.Items
         public MBracerOfArchProtection()
             : base(JewelryEffect.ArchProtection, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Arch Protection";
+//Name= " Bracer Of Arch Protection";
         }
 
         public MBracerOfArchProtection(Serial serial)
@@ -1124,7 +1097,7 @@ namespace Server.Items
         public MBracerOfArchCure()
             : base(JewelryEffect.ArchCure, Layer.Bracelet, 0x1086, 36, 46)
         {
-            Name = "Mystic Bracer Of Arch Cure";
+//Name= " Bracer Of Arch Cure";
         }
 
         public MBracerOfArchCure(Serial serial)
@@ -1161,7 +1134,7 @@ namespace Server.Items
         public MBracerOfParalyze()
             : base(JewelryEffect.Paralyze, Layer.Bracelet, 0x1086, 31, 41)
         {
-            Name = "Mystic Bracer Of Paralyze";
+//Name= " Bracer Of Paralyze";
         }
 
         public MBracerOfParalyze(Serial serial)
@@ -1196,7 +1169,7 @@ namespace Server.Items
         public MBracerOfMindBlast()
             : base(JewelryEffect.MindBlast, Layer.Bracelet, 0x1086, 31, 41)
         {
-            Name = "Mystic Bracer Of Mind Blast";
+//Name= " Bracer Of Mind Blast";
         }
 
         public MBracerOfMindBlast(Serial serial)
@@ -1231,7 +1204,7 @@ namespace Server.Items
         public MBracerOfDispelField()
             : base(JewelryEffect.DispelField, Layer.Bracelet, 0x1086, 31, 41)
         {
-            Name = "Mystic Bracer Of Dispel Field";
+//Name= " Bracer Of Dispel Field";
         }
 
         public MBracerOfDispelField(Serial serial)
@@ -1266,7 +1239,7 @@ namespace Server.Items
         public MBracerOfPoisonField()
             : base(JewelryEffect.PoisonField, Layer.Bracelet, 0x1086, 31, 41)
         {
-            Name = "Mystic Bracer Of Poison Field";
+//Name= " Bracer Of Poison Field";
         }
 
         public MBracerOfPoisonField(Serial serial)
@@ -1306,7 +1279,7 @@ namespace Server.Items
         public MBracerOfBladeSpirits()
             : base(JewelryEffect.BladeSpirits, Layer.Bracelet, 0x1086, 31, 41)
         {
-            Name = "Mystic Bracer Of Blade Spirits";
+//Name= " Bracer Of Blade Spirits";
         }
 
         public MBracerOfBladeSpirits(Serial serial)
@@ -1346,7 +1319,7 @@ namespace Server.Items
         public MBracerOfMagicReflect()
             : base(JewelryEffect.MagicReflect, Layer.Bracelet, 0x1086, 31, 41)
         {
-            Name = "Mystic Bracer Of Magic Reflect";
+//Name= " Bracer Of Magic Reflect";
         }
 
         public MBracerOfMagicReflect(Serial serial)
@@ -1381,7 +1354,7 @@ namespace Server.Items
         public MBracerOfIncognito()
             : base(JewelryEffect.Incognito, Layer.Bracelet, 0x1086, 31, 41)
         {
-            Name = "Mystic Bracer Of Incognito";
+//Name= " Bracer Of Incognito";
         }
 
         public MBracerOfIncognito(Serial serial)
@@ -1418,7 +1391,7 @@ namespace Server.Items
         public MBracerOfEnergyBolt()
             : base(JewelryEffect.EnergyBolt, Layer.Bracelet, 0x1086, 26, 36)
         {
-            Name = "Mystic Bracer Of Energy Bolt";
+//Name= " Bracer Of Energy Bolt";
         }
 
         public MBracerOfEnergyBolt(Serial serial)
@@ -1453,7 +1426,7 @@ namespace Server.Items
         public MBracerOfExplosion()
             : base(JewelryEffect.Explosion, Layer.Bracelet, 0x1086, 26, 36)
         {
-            Name = "Mystic Bracer Of Explosion";
+//Name= " Bracer Of Explosion";
         }
 
         public MBracerOfExplosion(Serial serial)
@@ -1488,7 +1461,7 @@ namespace Server.Items
         public MBracerOfDispel()
             : base(JewelryEffect.Dispel, Layer.Bracelet, 0x1086, 26, 36)
         {
-            Name = "Mystic Bracer Of Dispel";
+//Name= " Bracer Of Dispel";
         }
 
         public MBracerOfDispel(Serial serial)
@@ -1523,7 +1496,7 @@ namespace Server.Items
         public MBracerOfReveal()
             : base(JewelryEffect.Reveal, Layer.Bracelet, 0x1086, 26, 36)
         {
-            Name = "Mystic Bracer Of Reveal";
+//Name= " Bracer Of Reveal";
         }
 
         public MBracerOfReveal(Serial serial)
@@ -1558,7 +1531,7 @@ namespace Server.Items
         public MBracerOfMark()
             : base(JewelryEffect.Mark, Layer.Bracelet, 0x1086, 26, 36)
         {
-            Name = "Mystic Bracer Of Mark";
+//Name= " Bracer Of Mark";
         }
 
         public MBracerOfMark(Serial serial)
@@ -1603,7 +1576,7 @@ namespace Server.Items
         public MBracerOfParalyzeField()
             : base(JewelryEffect.ParalyzeField, Layer.Bracelet, 0x1086, 26, 36)
         {
-            Name = "Mystic Bracer Of Paralyze Field";
+//Name= " Bracer Of Paralyze Field";
         }
 
         public MBracerOfParalyzeField(Serial serial)
@@ -1643,7 +1616,7 @@ namespace Server.Items
         public MBracerOfInvisibility()
             : base(JewelryEffect.Invisibility, Layer.Bracelet, 0x1086, 26, 36)
         {
-            Name = "Mystic Bracer Of Invisibility";
+//Name= " Bracer Of Invisibility";
         }
 
         public MBracerOfInvisibility(Serial serial)
@@ -1680,7 +1653,7 @@ namespace Server.Items
         public MBracerOfPolymorph()
             : base(JewelryEffect.Polymorph, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Polymorph";
+//Name= " Bracer Of Polymorph";
         }
 
         public MBracerOfPolymorph(Serial serial)
@@ -1715,7 +1688,7 @@ namespace Server.Items
         public MBracerOfManaVampire()
             : base(JewelryEffect.ManaVampire, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Mana Vampire";
+//Name= " Bracer Of Mana Vampire";
         }
 
         public MBracerOfManaVampire(Serial serial)
@@ -1750,7 +1723,7 @@ namespace Server.Items
         public MBracerOfMassDispel()
             : base(JewelryEffect.MassDispel, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Mass Dispel";
+//Name= " Bracer Of Mass Dispel";
         }
 
         public MBracerOfMassDispel(Serial serial)
@@ -1785,7 +1758,7 @@ namespace Server.Items
         public MBracerOfMeteorSwarm()
             : base(JewelryEffect.MeteorSwarm, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Meteor Swarm";
+//Name= " Bracer Of Meteor Swarm";
         }
 
         public MBracerOfMeteorSwarm(Serial serial)
@@ -1825,7 +1798,7 @@ namespace Server.Items
         public MBracerOfChainLightning()
             : base(JewelryEffect.ChainLightning, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Chain Lightning";
+//Name= " Bracer Of Chain Lightning";
         }
 
         public MBracerOfChainLightning(Serial serial)
@@ -1865,7 +1838,7 @@ namespace Server.Items
         public MBracerOfFlameStrike()
             : base(JewelryEffect.FlameStrike, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Flame Strike";
+//Name= " Bracer Of Flame Strike";
         }
 
         public MBracerOfFlameStrike(Serial serial)
@@ -1901,7 +1874,7 @@ namespace Server.Items
         public MBracerOfGateTravel()
             : base(JewelryEffect.GateTravel, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Gate Travel";
+//Name= " Bracer Of Gate Travel";
         }
 
         public MBracerOfGateTravel(Serial serial)
@@ -1937,7 +1910,7 @@ namespace Server.Items
         public MBracerOfEnergyField()
             : base(JewelryEffect.EnergyField, Layer.Bracelet, 0x1086, 21, 31)
         {
-            Name = "Mystic Bracer Of Energy Field";
+//Name= " Bracer Of Energy Field";
         }
 
         public MBracerOfEnergyField(Serial serial)
@@ -1979,7 +1952,7 @@ namespace Server.Items
         public MBracerOfWaterElemental()
             : base(JewelryEffect.WaterElemental, Layer.Bracelet, 0x1086, 16, 26)
         {
-            Name = "Mystic Bracer Of Water Elemental";
+//Name= " Bracer Of Water Elemental";
         }
 
         public MBracerOfWaterElemental(Serial serial)
@@ -2019,7 +1992,7 @@ namespace Server.Items
         public MBracerOfAirElemental()
             : base(JewelryEffect.AirElemental, Layer.Bracelet, 0x1086, 16, 26)
         {
-            Name = "Mystic Bracer Of Air Elemental";
+//Name= " Bracer Of Air Elemental";
         }
 
         public MBracerOfAirElemental(Serial serial)
@@ -2059,7 +2032,7 @@ namespace Server.Items
         public MBracerOfFireElemental()
             : base(JewelryEffect.FireElemental, Layer.Bracelet, 0x1086, 16, 26)
         {
-            Name = "Mystic Bracer Of Fire Elemental";
+//Name= " Bracer Of Fire Elemental";
         }
 
         public MBracerOfFireElemental(Serial serial)
@@ -2099,7 +2072,7 @@ namespace Server.Items
         public MBracerOfEarthElemental()
             : base(JewelryEffect.EarthElemental, Layer.Bracelet, 0x1086, 16, 26)
         {
-            Name = "Mystic Bracer Of Earth Elemental";
+//Name= " Bracer Of Earth Elemental";
         }
 
         public MBracerOfEarthElemental(Serial serial)
@@ -2139,7 +2112,7 @@ namespace Server.Items
         public MBracerOfEnergyVortex()
             : base(JewelryEffect.EnergyVortex, Layer.Bracelet, 0x1086, 16, 26)
         {
-            Name = "Mystic Bracer Of Energy Vortex";
+//Name= " Bracer Of Energy Vortex";
         }
 
         public MBracerOfEnergyVortex(Serial serial)
@@ -2179,7 +2152,7 @@ namespace Server.Items
         public MBracerOfSummonDaemon()
             : base(JewelryEffect.SummonDaemon, Layer.Bracelet, 0x1086, 16, 26)
         {
-            Name = "Mystic Bracer Of Summon Daemon";
+//Name= " Bracer Of Summon Daemon";
         }
 
         public MBracerOfSummonDaemon(Serial serial)
@@ -2219,7 +2192,7 @@ namespace Server.Items
         public MBracerOfResurrection()
             : base(JewelryEffect.Resurrection, Layer.Bracelet, 0x1086, 16, 26)
         {
-            Name = "Mystic Bracer Of Resurrection";
+//Name= " Bracer Of Resurrection";
         }
 
         public MBracerOfResurrection(Serial serial)
@@ -2255,7 +2228,7 @@ namespace Server.Items
         public MBracerOfEarthquake()
             : base(JewelryEffect.Earthquake, Layer.Bracelet, 0x1086, 4, 6)
         {
-            Name = "Mystic Bracer Of Earth Quake";
+//Name= " Bracer Of Earth Quake";
         }
 
         public MBracerOfEarthquake(Serial serial)

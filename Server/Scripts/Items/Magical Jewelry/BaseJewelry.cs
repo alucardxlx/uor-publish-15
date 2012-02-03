@@ -90,9 +90,11 @@ namespace Server.Items
         //InvisibilityII
     }
     #endregion
+    
 
     public abstract class BaseJewelry : Item
     {
+        private Mobile m_Crafter;
         private JewelryEffect m_JewelryEffect;
         public int m_Charges;
         public int itemid;
@@ -105,6 +107,13 @@ namespace Server.Items
         {
             get { return m_JewelryEffect; }
             set { m_JewelryEffect = value; InvalidateProperties(); }
+        }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public Mobile Crafter
+        {
+            get { return m_Crafter; }
+            set { m_Crafter = value; InvalidateProperties(); }
         }
 
         [CommandProperty(AccessLevel.GameMaster)]
@@ -174,10 +183,13 @@ namespace Server.Items
 
             writer.Write((int)0); // version
 
+
             writer.Write((int)m_JewelryEffect);
             writer.Write((int)m_Charges);
+
         }
 
+       
 
         public override void Deserialize(GenericReader reader)
         {
@@ -286,7 +298,122 @@ namespace Server.Items
                     attrs.Add(new EquipInfoAttribute(1038021)); // blessed
                 else if (LootType == LootType.Cursed)
                     attrs.Add(new EquipInfoAttribute(1049643)); // cursed
+            
+                int num = 0;
+
+                switch (m_JewelryEffect)
+                {
+                    //Circle One
+                    case JewelryEffect.Clumsy: num = 3002011; break;
+                    case JewelryEffect.CreateFood: num = 3002012; break;
+                    case JewelryEffect.Feeblemind: num = 3002013; break;
+                    case JewelryEffect.Heal: num = 3002014; break;
+                    case JewelryEffect.MagicArrow: num = 3002015; break;
+                    case JewelryEffect.NightSight: num = 3002016; break;
+                    case JewelryEffect.ReactiveArmor: num = 3002017; break;
+                    case JewelryEffect.Weaken: num = 3002018; break;
+                    //Circle Two
+                    case JewelryEffect.Agility: num = 3002019; break;
+                    case JewelryEffect.Cunning: num = 3002020; break;
+                    case JewelryEffect.Cure: num = 3002021; break;
+                    case JewelryEffect.Harm: num = 3002022; break;
+                    case JewelryEffect.MagicTrap: num = 3002023; break;
+                    case JewelryEffect.RemoveTrap: num = 3002024; break;
+                    case JewelryEffect.Protection: num = 3002025; break;
+                    case JewelryEffect.Strength: num = 3002026; break;
+                    //Circle Three
+                    case JewelryEffect.Bless: num = 3002027; break;
+                    case JewelryEffect.Fireball: num = 3002028; break;
+                    case JewelryEffect.MagicLock: num = 3002029; break;
+                    case JewelryEffect.Poison: num = 3002030; break;
+                    case JewelryEffect.Telekinesis: num = 3002031; break;
+                    case JewelryEffect.Teleport: num = 3002032; break;
+                    case JewelryEffect.Unlock: num = 3002033; break;
+                    case JewelryEffect.WallOfStone: num = 3002034; break;
+                    //Circle Four
+                    case JewelryEffect.ArchCure: num = 3002035; break;
+                    case JewelryEffect.ArchProtection: num = 3002036; break;
+                    case JewelryEffect.Curse: num = 3002037; break;
+                    case JewelryEffect.FireField: num = 3002038; break;
+                    case JewelryEffect.GreaterHeal: num = 3002039; break;
+                    case JewelryEffect.Lightning: num = 3002040; break;
+                    case JewelryEffect.ManaDrain: num = 3002041; break;
+                    case JewelryEffect.Recall: num = 3002042; break;
+                    //Circle Five
+                    case JewelryEffect.BladeSpirits: num = 3002043; break;
+                    case JewelryEffect.DispelField: num = 3002044; break;
+                    case JewelryEffect.Incognito: num = 3002045; break;
+                    case JewelryEffect.MagicReflect: num = 3002046; break;
+                    case JewelryEffect.MindBlast: num = 3002047; break;
+                    case JewelryEffect.Paralyze: num = 3002048; break;
+                    case JewelryEffect.PoisonField: num = 3002049; break;
+                    //Circle Six
+                    case JewelryEffect.Dispel: num = 3002051; break;
+                    case JewelryEffect.EnergyBolt: num = 3002052; break;
+                    case JewelryEffect.Explosion: num = 3002053; break;
+                    case JewelryEffect.Invisibility: num = 3002054; break;
+                    case JewelryEffect.Mark: num = 3002055; break;
+                    case JewelryEffect.ParalyzeField: num = 3002057; break;
+                    case JewelryEffect.Reveal: num = 3002058; break;
+                    //Circle Seven
+                    case JewelryEffect.ChainLightning: num = 3002059; break;
+                    case JewelryEffect.EnergyField: num = 3002060; break;
+                    case JewelryEffect.FlameStrike: num = 3002061; break;
+                    case JewelryEffect.GateTravel: num = 3002062; break;
+                    case JewelryEffect.ManaVampire: num = 3002063; break;
+                    case JewelryEffect.MassDispel: num = 3002064; break;
+                    case JewelryEffect.MeteorSwarm: num = 3002065; break;
+                    case JewelryEffect.Polymorph: num = 3002066; break;
+                    //Circle Eight
+                    case JewelryEffect.Earthquake: num = 3002067; break;
+                    case JewelryEffect.EnergyVortex: num = 3002068; break;
+                    case JewelryEffect.Resurrection: num = 3002069; break;
+                    case JewelryEffect.AirElemental: num = 3002070; break;
+                    case JewelryEffect.SummonDaemon: num = 3002071; break;
+                    case JewelryEffect.EarthElemental: num = 3002072; break;
+                    case JewelryEffect.FireElemental: num = 3002073; break;
+                    case JewelryEffect.WaterElemental: num = 3002074; break;
+
+                }
+
+                if (num > 0)
+                    attrs.Add(new EquipInfoAttribute(num, m_Charges));
             }
+
+            int number;
+
+            if (Name == null && ItemID == 0x1086)
+            {
+                number = 1017094;
+            }
+
+            else if (Name == null && ItemID == 0x1087)
+            {
+                number = 1017095;
+            }
+
+            else if (Name == null && ItemID == 0x1088)
+            {
+                number = 1017096;
+            }
+
+            else if (Name == null && ItemID == 0x108A)
+            {
+                number = 1017098;
+            }
+
+            else
+            {
+                this.LabelTo(from, Name);
+                number = 1041000;
+            }
+
+            if (attrs.Count == 0 && Crafter == null && Name != null)
+                return;
+
+            EquipmentInfo eqInfo = new EquipmentInfo(number, Crafter, false, (EquipInfoAttribute[])attrs.ToArray(typeof(EquipInfoAttribute)));
+
+            from.Send(new DisplayEquipmentInfo(this, eqInfo));
         }
 
         public void Cast(Spell spell)

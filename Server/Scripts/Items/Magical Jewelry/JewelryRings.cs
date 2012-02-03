@@ -23,7 +23,7 @@ namespace Server.Items
         public MRingOfClumsy()
             : base(JewelryEffect.Clumsy, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of Clumsy";
+             //Name = "Mystic Ring Of Clumsy";
         }
 
         public MRingOfClumsy(Serial serial)
@@ -58,7 +58,7 @@ namespace Server.Items
         public MRingOfHeal()
             : base(JewelryEffect.Heal, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of Heal";
+             //Name = "Mystic Ring Of Heal";
         }
 
         public MRingOfHeal(Serial serial)
@@ -93,7 +93,7 @@ namespace Server.Items
         public MRingOfMagicArrow()
             : base(JewelryEffect.MagicArrow, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of Magic Arrow";
+             //Name = "Mystic Ring Of Magic Arrow";
         }
 
         public MRingOfMagicArrow(Serial serial)
@@ -128,7 +128,7 @@ namespace Server.Items
         public MRingOfFeeblemind()
             : base(JewelryEffect.Feeblemind, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of Feeblemind";
+             //Name = "Mystic Ring Of Feeblemind";
         }
 
         public MRingOfFeeblemind(Serial serial)
@@ -163,7 +163,7 @@ namespace Server.Items
         public MRingOfWeaken()
             : base(JewelryEffect.Weaken, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of Weaken";
+             //Name = "Mystic Ring Of Weaken";
         }
 
         public MRingOfWeaken(Serial serial)
@@ -198,7 +198,7 @@ namespace Server.Items
         public MRingOfCreateFood()
             : base(JewelryEffect.CreateFood, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of Create Food";
+             //Name = "Mystic Ring Of Create Food";
         }
 
         public MRingOfCreateFood(Serial serial)
@@ -233,7 +233,7 @@ namespace Server.Items
         public MRingOfNightSight()
             : base(JewelryEffect.NightSight, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of Night Sight";
+             //Name = "Mystic Ring Of Night Sight";
         }
 
         public MRingOfNightSight(Serial serial)
@@ -268,7 +268,7 @@ namespace Server.Items
         public MRingOfReactiveArmor()
             : base(JewelryEffect.ReactiveArmor, Layer.Ring, 0x108A, 51, 61)
         {
-            Name = "Mystic Ring Of ReactiveArmor";
+             //Name = "Mystic Ring Of ReactiveArmor";
         }
 
         public MRingOfReactiveArmor(Serial serial)
@@ -305,7 +305,7 @@ namespace Server.Items
         public MRingOfCure()
             : base(JewelryEffect.Cure, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Cure";
+             //Name = "Mystic Ring Of Cure";
         }
 
         public MRingOfCure(Serial serial)
@@ -340,7 +340,7 @@ namespace Server.Items
         public MRingOfRemoveTrap()
             : base(JewelryEffect.RemoveTrap, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Remove Trap";
+             //Name = "Mystic Ring Of Remove Trap";
         }
 
         public MRingOfRemoveTrap(Serial serial)
@@ -375,7 +375,7 @@ namespace Server.Items
         public MRingOfMagicTrap()
             : base(JewelryEffect.MagicTrap, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Magic Trap";
+             //Name = "Mystic Ring Of Magic Trap";
         }
 
         public MRingOfMagicTrap(Serial serial)
@@ -410,7 +410,7 @@ namespace Server.Items
         public MRingOfHarm()
             : base(JewelryEffect.Harm, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Harm";
+             //Name = "Mystic Ring Of Harm";
         }
 
         public MRingOfHarm(Serial serial)
@@ -445,7 +445,7 @@ namespace Server.Items
         public MRingOfAgility()
             : base(JewelryEffect.Agility, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Agility";
+             //Name = "Mystic Ring Of Agility";
         }
 
         public MRingOfAgility(Serial serial)
@@ -480,7 +480,7 @@ namespace Server.Items
         public MRingOfCunning()
             : base(JewelryEffect.Cunning, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Cunning";
+             //Name = "Mystic Ring Of Cunning";
         }
 
         public MRingOfCunning(Serial serial)
@@ -515,7 +515,7 @@ namespace Server.Items
         public MRingOfStrength()
             : base(JewelryEffect.Strength, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Strength";
+             //Name = "Mystic Ring Of Strength";
         }
 
         public MRingOfStrength(Serial serial)
@@ -550,7 +550,7 @@ namespace Server.Items
         public MRingOfProtection()
             : base(JewelryEffect.Protection, Layer.Ring, 0x108A, 46, 56)
         {
-            Name = "Mystic Ring Of Protection";
+             //Name = "Mystic Ring Of Protection";
         }
 
         public MRingOfProtection(Serial serial)
@@ -587,7 +587,7 @@ namespace Server.Items
         public MRingOfTeleport()
             : base(JewelryEffect.Teleport, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Teleport";
+             //Name = "Mystic Ring Of Teleport";
         }
 
         public MRingOfTeleport(Serial serial)
@@ -622,7 +622,7 @@ namespace Server.Items
         public MRingOfTelekinesis()
             : base(JewelryEffect.Telekinesis, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Telekinesis";
+             //Name = "Mystic Ring Of Telekinesis";
         }
 
         public MRingOfTelekinesis(Serial serial)
@@ -657,7 +657,7 @@ namespace Server.Items
         public MRingOfWallOfStone()
             : base(JewelryEffect.WallOfStone, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Wall Of Stone";
+             //Name = "Mystic Ring Of Wall Of Stone";
         }
 
         public MRingOfWallOfStone(Serial serial)
@@ -697,7 +697,7 @@ namespace Server.Items
         public MRingOfMagicLock()
             : base(JewelryEffect.MagicLock, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Magic Lock";
+             //Name = "Mystic Ring Of Magic Lock";
         }
 
         public MRingOfMagicLock(Serial serial)
@@ -732,7 +732,7 @@ namespace Server.Items
         public MRingOfUnlock()
             : base(JewelryEffect.Unlock, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Unlock";
+             //Name = "Mystic Ring Of Unlock";
         }
 
         public MRingOfUnlock(Serial serial)
@@ -767,7 +767,7 @@ namespace Server.Items
         public MRingOfBless()
             : base(JewelryEffect.Bless, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Bless";
+             //Name = "Mystic Ring Of Bless";
         }
 
         public MRingOfBless(Serial serial)
@@ -802,7 +802,7 @@ namespace Server.Items
         public MRingOfFireball()
             : base(JewelryEffect.Fireball, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Fireball";
+             //Name = "Mystic Ring Of Fireball";
         }
 
         public MRingOfFireball(Serial serial)
@@ -837,7 +837,7 @@ namespace Server.Items
         public MRingOfPoison()
             : base(JewelryEffect.Poison, Layer.Ring, 0x108A, 41, 51)
         {
-            Name = "Mystic Ring Of Poison";
+             //Name = "Mystic Ring Of Poison";
         }
 
         public MRingOfPoison(Serial serial)
@@ -874,7 +874,7 @@ namespace Server.Items
         public MRingOfFireField()
             : base(JewelryEffect.FireField, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Fire Field";
+             //Name = "Mystic Ring Of Fire Field";
         }
 
         public MRingOfFireField(Serial serial)
@@ -914,7 +914,7 @@ namespace Server.Items
         public MRingOfManaDrain()
             : base(JewelryEffect.ManaDrain, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Mana Drain";
+             //Name = "Mystic Ring Of Mana Drain";
         }
 
         public MRingOfManaDrain(Serial serial)
@@ -949,7 +949,7 @@ namespace Server.Items
         public MRingOfGreaterHeal()
             : base(JewelryEffect.GreaterHeal, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Greater Heal";
+             //Name = "Mystic Ring Of Greater Heal";
         }
 
         public MRingOfGreaterHeal(Serial serial)
@@ -984,7 +984,7 @@ namespace Server.Items
         public MRingOfCurse()
             : base(JewelryEffect.Curse, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Curse";
+             //Name = "Mystic Ring Of Curse";
         }
 
         public MRingOfCurse(Serial serial)
@@ -1019,7 +1019,7 @@ namespace Server.Items
         public MRingOfLightning()
             : base(JewelryEffect.Lightning, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Lightning";
+             //Name = "Mystic Ring Of Lightning";
         }
 
         public MRingOfLightning(Serial serial)
@@ -1054,7 +1054,7 @@ namespace Server.Items
         public MRingOfRecall()
             : base(JewelryEffect.Recall, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Recall";
+             //Name = "Mystic Ring Of Recall";
         }
 
         public MRingOfRecall(Serial serial)
@@ -1089,7 +1089,7 @@ namespace Server.Items
         public MRingOfArchProtection()
             : base(JewelryEffect.ArchProtection, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Arch Protection";
+             //Name = "Mystic Ring Of Arch Protection";
         }
 
         public MRingOfArchProtection(Serial serial)
@@ -1124,7 +1124,7 @@ namespace Server.Items
         public MRingOfArchCure()
             : base(JewelryEffect.ArchCure, Layer.Ring, 0x108A, 36, 46)
         {
-            Name = "Mystic Ring Of Arch Cure";
+             //Name = "Mystic Ring Of Arch Cure";
         }
 
         public MRingOfArchCure(Serial serial)
@@ -1161,7 +1161,7 @@ namespace Server.Items
         public MRingOfParalyze()
             : base(JewelryEffect.Paralyze, Layer.Ring, 0x108A, 31, 41)
         {
-            Name = "Mystic Ring Of Paralyze";
+             //Name = "Mystic Ring Of Paralyze";
         }
 
         public MRingOfParalyze(Serial serial)
@@ -1196,7 +1196,7 @@ namespace Server.Items
         public MRingOfMindBlast()
             : base(JewelryEffect.MindBlast, Layer.Ring, 0x108A, 31, 41)
         {
-            Name = "Mystic Ring Of Mind Blast";
+             //Name = "Mystic Ring Of Mind Blast";
         }
 
         public MRingOfMindBlast(Serial serial)
@@ -1231,7 +1231,7 @@ namespace Server.Items
         public MRingOfDispelField()
             : base(JewelryEffect.DispelField, Layer.Ring, 0x108A, 31, 41)
         {
-            Name = "Mystic Ring Of Dispel Field";
+             //Name = "Mystic Ring Of Dispel Field";
         }
 
         public MRingOfDispelField(Serial serial)
@@ -1266,7 +1266,7 @@ namespace Server.Items
         public MRingOfPoisonField()
             : base(JewelryEffect.PoisonField, Layer.Ring, 0x108A, 31, 41)
         {
-            Name = "Mystic Ring Of Poison Field";
+             //Name = "Mystic Ring Of Poison Field";
         }
 
         public MRingOfPoisonField(Serial serial)
@@ -1306,7 +1306,7 @@ namespace Server.Items
         public MRingOfBladeSpirits()
             : base(JewelryEffect.BladeSpirits, Layer.Ring, 0x108A, 31, 41)
         {
-            Name = "Mystic Ring Of Blade Spirits";
+             //Name = "Mystic Ring Of Blade Spirits";
         }
 
         public MRingOfBladeSpirits(Serial serial)
@@ -1346,7 +1346,7 @@ namespace Server.Items
         public MRingOfMagicReflect()
             : base(JewelryEffect.MagicReflect, Layer.Ring, 0x108A, 31, 41)
         {
-            Name = "Mystic Ring Of Magic Reflect";
+             //Name = "Mystic Ring Of Magic Reflect";
         }
 
         public MRingOfMagicReflect(Serial serial)
@@ -1381,7 +1381,7 @@ namespace Server.Items
         public MRingOfIncognito()
             : base(JewelryEffect.Incognito, Layer.Ring, 0x108A, 31, 41)
         {
-            Name = "Mystic Ring Of Incognito";
+             //Name = "Mystic Ring Of Incognito";
         }
 
         public MRingOfIncognito(Serial serial)
@@ -1418,7 +1418,7 @@ namespace Server.Items
         public MRingOfEnergyBolt()
             : base(JewelryEffect.EnergyBolt, Layer.Ring, 0x108A, 26, 36)
         {
-            Name = "Mystic Ring Of Energy Bolt";
+             //Name = "Mystic Ring Of Energy Bolt";
         }
 
         public MRingOfEnergyBolt(Serial serial)
@@ -1453,7 +1453,7 @@ namespace Server.Items
         public MRingOfExplosion()
             : base(JewelryEffect.Explosion, Layer.Ring, 0x108A, 26, 36)
         {
-            Name = "Mystic Ring Of Explosion";
+             //Name = "Mystic Ring Of Explosion";
         }
 
         public MRingOfExplosion(Serial serial)
@@ -1488,7 +1488,7 @@ namespace Server.Items
         public MRingOfDispel()
             : base(JewelryEffect.Dispel, Layer.Ring, 0x108A, 26, 36)
         {
-            Name = "Mystic Ring Of Dispel";
+             //Name = "Mystic Ring Of Dispel";
         }
 
         public MRingOfDispel(Serial serial)
@@ -1523,7 +1523,7 @@ namespace Server.Items
         public MRingOfReveal()
             : base(JewelryEffect.Reveal, Layer.Ring, 0x108A, 26, 36)
         {
-            Name = "Mystic Ring Of Reveal";
+             //Name = "Mystic Ring Of Reveal";
         }
 
         public MRingOfReveal(Serial serial)
@@ -1558,7 +1558,7 @@ namespace Server.Items
         public MRingOfMark()
             : base(JewelryEffect.Mark, Layer.Ring, 0x108A, 26, 36)
         {
-            Name = "Mystic Ring Of Mark";
+             //Name = "Mystic Ring Of Mark";
         }
 
         public MRingOfMark(Serial serial)
@@ -1603,7 +1603,7 @@ namespace Server.Items
         public MRingOfParalyzeField()
             : base(JewelryEffect.ParalyzeField, Layer.Ring, 0x108A, 26, 36)
         {
-            Name = "Mystic Ring Of Paralyze Field";
+             //Name = "Mystic Ring Of Paralyze Field";
         }
 
         public MRingOfParalyzeField(Serial serial)
@@ -1643,7 +1643,7 @@ namespace Server.Items
         public MRingOfInvisibility()
             : base(JewelryEffect.Invisibility, Layer.Ring, 0x108A, 26, 36)
         {
-            Name = "Mystic Ring Of Invisibility";
+             //Name = "Mystic Ring Of Invisibility";
         }
 
         public MRingOfInvisibility(Serial serial)
@@ -1680,7 +1680,7 @@ namespace Server.Items
         public MRingOfPolymorph()
             : base(JewelryEffect.Polymorph, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Polymorph";
+             //Name = "Mystic Ring Of Polymorph";
         }
 
         public MRingOfPolymorph(Serial serial)
@@ -1715,7 +1715,7 @@ namespace Server.Items
         public MRingOfManaVampire()
             : base(JewelryEffect.ManaVampire, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Mana Vampire";
+             //Name = "Mystic Ring Of Mana Vampire";
         }
 
         public MRingOfManaVampire(Serial serial)
@@ -1750,7 +1750,7 @@ namespace Server.Items
         public MRingOfMassDispel()
             : base(JewelryEffect.MassDispel, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Mass Dispel";
+             //Name = "Mystic Ring Of Mass Dispel";
         }
 
         public MRingOfMassDispel(Serial serial)
@@ -1785,7 +1785,7 @@ namespace Server.Items
         public MRingOfMeteorSwarm()
             : base(JewelryEffect.MeteorSwarm, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Meteor Swarm";
+             //Name = "Mystic Ring Of Meteor Swarm";
         }
 
         public MRingOfMeteorSwarm(Serial serial)
@@ -1825,7 +1825,7 @@ namespace Server.Items
         public MRingOfChainLightning()
             : base(JewelryEffect.ChainLightning, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Chain Lightning";
+             //Name = "Mystic Ring Of Chain Lightning";
         }
 
         public MRingOfChainLightning(Serial serial)
@@ -1865,7 +1865,7 @@ namespace Server.Items
         public MRingOfFlameStrike()
             : base(JewelryEffect.FlameStrike, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Flame Strike";
+             //Name = "Mystic Ring Of Flame Strike";
         }
 
         public MRingOfFlameStrike(Serial serial)
@@ -1901,7 +1901,7 @@ namespace Server.Items
         public MRingOfGateTravel()
             : base(JewelryEffect.GateTravel, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Gate Travel";
+             //Name = "Mystic Ring Of Gate Travel";
         }
 
         public MRingOfGateTravel(Serial serial)
@@ -1937,7 +1937,7 @@ namespace Server.Items
         public MRingOfEnergyField()
             : base(JewelryEffect.EnergyField, Layer.Ring, 0x108A, 21, 31)
         {
-            Name = "Mystic Ring Of Energy Field";
+             //Name = "Mystic Ring Of Energy Field";
         }
 
         public MRingOfEnergyField(Serial serial)
@@ -1979,7 +1979,7 @@ namespace Server.Items
         public MRingOfWaterElemental()
             : base(JewelryEffect.WaterElemental, Layer.Ring, 0x108A, 16, 26)
         {
-            Name = "Mystic Ring Of Water Elemental";
+             //Name = "Mystic Ring Of Water Elemental";
         }
 
         public MRingOfWaterElemental(Serial serial)
@@ -2019,7 +2019,7 @@ namespace Server.Items
         public MRingOfAirElemental()
             : base(JewelryEffect.AirElemental, Layer.Ring, 0x108A, 16, 26)
         {
-            Name = "Mystic Ring Of Air Elemental";
+             //Name = "Mystic Ring Of Air Elemental";
         }
 
         public MRingOfAirElemental(Serial serial)
@@ -2059,7 +2059,7 @@ namespace Server.Items
         public MRingOfFireElemental()
             : base(JewelryEffect.FireElemental, Layer.Ring, 0x108A, 16, 26)
         {
-            Name = "Mystic Ring Of Fire Elemental";
+             //Name = "Mystic Ring Of Fire Elemental";
         }
 
         public MRingOfFireElemental(Serial serial)
@@ -2099,7 +2099,7 @@ namespace Server.Items
         public MRingOfEarthElemental()
             : base(JewelryEffect.EarthElemental, Layer.Ring, 0x108A, 16, 26)
         {
-            Name = "Mystic Ring Of Earth Elemental";
+             //Name = "Mystic Ring Of Earth Elemental";
         }
 
         public MRingOfEarthElemental(Serial serial)
@@ -2139,7 +2139,7 @@ namespace Server.Items
         public MRingOfEnergyVortex()
             : base(JewelryEffect.EnergyVortex, Layer.Ring, 0x108A, 16, 26)
         {
-            Name = "Mystic Ring Of Energy Vortex";
+             //Name = "Mystic Ring Of Energy Vortex";
         }
 
         public MRingOfEnergyVortex(Serial serial)
@@ -2179,7 +2179,7 @@ namespace Server.Items
         public MRingOfSummonDaemon()
             : base(JewelryEffect.SummonDaemon, Layer.Ring, 0x108A, 16, 26)
         {
-            Name = "Mystic Ring Of Summon Daemon";
+             //Name = "Mystic Ring Of Summon Daemon";
         }
 
         public MRingOfSummonDaemon(Serial serial)
@@ -2219,7 +2219,7 @@ namespace Server.Items
         public MRingOfResurrection()
             : base(JewelryEffect.Resurrection, Layer.Ring, 0x108A, 16, 26)
         {
-            Name = "Mystic Ring Of Resurrection";
+             //Name = "Mystic Ring Of Resurrection";
         }
 
         public MRingOfResurrection(Serial serial)
@@ -2255,7 +2255,7 @@ namespace Server.Items
         public MRingOfEarthquake()
             : base(JewelryEffect.Earthquake, Layer.Ring, 0x108A, 4, 6)
         {
-            Name = "Mystic Ring Of Earth Quake";
+             //Name = "Mystic Ring Of Earth Quake";
         }
 
         public MRingOfEarthquake(Serial serial)
