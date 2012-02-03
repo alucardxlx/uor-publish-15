@@ -136,8 +136,8 @@ namespace Server.Items
         public void ConsumeCharge(Mobile from)
         {
             --Charges;
-            if (Charges == 0)
-                from.SendMessage("With the power binding your jewelry gone, it vanishes.");//
+           // if (Charges == 0)
+           //     from.SendMessage("With the power binding your jewelry gone, it vanishes.");//
             ApplyDelayTo(from);
         }
 
@@ -435,7 +435,7 @@ namespace Server.Items
             if (Charges != 0)
                 return;
             else
-                Delete();
+                return; //from.SendMessage("The last of the magic is consumed but was not enough for the spell.");//  //Delete();
         }
 
         public virtual void OnJewelryUse(Mobile from)
