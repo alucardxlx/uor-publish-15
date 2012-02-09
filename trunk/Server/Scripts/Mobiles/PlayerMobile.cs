@@ -104,6 +104,7 @@ namespace Server.Mobiles
 		private bool m_IgnoreMobiles; // IgnoreMobiles should be moved to Server.Mobiles
 		private int m_NonAutoreinsuredItems; // number of items that could not be automaitically reinsured because gold in bank was not enough
 		private bool m_NinjaWepCooldown;
+        public bool m_InPowerHour; //CUSTOM POWERHOUR
 		/*
 		 * a value of zero means, that the mobile is not executing the spell. Otherwise,
 		 * the value should match the BaseMana required
@@ -783,6 +784,8 @@ namespace Server.Mobiles
 
 			if( from is PlayerMobile )
 				((PlayerMobile)from).ClaimAutoStabledPets();
+            ((PlayerMobile)from).CheckPowerHourBool();
+
 		}
 
 		private bool m_NoDeltaRecursion;
@@ -2339,6 +2342,8 @@ namespace Server.Mobiles
 			}
 		}
 
+       
+
 		private List<Mobile> m_PermaFlags;
 		private List<Mobile> m_VisList;
 		private Hashtable m_AntiMacroTable;
@@ -2351,6 +2356,8 @@ namespace Server.Mobiles
 		private DateTime m_NextSmithBulkOrder;
 		private DateTime m_NextTailorBulkOrder;
 		private DateTime m_SavagePaintExpiration;
+        public DateTime m_PowerHourExpiration;
+        public DateTime m_NextPowerHour;
 		private SkillName m_Learning = (SkillName)(-1);
 
 		public SkillName Learning
@@ -2376,6 +2383,47 @@ namespace Server.Mobiles
 				m_SavagePaintExpiration = DateTime.Now + value;
 			}
 		}
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool InPowerHour
+        {
+            get { return m_InPowerHour; }
+            set { m_InPowerHour = value; }
+        }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public TimeSpan PowerHourExpiration
+        {
+            get 
+            {
+              TimeSpan ts = m_PowerHourExpiration - DateTime.Now;
+
+              if (ts < TimeSpan.Zero)
+                  ts = TimeSpan.Zero;
+                  return ts;
+             
+            }
+
+            set { m_PowerHourExpiration = DateTime.Now + value; }
+        }
+
+
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public TimeSpan NextPowerHour
+        {
+            get
+            {
+                TimeSpan ts = m_NextPowerHour - DateTime.Now;
+
+                if (ts < TimeSpan.Zero)
+                    ts = TimeSpan.Zero;
+                return ts;
+            }
+
+            set { m_NextPowerHour = DateTime.Now + value; }
+        }
+
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public TimeSpan NextSmithBulkOrder
@@ -2713,6 +2761,40 @@ namespace Server.Mobiles
 
 			switch ( version )
 			{
+                case 31:
+                    {
+
+                        m_NextPowerHour = reader.ReadDateTime();
+   
+                        goto case 30;
+                    }
+
+               case 30:
+                  {
+
+                   m_PowerHourExpiration = reader.ReadDateTime();
+
+                   if (m_PowerHourExpiration > DateTime.Now)
+                   {
+                       InPowerHour = true;
+                   }
+
+                   else
+                   {
+                       InPowerHour = false;
+                   }
+
+                 
+                    goto case 29;
+                  }
+
+               case 29:
+                  {
+
+                    InPowerHour = reader.ReadBool();
+
+                    goto case 28;
+                  } 
 				case 28:
 				{
 					m_PeacedUntil = reader.ReadDateTime();
@@ -2996,12 +3078,18 @@ namespace Server.Mobiles
 			}
 
 			CheckKillDecay();
+            CheckPowerHourBool();
+
 
 			CheckAtrophies( this );
 
 			base.Serialize( writer );
 
-			writer.Write( (int) 28 ); // version
+			writer.Write( (int) 31 ); // version
+
+            writer.Write((DateTime)m_NextPowerHour);
+            writer.Write((DateTime)m_PowerHourExpiration);
+            writer.Write((bool)m_InPowerHour);
 
 			writer.Write( (DateTime) m_PeacedUntil );
 			writer.Write( (DateTime) m_AnkhNextUse );
@@ -3117,6 +3205,19 @@ namespace Server.Mobiles
 				ChampionTitleInfo.CheckAtrophy( (PlayerMobile)m );
 		}
 
+        public void CheckPowerHourBool()
+        {
+            if (m_PowerHourExpiration > DateTime.Now)
+            {
+                InPowerHour = true;
+            }
+
+            else
+            {
+                InPowerHour = false;
+            }
+        } 
+
 		public void CheckKillDecay()
 		{
 			if ( m_ShortTermElapse < this.GameTime )
@@ -3140,6 +3241,7 @@ namespace Server.Mobiles
 			m_LongTermElapse = this.GameTime + TimeSpan.FromHours( 40 );
 		}
 
+       
 		[CommandProperty( AccessLevel.GameMaster )]
 		public DateTime SessionStart
 		{
