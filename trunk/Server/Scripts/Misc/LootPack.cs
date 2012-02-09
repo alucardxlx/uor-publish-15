@@ -136,6 +136,11 @@ namespace Server
 				new LootPackItem( typeof( LesserPoisonPotion ), 1 )
 			};
 
+        public static readonly LootPackItem[] PowerHourScroll = new LootPackItem[]
+			{
+				new LootPackItem( typeof( PowerHourTicket ), 1 ),
+			};
+
         public static readonly LootPackItem[] MagicWands = new LootPackItem[]
 			{
 				new LootPackItem( typeof( ClumsyWand ), 1 ),
@@ -415,6 +420,7 @@ namespace Server
 			{
 				new LootPackEntry(  true, Gold,			100.00, "1d25" ),
 				//new LootPackEntry( false, Instruments,	  0.02, 1 )
+                new LootPackEntry( false, PowerHourScroll,      0.005, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldMeager = new LootPack( new LootPackEntry[]
@@ -424,6 +430,7 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems,  1.00, 1, 1, 0, 60 ),
 				new LootPackEntry( false, OldMagicItems,  0.20, 1, 1, 10, 70 ),
                 //new LootPackEntry( false, MagicWands,      0.20, 1, 1, 10, 70)
+                new LootPackEntry( false, PowerHourScroll,      0.01, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldAverage = new LootPack( new LootPackEntry[]
@@ -432,7 +439,8 @@ namespace Server
 				//new LootPackEntry( false, Instruments,	  0.40, 1 ),
 				new LootPackEntry( false, OldMagicItems,  5.00, 1, 1, 20, 80 ),
 				new LootPackEntry( false, OldMagicItems,  2.00, 1, 1, 30, 90 ),
-				new LootPackEntry( false, OldMagicItems,  0.50, 1, 1, 40, 100 )
+				new LootPackEntry( false, OldMagicItems,  0.50, 1, 1, 40, 100 ),
+                new LootPackEntry( false, PowerHourScroll,      0.02, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldRich = new LootPack( new LootPackEntry[]
@@ -442,7 +450,8 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems, 20.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems, 10.00, 1, 1, 65, 100 ),
 				new LootPackEntry( false, OldMagicItems,  1.00, 1, 1, 70, 100 ),
-                new LootPackEntry( false, MagicWands,     10.00, 1, 1, 10, 70)
+                new LootPackEntry( false, MagicWands,     10.00, 1, 1, 10, 70),
+                new LootPackEntry( false, PowerHourScroll,      0.04, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldFilthyRich = new LootPack( new LootPackEntry[]
@@ -453,7 +462,8 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems, 33.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems, 20.00, 1, 1, 70, 100 ),
 				new LootPackEntry( false, OldMagicItems,  5.00, 1, 1, 80, 100 ),
-                new LootPackEntry( false, MagicWands,     10.00, 1, 1, 10, 70)
+                new LootPackEntry( false, MagicWands,     10.00, 1, 1, 10, 70),
+                new LootPackEntry( false, PowerHourScroll,      0.08, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldUltraRich = new LootPack( new LootPackEntry[]
@@ -466,7 +476,8 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 50, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
-                new LootPackEntry( false, MagicWands,       10.00, 1, 1, 10, 70)
+                new LootPackEntry( false, MagicWands,       10.00, 1, 1, 10, 70),
+                 new LootPackEntry( false, PowerHourScroll,      0.16, 1, 1, 10, 70)
 			} );
 
 		public static readonly LootPack OldSuperBoss = new LootPack( new LootPackEntry[]
@@ -483,7 +494,8 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 70, 100 ),
-                new LootPackEntry( false, MagicWands,       10.00, 1, 1, 10, 70)
+                new LootPackEntry( false, MagicWands,       10.00, 1, 1, 10, 70),
+                new LootPackEntry( false, PowerHourScroll,      0.32, 1, 1, 10, 70)
 			} );
 		#endregion
 
@@ -524,6 +536,10 @@ namespace Server
         public static readonly LootPack Wands = new LootPack(new LootPackEntry[]
             {
                 new LootPackEntry ( false, MagicWands,       100.00, 1)
+            });
+        public static readonly LootPack PowerHour = new LootPack(new LootPackEntry[]
+            {
+                new LootPackEntry ( false, PowerHourScroll,       100.00, 1)
             });
 	}
 
