@@ -7,7 +7,7 @@ namespace Server.Misc
 {
 	public class SkillCheck
 	{
-		private static readonly bool AntiMacroCode = !Core.ML;		//Change this to false to disable anti-macro code
+		private static readonly bool AntiMacroCode = false;		//Change this to false to disable anti-macro code
 
 		public static TimeSpan AntiMacroExpire = TimeSpan.FromMinutes( 5.0 ); //How long do we remember targets/locations?
 		public const int Allowance = 3;	//How many times may we use the same location/target for gain
@@ -191,66 +191,71 @@ namespace Server.Misc
 
 		public enum Stat { Str, Dex, Int }
 
-		public static void Gain( Mobile from, Skill skill )
-		{
-			if ( from.Region.IsPartOf( typeof( Regions.Jail ) ) )
-				return;
+        public static void Gain(Mobile from, Skill skill)
+        {
+            if (from.Region.IsPartOf(typeof(Regions.Jail)))
+                return;
 
-			if ( from is BaseCreature && ((BaseCreature)from).IsDeadPet )
-				return;
+            if (from is BaseCreature && ((BaseCreature)from).IsDeadPet)
+                return;
 
-			if ( skill.SkillName == SkillName.Focus && from is BaseCreature )
-				return;
+            if (skill.SkillName == SkillName.Focus && from is BaseCreature)
+                return;
 
-			if ( skill.Base < skill.Cap && skill.Lock == SkillLock.Up )
-			{
-				int toGain = 1;
+            if (skill.Base < skill.Cap && skill.Lock == SkillLock.Up)
+            {
+                int toGain = 1;
+                //CUSTOM POWERHOUR
+                if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true)) //is in powerhour?
+                {
+                    toGain = 2; //Powerhour Modifier!?
 
-				if ( skill.Base <= 10.0 )
-					toGain = Utility.Random( 4 ) + 1;
+                    if (skill.Base <= 10.0)
+                        toGain = Utility.Random(4) + 1;
 
-				Skills skills = from.Skills;
+                    Skills skills = from.Skills;
 
-				if ( from.Player && ( skills.Total / skills.Cap ) >= Utility.RandomDouble() )//( skills.Total >= skills.Cap )
-				{
-					for ( int i = 0; i < skills.Length; ++i )
-					{
-						Skill toLower = skills[i];
+                    if (from.Player && (skills.Total / skills.Cap) >= Utility.RandomDouble())//( skills.Total >= skills.Cap )
+                    {
+                        for (int i = 0; i < skills.Length; ++i)
+                        {
+                            Skill toLower = skills[i];
 
-						if ( toLower != skill && toLower.Lock == SkillLock.Down && toLower.BaseFixedPoint >= toGain )
-						{
-							toLower.BaseFixedPoint -= toGain;
-							break;
-						}
-					}
-				}
+                            if (toLower != skill && toLower.Lock == SkillLock.Down && toLower.BaseFixedPoint >= toGain)
+                            {
+                                toLower.BaseFixedPoint -= toGain;
+                                break;
+                            }
+                        }
+                    }
 
-				#region Scroll of Alacrity
-				PlayerMobile pm = from as PlayerMobile;
+                    #region Scroll of Alacrity
+                    PlayerMobile pm = from as PlayerMobile;
 
-				if ( from is PlayerMobile )
-					if (pm != null && skill.SkillName == pm.AcceleratedSkill && pm.AcceleratedStart > DateTime.Now)
-					toGain *= Utility.RandomMinMax(2, 5);
-					#endregion
+                    if (from is PlayerMobile)
+                        if (pm != null && skill.SkillName == pm.AcceleratedSkill && pm.AcceleratedStart > DateTime.Now)
+                            toGain *= Utility.RandomMinMax(2, 5);
+                    #endregion
 
-				if ( !from.Player || (skills.Total + toGain) <= skills.Cap )
-				{
-					skill.BaseFixedPoint += toGain;
-				}
-			}
+                    if (!from.Player || (skills.Total + toGain) <= skills.Cap)
+                    {
+                        skill.BaseFixedPoint += toGain;
+                    }
+                }
 
-			if ( skill.Lock == SkillLock.Up )
-			{
-				SkillInfo info = skill.Info;
+                if (skill.Lock == SkillLock.Up)
+                {
+                    SkillInfo info = skill.Info;
 
-				if ( from.StrLock == StatLockType.Up && (info.StrGain / 33.3) > Utility.RandomDouble() )
-					GainStat( from, Stat.Str );
-				else if ( from.DexLock == StatLockType.Up && (info.DexGain / 33.3) > Utility.RandomDouble() )
-					GainStat( from, Stat.Dex );
-				else if ( from.IntLock == StatLockType.Up && (info.IntGain / 33.3) > Utility.RandomDouble() )
-					GainStat( from, Stat.Int );
-			}
-		}
+                    if (from.StrLock == StatLockType.Up && (info.StrGain / 33.3) > Utility.RandomDouble())
+                        GainStat(from, Stat.Str);
+                    else if (from.DexLock == StatLockType.Up && (info.DexGain / 33.3) > Utility.RandomDouble())
+                        GainStat(from, Stat.Dex);
+                    else if (from.IntLock == StatLockType.Up && (info.IntGain / 33.3) > Utility.RandomDouble())
+                        GainStat(from, Stat.Int);
+                }
+            }
+        }
 
 		public static bool CanLower( Mobile from, Stat stat )
 		{
