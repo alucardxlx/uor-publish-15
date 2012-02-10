@@ -117,32 +117,70 @@ namespace Server.Misc
 			return CheckSkill( from, skill, loc, chance );
 		}
 
-		public static bool CheckSkill( Mobile from, Skill skill, object amObj, double chance )
-		{
-			if ( from.Skills.Cap == 0 )
-				return false;
+        public static bool CheckSkill(Mobile from, Skill skill, object amObj, double chance)
+        {
+            if (from.Skills.Cap == 0)
+                return false;
 
-			bool success = ( chance >= Utility.RandomDouble() );
-			double gc = (double)(from.Skills.Cap - from.Skills.Total) / from.Skills.Cap;
-			gc += ( skill.Cap - skill.Base ) / skill.Cap;
-			gc /= 2;
+            // hunger bonus: completely full +2%
+            double bonusph = 1.0;
 
-			gc += ( 1.0 - chance ) * ( success ? 0.5 : (Core.AOS ? 0.0 : 0.2) );
-			gc /= 2;
+            double bonus = (from.Hunger) / 1000.0;
+            if (bonus > 0.02)
+                bonus = 0.02;
+            else if (bonus < 0)
+                bonus = 0;
+            if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true))
+                chance += (bonus + bonusph);
+             else
+                chance += bonus;
 
-			gc *= skill.Info.GainFactor;
+            bool success = (chance >= Utility.RandomDouble());
 
-			if ( gc < 0.01 )
-				gc = 0.01;
+            if (chance > 1.0)
+                chance = 1.0;
 
-			if ( from is BaseCreature && ((BaseCreature)from).Controlled )
-				gc *= 2;
+            double gc = ((from.Skills.Cap - from.Skills.Total) / from.Skills.Cap);
+            gc += 0.001 + ((skill.Cap - skill.Base) / skill.Cap) * 0.999;
+            // gc += ( -Math.Pow( (1.5*chance - 0.9), 2 ) + 0.85 ) * (success ? 1.0 : 0.5); // for c=0 this=0.04, for c=.6 this=0.85, for c=1, this=0.49
+            gc += (-Math.Pow((1.75 * chance - 0.83), 2) + 0.85) * (success ? 1.0 : 0.5); // for c=0 this=0.161, for c=.475 this=0.85, for c=1, this=0.0036
+            //this gives a nearly even distribution cirve, osi most likely has a symetrical curve, which is gay.
+            gc /= 3; // avg of the 3 (the highest this can be is (1+1+0.85)/3=0.95)
 
-			if ( from.Alive && ( ( gc >= Utility.RandomDouble() && AllowGain( from, skill, amObj ) ) || skill.Base < 10.0 ) )
-				Gain( from, skill );
+            gc *= skill.Info.GainFactor;
 
-			return success;
-		}
+            // extra pentalty for high skill
+            /*
+            if ( skill.Base >= 80.0 )
+            {
+                double chg = 0.666667 * (100.0 - skill.Base)/20 + 0.1;
+                if ( chg < 0.225 )
+                    chg = 0.225;
+                else if ( chg > 0.666667 )
+                    chg = 0.666667;
+
+                gc *= chg;
+            }
+            */
+
+            gc /= 1.75; //was 2.5
+
+            if (skill.Base >= 80.0)
+                gc *= ((100.0 - (skill.Base - 80.0)) / 105.0);
+
+            else
+            {
+                gc *= 0.9;
+            }
+
+            if (chance >= 1.0 && skill.Base == skill.Cap)
+                gc = gc * 1.25 + 0.01;
+
+            if (from.Alive && gc >= Utility.RandomDouble() && AllowGain(from, skill, amObj))
+                Gain(from, skill);
+
+            return success;
+        }
 
 		public static bool Mobile_SkillCheckTarget( Mobile from, SkillName skillName, object target, double minSkill, double maxSkill )
 		{
@@ -206,42 +244,43 @@ namespace Server.Misc
             {
                 int toGain = 1;
                 //CUSTOM POWERHOUR
-                if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true)) //is in powerhour?
+                //if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true))
+                 //   toGain *= 2; //is in powerhour?
+
+                //Powerhour Modifier!?
+
+                if (skill.Base <= 10.0)
+                    toGain = Utility.Random(4) + 1;
+
+                Skills skills = from.Skills;
+
+                if (from.Player && (skills.Total / skills.Cap) >= Utility.RandomDouble())//( skills.Total >= skills.Cap )
                 {
-                    toGain = 2; //Powerhour Modifier!?
-
-                    if (skill.Base <= 10.0)
-                        toGain = Utility.Random(4) + 1;
-
-                    Skills skills = from.Skills;
-
-                    if (from.Player && (skills.Total / skills.Cap) >= Utility.RandomDouble())//( skills.Total >= skills.Cap )
+                    for (int i = 0; i < skills.Length; ++i)
                     {
-                        for (int i = 0; i < skills.Length; ++i)
-                        {
-                            Skill toLower = skills[i];
+                        Skill toLower = skills[i];
 
-                            if (toLower != skill && toLower.Lock == SkillLock.Down && toLower.BaseFixedPoint >= toGain)
-                            {
-                                toLower.BaseFixedPoint -= toGain;
-                                break;
-                            }
+                        if (toLower != skill && toLower.Lock == SkillLock.Down && toLower.BaseFixedPoint >= toGain)
+                        {
+                            toLower.BaseFixedPoint -= toGain;
+                            break;
                         }
                     }
-
-                    #region Scroll of Alacrity
-                    PlayerMobile pm = from as PlayerMobile;
-
-                    if (from is PlayerMobile)
-                        if (pm != null && skill.SkillName == pm.AcceleratedSkill && pm.AcceleratedStart > DateTime.Now)
-                            toGain *= Utility.RandomMinMax(2, 5);
-                    #endregion
-
-                    if (!from.Player || (skills.Total + toGain) <= skills.Cap)
-                    {
-                        skill.BaseFixedPoint += toGain;
-                    }
                 }
+
+                #region Scroll of Alacrity
+                PlayerMobile pm = from as PlayerMobile;
+
+                if (from is PlayerMobile)
+                    if (pm != null && skill.SkillName == pm.AcceleratedSkill && pm.AcceleratedStart > DateTime.Now)
+                        toGain *= Utility.RandomMinMax(2, 5);
+                #endregion
+
+                if (!from.Player || (skills.Total + toGain) <= skills.Cap)
+                {
+                    skill.BaseFixedPoint += toGain;
+                }
+            }
 
                 if (skill.Lock == SkillLock.Up)
                 {
@@ -255,7 +294,7 @@ namespace Server.Misc
                         GainStat(from, Stat.Int);
                 }
             }
-        }
+        
 
 		public static bool CanLower( Mobile from, Stat stat )
 		{
