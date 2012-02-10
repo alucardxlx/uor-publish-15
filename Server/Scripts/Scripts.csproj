@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BDB2CCDD-EE34-49F9-88EC-83BAD381050E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Scripts</RootNamespace>
     <AssemblyName>Scripts</AssemblyName>
@@ -368,9 +368,6 @@
     <Compile Include="Context Menus\TeachEntry.cs" />
     <Compile Include="Custom\Economy Throttling\Check Book.cs" />
     <Compile Include="Custom\Economy Throttling\globalCountGold.cs" />
-    <Compile Include="Custom\Premium Spawner\PremiumSpawner.cs" />
-    <Compile Include="Custom\Premium Spawner\PremiumSpawnerGump.cs" />
-    <Compile Include="Custom\Premium Spawner\SpawnsOverseer.cs" />
     <Compile Include="Engines\BulkOrders\Books\BOBFilter.cs" />
     <Compile Include="Engines\BulkOrders\Books\BOBFilterGump.cs" />
     <Compile Include="Engines\BulkOrders\Books\BOBGump.cs" />
