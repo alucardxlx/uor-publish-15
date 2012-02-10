@@ -50,7 +50,8 @@ namespace Server.Mobiles
                     {
                         Timer t = new WaitPowerHourTimer(pm);
                         t.Start();
-                        pm.m_NextPowerHour = DateTime.Now +TimeSpan.FromSeconds(45.0);
+                        pm.m_NextPowerHour = DateTime.Now +TimeSpan.FromHours(24.0);
+                        pm.InPowerHour = true;
                         pm.SendMessage(0x35, "Your powerhour will begin soon.");
                     }
                     else
@@ -68,9 +69,8 @@ namespace Server.Mobiles
             }
             protected override void OnTick()
             {
-                pm.m_PowerHourExpiration = DateTime.Now + TimeSpan.FromSeconds(30.0);
+                pm.m_PowerHourExpiration = DateTime.Now + TimeSpan.FromMinutes(60.0);
                 pm.SendMessage(0x35, "Your powerhour has started.");
-                pm.InPowerHour = true;
                 Timer ti = new PowerHourTimer(pm);
                 ti.Start();
             }
@@ -79,7 +79,7 @@ namespace Server.Mobiles
         {
             private PlayerMobile pm;
             public PowerHourTimer(PlayerMobile from)
-                : base(TimeSpan.FromSeconds(30.0))
+                : base(TimeSpan.FromMinutes(60.0))
             {
                 pm = from;
             }
