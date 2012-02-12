@@ -123,54 +123,129 @@ namespace Server.Misc
                 return false;
 
             // hunger bonus: completely full +2%
-            double bonusph = 1.0;
+            //double bonusph = 1.0;
+
+            
 
             double bonus = (from.Hunger) / 1000.0;
             if (bonus > 0.02)
                 bonus = 0.02;
             else if (bonus < 0)
                 bonus = 0;
-            if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true))
-                chance += (bonus + bonusph);
-             else
                 chance += bonus;
+
+            //from.SendMessage("you have {0} success chance with {1}", chance , skill.SkillName);  //Debug to see success chance
 
             bool success = (chance >= Utility.RandomDouble());
 
             if (chance > 1.0)
                 chance = 1.0;
 
+
             double gc = ((from.Skills.Cap - from.Skills.Total) / from.Skills.Cap);
-            gc += 0.001 + ((skill.Cap - skill.Base) / skill.Cap) * 0.999;
+            gc += 0.001 + (((skill.Cap - skill.Base) / skill.Cap) * 0.999);
             // gc += ( -Math.Pow( (1.5*chance - 0.9), 2 ) + 0.85 ) * (success ? 1.0 : 0.5); // for c=0 this=0.04, for c=.6 this=0.85, for c=1, this=0.49
-            gc += (-Math.Pow((1.75 * chance - 0.83), 2) + 0.85) * (success ? 1.0 : 0.5); // for c=0 this=0.161, for c=.475 this=0.85, for c=1, this=0.0036
+            gc += (-Math.Pow(((1.75 * chance) - 0.83), 2) + 0.85) * (success ? 1.0 : 0.5); // for c=0 this=0.161, for c=.475 this=0.85, for c=1, this=0.0036
             //this gives a nearly even distribution cirve, osi most likely has a symetrical curve, which is gay.
             gc /= 3; // avg of the 3 (the highest this can be is (1+1+0.85)/3=0.95)
 
             gc *= skill.Info.GainFactor;
 
-            // extra pentalty for high skill
-            /*
-            if ( skill.Base >= 80.0 )
-            {
-                double chg = 0.666667 * (100.0 - skill.Base)/20 + 0.1;
-                if ( chg < 0.225 )
-                    chg = 0.225;
-                else if ( chg > 0.666667 )
-                    chg = 0.666667;
+            if (skill.SkillID == 0) gc /= 1.75;  //Alchemy
+            if (skill.SkillID == 1) gc /= 1.75;  //Anatomy
+            if (skill.SkillID == 2) gc /= 0.75;  //Animal Lore
+            if (skill.SkillID == 3) gc /= 1.02;  //Item ID
+            if (skill.SkillID == 4) gc /= 0.75;  //Arms Lore
+            if (skill.SkillID == 5) gc /= 1.75;  //Parry
+            if (skill.SkillID == 6) gc /= 1.75;  //Begging
+            if (skill.SkillID == 7) gc /= 1.75;  //Blacksmith
+            if (skill.SkillID == 8) gc /= 1.75;  //Fletching
+            if (skill.SkillID == 9) gc /= 0.75;  //Peacemaking
+            if (skill.SkillID == 10) gc /= 1.75; //Camping
+            if (skill.SkillID == 11) gc /= 1.75; //Carpentry
+            if (skill.SkillID == 12) gc /= 1.75; //Cartography
+            if (skill.SkillID == 13) gc /= 1.75; //Cooking
+            if (skill.SkillID == 14) gc /= 1.75; //Detect Hidden
+            if (skill.SkillID == 15) gc /= 0.75; //Discordance - Enticement
+            if (skill.SkillID == 16) gc /= 1.75; //Eval INT
+            if (skill.SkillID == 17) gc /= 1.75; //Healing
+            if (skill.SkillID == 18) gc /= 1.75; //Fishing
+            if (skill.SkillID == 19) gc /= 0.75; //Forensics
+            if (skill.SkillID == 20) gc /= 1.75; //Herding
+            if (skill.SkillID == 21) gc /= 1.75; //Hiding
+            if (skill.SkillID == 22) gc /= 1.75; //Provocation
+            if (skill.SkillID == 23) gc /= 1.75; //Inscription
+            if (skill.SkillID == 24) gc /= 1.75; //Lockpicking
+            if (skill.SkillID == 25) gc /= 1.75; //Magery
+            if (skill.SkillID == 26) gc /= 1.75; //Magic Resist
+            if (skill.SkillID == 27) gc /= 0.75; //Tactics
+            if (skill.SkillID == 28) gc /= 1.75; //Snooping
+            if (skill.SkillID == 29) gc /= 0.75; //Musicianship
+            if (skill.SkillID == 30) gc /= 1.75; //Poisoning
+            if (skill.SkillID == 31) gc /= 1.75; //Archery
+            if (skill.SkillID == 32) gc /= 0.75; //Spirit Speak
+            if (skill.SkillID == 33) gc /= 1.75; //Stealing
+            if (skill.SkillID == 34) gc /= 1.75; //Tailoring
+            if (skill.SkillID == 35) gc /= 1.75; //Animal Taming
+            if (skill.SkillID == 36) gc /= 0.75; //Taste ID
+            if (skill.SkillID == 37) gc /= 1.75; //Tinkering
+            if (skill.SkillID == 38) gc /= 0.75; //Tracking
+            if (skill.SkillID == 39) gc /= 1.75; //Veterinary
+            if (skill.SkillID == 40) gc /= 1.10; //Swords
+            if (skill.SkillID == 41) gc /= 1.10; //Macing
+            if (skill.SkillID == 42) gc /= 1.10; //Fencing
+            if (skill.SkillID == 43) gc /= 1.10; //Wrestling
+            if (skill.SkillID == 44) gc /= 1.75; //Lumberjacking
+            if (skill.SkillID == 45) gc /= 0.75; //Mining
+            if (skill.SkillID == 46) gc /= 2.25; //Meditation
+            if (skill.SkillID == 47) gc /= 1.75; //Stealth
+            if (skill.SkillID == 48) gc /= 1.75; //Remove Trap
+            if (skill.SkillID == 49) gc /= 1.75; //Necromancy
+            if (skill.SkillID == 50) gc /= 1.75; //Focus
+            if (skill.SkillID == 51) gc /= 1.75; //Chivalry
+            if (skill.SkillID == 52) gc /= 1.75; //Bushido
+            if (skill.SkillID == 53) gc /= 1.75; //Ninjitsu
+            if (skill.SkillID == 54) gc /= 1.75; //Spellweaving
 
-                gc *= chg;
+            //gc /= 2.5;  //was 2.5 // Not used when using individual Gains.
+
+            if (skill.Base >= 90.0)
+            {
+                gc *= ((100.0 - (skill.Base - 80)) / 110.0);
+
+                from.SendMessage("you have {0} chance to gain {1} over 90.", gc , skill.SkillName);
+
+                if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true))
+                {
+                    gc *= 2.0;
+                    from.SendMessage("you have {0} chance to gain {1} over 90 in Power Hour.", gc, skill.SkillName);
+                }
+
             }
-            */
 
-            gc /= 1.75; //was 2.5
-
-            if (skill.Base >= 80.0)
-                gc *= ((100.0 - (skill.Base - 80.0)) / 105.0);
-
-            else
+            if (skill.Base >= 80.0 && skill.Base <= 89.9)
             {
-                gc *= 0.9;
+                gc *= ((100.0 - (skill.Base - 80.0)) / 105.0);
+                from.SendMessage("you have {0} chance to gain  {1} over 80.", gc, skill.SkillName);
+
+                if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true))
+                {
+                    gc *= 2.0;
+                    from.SendMessage("you have {0} chance to gain  {1} over 80 in Power Hour.", gc, skill.SkillName);
+                }
+
+            }
+
+            else if (skill.Base >= 0.0 && skill.Base <= 79.9)
+            {
+                gc *= 0.9; //originally 0.9
+                from.SendMessage("you have {0} chance to gain  {1} Under 80.", gc, skill.SkillName);
+
+                if (from is PlayerMobile && (((PlayerMobile)from).m_InPowerHour == true))
+                {
+                    gc *= 2.0;
+                    from.SendMessage("you have {0} chance to gain  {1} under 80 in Power Hour.", gc, skill.SkillName);
+                }
             }
 
             if (chance >= 1.0 && skill.Base == skill.Cap)
@@ -285,12 +360,22 @@ namespace Server.Misc
                 if (skill.Lock == SkillLock.Up)
                 {
                     SkillInfo info = skill.Info;
-
-                    if (from.StrLock == StatLockType.Up && (info.StrGain / 33.3) > Utility.RandomDouble())
+                    if (((PlayerMobile)from).InPowerHour == true && from.StrLock == StatLockType.Up && (info.StrGain / 16.65) > Utility.RandomDouble())  //Power Hour Boost
                         GainStat(from, Stat.Str);
-                    else if (from.DexLock == StatLockType.Up && (info.DexGain / 33.3) > Utility.RandomDouble())
+
+                    if (((PlayerMobile)from).InPowerHour == false && from.StrLock == StatLockType.Up && (info.StrGain / 33.3) > Utility.RandomDouble())
+                        GainStat(from, Stat.Str);
+
+                    else if (((PlayerMobile)from).InPowerHour == true && from.DexLock == StatLockType.Up && (info.DexGain / 16.65) > Utility.RandomDouble()) //Power Hour Boost
                         GainStat(from, Stat.Dex);
-                    else if (from.IntLock == StatLockType.Up && (info.IntGain / 33.3) > Utility.RandomDouble())
+
+                    else if (((PlayerMobile)from).InPowerHour == false && from.DexLock == StatLockType.Up && (info.DexGain / 33.3) > Utility.RandomDouble())
+                        GainStat(from, Stat.Dex);
+
+                    else if (((PlayerMobile)from).InPowerHour == true && from.IntLock == StatLockType.Up && (info.IntGain / 16.65) > Utility.RandomDouble()) //Power Hour Boost
+                        GainStat(from, Stat.Int);
+
+                    else if (((PlayerMobile)from).InPowerHour == false && from.IntLock == StatLockType.Up && (info.IntGain / 33.3) > Utility.RandomDouble())
                         GainStat(from, Stat.Int);
                 }
             }
@@ -380,7 +465,7 @@ namespace Server.Misc
 			}
 		}
 
-		private static TimeSpan m_StatGainDelay = TimeSpan.FromMinutes( 15.0 );
+		private static TimeSpan m_StatGainDelay = TimeSpan.FromMinutes( 0.30 );
 		private static TimeSpan m_PetStatGainDelay = TimeSpan.FromMinutes( 5.0 );
 
 		public static void GainStat( Mobile from, Stat stat )
