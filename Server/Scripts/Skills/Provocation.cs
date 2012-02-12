@@ -19,7 +19,7 @@ namespace Server.SkillHandlers
 
 			BaseInstrument.PickInstrument( m, new InstrumentPickedCallback( OnPickedInstrument ) );
 
-			return TimeSpan.FromSeconds( 10.0 ); // Cannot use another skill for 10 seconds
+			return TimeSpan.FromSeconds( 1.0 ); // Cannot use another skill for 10 seconds
 		}
 
 		public static void OnPickedInstrument( Mobile from, BaseInstrument instrument )
@@ -97,11 +97,11 @@ namespace Server.SkillHandlers
 					{
 						from.SendLocalizedMessage( 1049450 ); // The creatures you are trying to provoke are too far away from each other for your music to have an effect.
 					}
-					else if ( m_Creature != targ )
+                    else if (m_Creature != targ)
 					{
 						if ( from == targ )
 						{
-							from.SendAsciiMessage( "Maybe you should just attack it." );
+                            from.SendMessage("Maybe you should just attack it."); //from.SendAsciiMessage("Maybe you should just attack it.");
 							return;
 						}
 
@@ -121,6 +121,7 @@ namespace Server.SkillHandlers
 
 							if ( !BaseInstrument.CheckMusicianship( from ) )
 							{
+                                from.NextSkillTime = DateTime.Now + TimeSpan.FromSeconds(5.0);
 								from.SendLocalizedMessage( 500612 ); // You play poorly, and there is no effect.
 								m_Instrument.PlayInstrumentBadly( from );
 								//m_Instrument.ConsumeUse( from );
@@ -132,12 +133,14 @@ namespace Server.SkillHandlers
 
 								if ( !from.CheckTargetSkill( SkillName.Provocation, targ, 0, 110 ) )//diff-25.0, diff+25.0 ) )
 								{
+                                    from.NextSkillTime = DateTime.Now + TimeSpan.FromSeconds(5.0);
 									from.SendLocalizedMessage( 501599 ); // Your music fails to incite enough anger.
 									m_Instrument.PlayInstrumentBadly( from );
 									//m_Instrument.ConsumeUse( from );
 								}
 								else
 								{
+                                    from.NextSkillTime = DateTime.Now + TimeSpan.FromSeconds(10.0);
 									from.SendLocalizedMessage( 501602 ); // Your music succeeds, as you start a fight.
 									m_Instrument.PlayInstrumentWell( from );
 									//m_Instrument.ConsumeUse( from );

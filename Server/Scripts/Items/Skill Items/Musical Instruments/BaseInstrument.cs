@@ -559,7 +559,7 @@ namespace Server.Items
 		{
 			private Mobile m_From;
 
-			public InternalTimer( Mobile from ) : base( TimeSpan.FromSeconds( 6.0 ) )
+			public InternalTimer( Mobile from ) : base( TimeSpan.FromSeconds( 2.0 ) )
 			{
 				m_From = from;
 				Priority = TimerPriority.TwoFiftyMS;
