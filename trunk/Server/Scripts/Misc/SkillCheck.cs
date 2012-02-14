@@ -197,7 +197,7 @@ namespace Server.Misc
             if (skill.SkillID == 43) gc /= 1.10; //Wrestling
             if (skill.SkillID == 44) gc /= 1.75; //Lumberjacking
             if (skill.SkillID == 45) gc /= 0.75; //Mining
-            if (skill.SkillID == 46) gc /= 2.25; //Meditation
+            if (skill.SkillID == 46) gc /= 0.75; //Meditation
             if (skill.SkillID == 47) gc /= 1.75; //Stealth
             if (skill.SkillID == 48) gc /= 1.75; //Remove Trap
             if (skill.SkillID == 49) gc /= 1.75; //Necromancy
