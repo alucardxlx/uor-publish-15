@@ -38,7 +38,7 @@ namespace Server {
 			Threaded
 		}
 
-		public static SaveOption SaveType = SaveOption.Normal;
+		public static SaveOption SaveType = SaveOption.Threaded; //changed default is Normal
 
 		private static Dictionary<Serial, Mobile> m_Mobiles;
 		private static Dictionary<Serial, Item> m_Items;
