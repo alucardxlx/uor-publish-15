@@ -7,3 +7,4 @@ C:\Users\Fxbaby\Desktop\Project Files\DAoC Hook\DAoC Hook\obj\x86\Debug\Generate
 C:\Users\Fxbaby\Desktop\Project Files\DAoC Hook\DAoC Hook\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Fxbaby\Desktop\Project Files\DAoC Hook\DAoC Hook\obj\x86\Debug\DAoC Hook.exe
 C:\Users\Fxbaby\Desktop\Project Files\DAoC Hook\DAoC Hook\obj\x86\Debug\DAoC Hook.pdb
+C:\Users\Fxbaby\Desktop\Project Files\DAoC Hook\DAoC Hook\bin\Debug\MemoryEditor.dll
