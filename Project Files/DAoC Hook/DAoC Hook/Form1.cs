@@ -38,12 +38,28 @@ namespace WindowsFormsApplication1
 
 
 
-        public int LifeAddr = Addr.ToDec("0145CDF8");       //4byte
-        public int StamAddr = Addr.ToDec("0145CE00");       //4byte
-        public int EnemyLifeAddr = Addr.ToDec("0145CE0C");  //4byte
-        public int XCoOrdAddr = Addr.ToDec("00980520");     //float
-        public int YcoOrdAddr = Addr.ToDec("00980524");     //float
- 
+        int LifeAddr = Addr.ToDec("0145CDF8");       //4byte
+        int StamAddr = Addr.ToDec("0145CE00");       //4byte
+        int EnemyLifeAddr = Addr.ToDec("0145CE0C");  //4byte
+        int XCoOrdAddr = Addr.ToDec("00980520");     //float
+        int YcoOrdAddr = Addr.ToDec("00980524");     //float
+        int stam;
+        int life;
+        int enemyLife;
+
+
+        char input;
+
+        
+        bool combat = false;
+        bool healthcheckloop = false;
+        bool On = false;
+        bool resting = false;
+
+
+
+
+
 
         public Form1()
         {
@@ -82,8 +98,62 @@ namespace WindowsFormsApplication1
 
         }
 
-        bool combatloop = false;
-        bool resting = false;
+        public void Resting()
+        {
+           
+            do
+            {
+                stam = StamStat();
+                life = LifeStat();
+
+                if (resting == false && life < 100 | stam < 100 )
+                {
+                    Keys.PressKey('x', true); //sit
+                    resting = true;
+                    Thread.Sleep(5000);
+                }
+                else if (resting == true && life == 100 & stam == 100 )
+                {
+                    Keys.PressKey('x', true); //stand
+                    resting = false;
+                    Thread.Sleep(5000);
+                }
+                else
+                {
+                    Thread.Sleep(5000);
+                }
+            }
+            while (resting == true);
+
+        }
+
+
+
+
+        public void Combat()
+        {
+            do
+            {
+                stam = StamStat();
+                life = LifeStat();
+                enemyLife = EnemyLife();
+
+                if (enemyLife >= 0 & enemyLife <= 100)
+                {
+                    combat = true;
+                    Keys.PressKey(input, true);
+                    Thread.Sleep(2500); //Wait between sends
+                }
+                else
+                {
+                    combat = false;
+                }
+            }
+            while (combat == true);
+
+        }
+         
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -91,74 +161,46 @@ namespace WindowsFormsApplication1
 
             if (processes.Length != 0)
             {
-
-
                 string text = textBox1.Text;
-                char input;
                 input = text[0];
+
                 IntPtr WindowHandle = processes[0].MainWindowHandle;
                 WindowsAPI.SwitchWindow(WindowHandle);
                 Thread.Sleep(1000); //wait while window is switched
 
-
-                if (combatloop == true)
-                    combatloop = false;
+                if (On == true)
+                    On = false;
                 else
                 {
-                    combatloop = true;
+                    On = true;
                     do
                     {
                         oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
                         oMemory.Open(); //Open Process 
 
-                        int stamcheck = StamStat();
-                        int lifecheck = LifeStat();
-                        int enemyLife = EnemyLife();
+                        stam = StamStat();
+                        life = LifeStat();
+                        enemyLife = EnemyLife();
 
-
-                        //string message = enemyLife.ToString();
-                        //string lifemessage = life.ToString();
-                        //MessageBox.Show(message, lifemessage); //Debug Message
-
-                        if (enemyLife > 0 && enemyLife <= 100)
+                        if (enemyLife >= 0 & enemyLife <= 100)
                         {
-                            Keys.PressKey(input, true);
-                            Thread.Sleep(2500); //Wait between sends
+                            Combat();
                         }
-                        else if(lifecheck < 100 || stamcheck < 100)
+                        else if (life < 100 | stam < 100 & enemyLife < 0 & resting == false)
                         {
-                            do
-                            {
-                                int stam = StamStat();
-                                int life = LifeStat();
-
-                                if (life < 100 || stam < 100 && resting == false)
-                                {
-                                    Keys.PressKey('x', true); //sit
-                                    resting = true;
-                                    Thread.Sleep(5000);
-
-                                }
-                                else if (life == 100 && stam == 100)
-                                {
-                                    Keys.PressKey('x', true); //standxx
-                                    resting = false;
-                                    Thread.Sleep(5000);
-                                }
-                                else
-                                {
-                                    Thread.Sleep(5000);
-                                }
-                            }
-                            while (resting == true);
+                            Resting();
+                        }
+                        else
+                        {
+                            Thread.Sleep(500); //   half second pause as to not overload your processor.
                         }
                     }
-                    while (combatloop == true);
+                    while (On == true);
                 }
             }
         }
 
-        bool healthcheckloop = false;
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -215,6 +257,7 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
         }
 
 
