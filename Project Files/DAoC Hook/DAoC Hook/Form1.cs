@@ -37,7 +37,6 @@ namespace WindowsFormsApplication1
 
 
 
-
         int LifeAddr = Addr.ToDec("0145CDF8");       //4byte
         int StamAddr = Addr.ToDec("0145CE00");       //4byte
         int EnemyLifeAddr = Addr.ToDec("0145CE0C");  //4byte
@@ -46,15 +45,19 @@ namespace WindowsFormsApplication1
         int stam;
         int life;
         int enemyLife;
+        int loop;
 
 
         char input;
+        char stick;
 
         
         bool combat = false;
         bool healthcheckloop = false;
         bool On = false;
         bool resting = false;
+
+        delegate void SetTextCallback(string text);
 
 
 
@@ -105,23 +108,29 @@ namespace WindowsFormsApplication1
             {
                 stam = StamStat();
                 life = LifeStat();
+                enemyLife = EnemyLife();
+
+                if (enemyLife >= 0 && enemyLife <= 100)
+                {
+                    resting = false;
+                    return;
+                }
 
                 if (resting == false && life < 100 | stam < 100 )
                 {
                     Keys.PressKey('x', true); //sit
                     resting = true;
-                    Thread.Sleep(5000);
+                    combat = false;
+                    Thread.Sleep(1000);
                 }
-                else if (resting == true && life == 100 & stam == 100 )
+                else if (life == 100 & stam == 100)
                 {
                     Keys.PressKey('x', true); //stand
                     resting = false;
-                    Thread.Sleep(5000);
+                    Thread.Sleep(1000);
                 }
-                else
-                {
-                    Thread.Sleep(5000);
-                }
+
+               
             }
             while (resting == true);
 
@@ -140,7 +149,11 @@ namespace WindowsFormsApplication1
 
                 if (enemyLife >= 0 & enemyLife <= 100)
                 {
+                  
+
                     combat = true;
+                    resting = false;
+                    
                     Keys.PressKey(input, true);
                     Thread.Sleep(2500); //Wait between sends
                 }
@@ -152,50 +165,102 @@ namespace WindowsFormsApplication1
             while (combat == true);
 
         }
-         
 
 
+        private void SetText(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.label4.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetText);
+                this.Invoke(d, new object[] { text });
+                //this.label4.Update();
+            }
+            else
+            {
+                this.label4.Text = text;
+                //this.label4.Update();
+            }
+        }
+
+
+
+
+        private void StatusUpdate()
+        {
+            string text = textBox1.Text;
+            input = text[0];
+
+            if (combat == true)
+                this.SetText("In Combat");
+            //label4.Update();
+            if (resting == true)
+                this.SetText("Resting");
+            //label4.Update();
+            if (combat == false & resting == false)
+                this.SetText("Waiting");
+            //label4.Update();
+        }
+
+        public void MainLoop()
+        {
+            for (; loop < 2; )
+            {
+                oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
+                oMemory.Open(); //Open Process 
+
+                stam = StamStat();
+                life = LifeStat();
+                enemyLife = EnemyLife();
+
+                Thread s = new Thread(new ThreadStart(StatusUpdate));
+                s.Start();
+                //StatusUpdate();
+
+                if (enemyLife >= 0 & enemyLife <= 100 && combat == false)
+                {
+                    Thread c = new Thread(new ThreadStart(Combat));
+                    c.Start();
+                    //Combat();
+                }
+                else if (life < 100 | stam < 100 & enemyLife < 0 && combat == false)
+                {
+                    Thread r = new Thread(new ThreadStart(Resting));
+                    r.Start();
+                    //Resting();
+                }
+                //else
+                //{
+                // 
+                //    Thread.Sleep(1500); //pause as to not overload your processor.
+                //}
+            }
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
 
             if (processes.Length != 0)
             {
-                string text = textBox1.Text;
-                input = text[0];
-
+               
                 IntPtr WindowHandle = processes[0].MainWindowHandle;
                 WindowsAPI.SwitchWindow(WindowHandle);
                 Thread.Sleep(1000); //wait while window is switched
 
                 if (On == true)
+                {
                     On = false;
+                    loop = 2;
+                }
                 else
                 {
+                    Thread Main = new Thread(new ThreadStart(MainLoop));
+                    Main.Start();
+                    loop = 1;
                     On = true;
-                    do
-                    {
-                        oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
-                        oMemory.Open(); //Open Process 
-
-                        stam = StamStat();
-                        life = LifeStat();
-                        enemyLife = EnemyLife();
-
-                        if (enemyLife >= 0 & enemyLife <= 100)
-                        {
-                            Combat();
-                        }
-                        else if (life < 100 | stam < 100 & enemyLife < 0 & resting == false)
-                        {
-                            Resting();
-                        }
-                        else
-                        {
-                            Thread.Sleep(500); //   half second pause as to not overload your processor.
-                        }
-                    }
-                    while (On == true);
                 }
             }
         }
@@ -209,7 +274,7 @@ namespace WindowsFormsApplication1
             {
                 IntPtr WindowHandle = processes[0].MainWindowHandle;
                 WindowsAPI.SwitchWindow(WindowHandle);
-                Thread.Sleep(1000); //wait while window is switched
+                //Thread.Sleep(1000); //wait while window is switched
 
 
                 if (healthcheckloop == true)
@@ -222,7 +287,7 @@ namespace WindowsFormsApplication1
                         oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
                         oMemory.Open(); //Open Process 
 
-
+                        
                         int panicPercent = 20;
                         int enemyLife = EnemyLife();
                         int life = LifeStat();
@@ -238,9 +303,9 @@ namespace WindowsFormsApplication1
                         if (panicPercent >= life)
                         {
                             Keys.PressKey('1', true);
-                            Thread.Sleep(2000);
+                            //Thread.Sleep(2000);
                         }
-                        Thread.Sleep(1000);
+                        //Thread.Sleep(1000);
                     }
 
                  while (healthcheckloop == true);
