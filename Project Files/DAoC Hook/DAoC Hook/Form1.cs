@@ -54,7 +54,9 @@ namespace WindowsFormsApplication1
         char pull;
         char nearesttarget;
         char face;
+        char DD1;
 
+        bool pulling = false;
         bool inCombat = false;
         bool combat = false;
         bool healthcheckloop = false;
@@ -170,12 +172,50 @@ namespace WindowsFormsApplication1
 
         public void Pull()
         {
-                Keys.PressKey(nearesttarget, true);
-                Thread.Sleep(1000);
-                Keys.PressKey(face, true);
-                Thread.Sleep(500);
-                Keys.PressKey(pull, true);
-                Thread.Sleep(1000);            
+            if (healer == true)
+            {
+                pulling = true;
+                while (pulling == true)
+                {
+                    Keys.PressKey(nearesttarget, true);
+                    Thread.Sleep(1000);
+
+                    enemyLife = EnemyLife();
+                    if (enemyLife == 100)
+                    {
+                        Keys.PressKey(face, true);
+                        Thread.Sleep(500);
+                        Keys.PressKey(pull, true);
+                        Thread.Sleep(2000);
+                        pulling = false;
+                    }
+                }
+            }
+
+            else if (shaman == true)
+            {
+                pulling = true;
+
+                while (pulling == true)
+                {
+                    Keys.PressKey(nearesttarget, true);
+                    Thread.Sleep(1000);
+
+                    enemyLife = EnemyLife();
+
+                    if (enemyLife == 100)
+                    {
+                        Keys.PressKey(face, true);
+                        Thread.Sleep(500);
+                        Keys.PressKey(pull, true);
+                        Thread.Sleep(1000);
+                        Keys.PressKey(DD1, true);
+                        Thread.Sleep(7000);
+                        pulling = false;
+                    }
+
+                }
+            }
         }
 
         public void Healer()
@@ -216,6 +256,46 @@ namespace WindowsFormsApplication1
                 }
             }
             
+        }
+
+        public void Shaman()
+        {
+            while (combat == true)
+            {
+                stam = StamStat();
+                life = LifeStat();
+                enemyLife = EnemyLife();
+
+                if (On == false)
+                {
+                    inCombat = false;
+                    combat = false;
+                    return;
+                }
+
+                else if (inCombat == true && enemyLife >= 0 & enemyLife <= 100)
+                {
+                    Thread.Sleep(2000);
+                }
+
+                else if (enemyLife >= 0 && enemyLife <= 100 && inCombat == false)
+                {
+                    combat = true;
+                    resting = false;
+                    inCombat = true;
+                    Keys.PressKey('`', true);
+                    Thread.Sleep(1000);
+                }
+
+
+                else
+                {
+                    inCombat = false;
+                    combat = false;
+                    return;
+                }
+            }
+
         }
 
 
@@ -302,6 +382,9 @@ namespace WindowsFormsApplication1
             string faceKey = textBox6.Text;
             face = faceKey[0];
 
+            string DD1Key = textBox7.Text;
+            DD1 = DD1Key[0];
+
 
 
             if (combat == true)
@@ -340,7 +423,7 @@ namespace WindowsFormsApplication1
                     else if (shaman == true)
                     {
                         combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
+                        Thread c = new Thread(new ThreadStart(Shaman));
                         c.Start();
                     }
                     else if (hunter == true)
@@ -418,7 +501,7 @@ namespace WindowsFormsApplication1
                     //c.Start();
                     //Combat();
                 }
-                else if (life < 100 | stam < 100 & enemyLife < 0 && combat == false)
+                else if (life < 80 | stam < 100 & enemyLife < 0 && combat == false)
                 {
                     resting = true;
                     Thread r = new Thread(new ThreadStart(Resting));
@@ -443,7 +526,7 @@ namespace WindowsFormsApplication1
                
                 IntPtr WindowHandle = processes[0].MainWindowHandle;
                 WindowsAPI.SwitchWindow(WindowHandle);
-                Thread.Sleep(1000); //wait while window is switched
+                Thread.Sleep(2000); //wait while window is switched
 
 
                 if (On == false)
