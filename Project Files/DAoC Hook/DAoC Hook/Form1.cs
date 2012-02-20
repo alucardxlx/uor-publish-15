@@ -45,17 +45,35 @@ namespace WindowsFormsApplication1
         int stam;
         int life;
         int enemyLife;
-        int loop;
 
 
-        char input;
+
+        char attack1;
+        char attack2;
         char stick;
+        char pull;
+        char nearesttarget;
+        char face;
 
-        
+        bool inCombat = false;
         bool combat = false;
         bool healthcheckloop = false;
         bool On = false;
         bool resting = false;
+        bool restingLoop = false;
+        bool healer = false;
+        bool shaman = false;
+        bool hunter = false;
+        bool shadowblade = false;
+        bool skald = false;
+        bool berserker = false;
+        bool savage = false;
+        bool spiritmaster = false;
+        bool runemaster = false;
+        bool bonedancer = false;
+        bool thane = false;
+        bool warrior = false;
+
 
         delegate void SetTextCallback(string text);
 
@@ -104,67 +122,136 @@ namespace WindowsFormsApplication1
         public void Resting()
         {
            
-            do
+            while(resting == true)
             {
                 stam = StamStat();
                 life = LifeStat();
                 enemyLife = EnemyLife();
 
-                if (enemyLife >= 0 && enemyLife <= 100)
+                if (resting == true && enemyLife >= 0 && enemyLife <= 100)
                 {
                     resting = false;
+                    restingLoop = false;
                     return;
                 }
 
-                if (resting == false && life < 100 | stam < 100 )
+                if (On == false)
+                {
+                    resting = false;
+                    restingLoop = false;
+                    return;
+                }
+
+                if (restingLoop == false && life < 100 | stam < 100 )
                 {
                     Keys.PressKey('x', true); //sit
                     resting = true;
+                    restingLoop = true;
                     combat = false;
-                    Thread.Sleep(1000);
+                    //Thread.Sleep(1000);
                 }
-                else if (life == 100 & stam == 100)
+
+
+                else if (restingLoop == true && life == 100 & stam == 100)
                 {
                     Keys.PressKey('x', true); //stand
                     resting = false;
-                    Thread.Sleep(1000);
+                    restingLoop = false;
+                    //Thread.Sleep(1000);
+                    return;
+                    
                 }
 
                
             }
-            while (resting == true);
 
         }
 
 
-
-
-        public void Combat()
+        public void Pull()
         {
-            do
+                Keys.PressKey(nearesttarget, true);
+                Thread.Sleep(1000);
+                Keys.PressKey(face, true);
+                Thread.Sleep(500);
+                Keys.PressKey(pull, true);
+                Thread.Sleep(1000);            
+        }
+
+        public void Healer()
+        {
+            while (combat == true)
             {
                 stam = StamStat();
                 life = LifeStat();
                 enemyLife = EnemyLife();
 
-                if (enemyLife >= 0 & enemyLife <= 100)
+                if (On == false)
                 {
-                  
+                    inCombat = false;
+                    combat = false;
+                    return;
+                }
 
+                else if (inCombat == true && enemyLife >= 0 & enemyLife <= 100)
+                {
+                        Thread.Sleep(2000);
+                 }
+
+                else if (enemyLife >= 0 && enemyLife <= 100 && inCombat == false)
+                {
                     combat = true;
                     resting = false;
-                    
-                    Keys.PressKey(input, true);
+                    inCombat = true;
+                    Keys.PressKey('`', true);
+                    Thread.Sleep(1000);
+                }
+
+
+                else
+                {
+                    inCombat = false;
+                    combat = false;
+                    return;
+                }
+            }
+            
+        }
+
+
+
+     public void Combat()
+        {
+            while(combat == true)
+            {
+                stam = StamStat();
+                life = LifeStat();
+                enemyLife = EnemyLife();
+
+
+                if (enemyLife >= 0 & enemyLife <= 100)
+                {
+                    combat = true;
+                    resting = false;
+                    Keys.PressKey(attack2, true);
+                    Thread.Sleep(50);
+                    Keys.PressKey(attack1, true);
                     Thread.Sleep(2500); //Wait between sends
                 }
+                if (On == false)
+                {
+                    combat = false;
+                    return;
+                }
+
                 else
                 {
                     combat = false;
+                    return;
                 }
             }
-            while (combat == true);
 
-        }
+        } 
 
 
         private void SetText(string text)
@@ -172,16 +259,23 @@ namespace WindowsFormsApplication1
             // InvokeRequired required compares the thread ID of the
             // calling thread to the thread ID of the creating thread.
             // If these threads are different, it returns true.
-            if (this.label4.InvokeRequired)
+            if (this.label4.InvokeRequired && text == ("Resting") | text == ("Waiting"))
             {
+                label4.ForeColor = System.Drawing.Color.Green;
                 SetTextCallback d = new SetTextCallback(SetText);
                 this.Invoke(d, new object[] { text });
-                //this.label4.Update();
             }
+
+            else if (this.label4.InvokeRequired && text == ("In Combat"))
+            {
+                label4.ForeColor = System.Drawing.Color.Red;
+                SetTextCallback d = new SetTextCallback(SetText);
+                this.Invoke(d, new object[] { text });
+            }
+                
             else
             {
                 this.label4.Text = text;
-                //this.label4.Update();
             }
         }
 
@@ -190,23 +284,37 @@ namespace WindowsFormsApplication1
 
         private void StatusUpdate()
         {
-            string text = textBox1.Text;
-            input = text[0];
+            string attackKey1 = textBox1.Text;
+            attack1 = attackKey1[0];
+
+            string attackKey2 = textBox3.Text;
+            attack2 = attackKey2[0];
+
+            string stickKey = textBox2.Text;
+            stick = stickKey[0];
+
+            string pullKey = textBox4.Text;
+            pull = pullKey[0];
+
+            string nearestTarget = textBox5.Text;
+            nearesttarget = nearestTarget[0];
+
+            string faceKey = textBox6.Text;
+            face = faceKey[0];
+
+
 
             if (combat == true)
                 this.SetText("In Combat");
-            //label4.Update();
             if (resting == true)
                 this.SetText("Resting");
-            //label4.Update();
             if (combat == false & resting == false)
                 this.SetText("Waiting");
-            //label4.Update();
         }
 
         public void MainLoop()
         {
-            for (; loop < 2; )
+            while(On == true)
             {
                 oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
                 oMemory.Open(); //Open Process 
@@ -217,25 +325,112 @@ namespace WindowsFormsApplication1
 
                 Thread s = new Thread(new ThreadStart(StatusUpdate));
                 s.Start();
-                //StatusUpdate();
+
+               
 
                 if (enemyLife >= 0 & enemyLife <= 100 && combat == false)
                 {
-                    Thread c = new Thread(new ThreadStart(Combat));
-                    c.Start();
+                    if (healer == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Healer));
+                        c.Start();
+                    }
+
+                    else if (shaman == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+                    else if (hunter == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+                    else if (shadowblade == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    else if (skald == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+
+                    else if (berserker == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    else if (savage == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    else if (spiritmaster == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    else if (runemaster == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    else if (bonedancer == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    else if (thane == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    else if (warrior == true)
+                    {
+                        combat = true;
+                        Thread c = new Thread(new ThreadStart(Combat));
+                        c.Start();
+                    }
+
+                    //combat = true;
+                    //Thread c = new Thread(new ThreadStart(Combat));
+                    //c.Start();
                     //Combat();
                 }
                 else if (life < 100 | stam < 100 & enemyLife < 0 && combat == false)
                 {
+                    resting = true;
                     Thread r = new Thread(new ThreadStart(Resting));
                     r.Start();
                     //Resting();
                 }
-                //else
-                //{
-                // 
-                //    Thread.Sleep(1500); //pause as to not overload your processor.
-                //}
+
+                else if (combat == false & resting == false & enemyLife < 0)
+                {
+                    Pull();
+                }
+
             }
 
         }
@@ -250,17 +445,26 @@ namespace WindowsFormsApplication1
                 WindowsAPI.SwitchWindow(WindowHandle);
                 Thread.Sleep(1000); //wait while window is switched
 
-                if (On == true)
+
+                if (On == false)
                 {
-                    On = false;
-                    loop = 2;
-                }
-                else
-                {
+                    On = true;
                     Thread Main = new Thread(new ThreadStart(MainLoop));
                     Main.Start();
-                    loop = 1;
-                    On = true;
+                    label5.Text = ("On");
+                    label5.ForeColor = System.Drawing.Color.Green;
+    
+                }
+
+
+                else
+                {
+                    On = false;
+                    combat = false;
+                    resting = false;
+                    label5.Text = ("Off");
+                    label5.ForeColor = System.Drawing.Color.Red;
+
                 }
             }
         }
@@ -324,6 +528,258 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) //healer
+        {
+            if (radioButton1.Checked == true)
+            {
+
+                healer = true;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+
+                //string hmessage = healer.ToString();
+                //string smessage = shaman.ToString();
+                //MessageBox.Show(smessage, hmessage);
+            }
+
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e) //shaman
+        {
+            if (radioButton2.Checked == true)
+            {
+                healer = false;
+                shaman = true;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+
+                //string hmessage = healer.ToString();
+                //string smessage = shaman.ToString();
+                //MessageBox.Show(smessage, hmessage);
+            }
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e) //hunter
+        {
+            if (radioButton3.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = true;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e) //shadowblade
+        {
+            if (radioButton4.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = true;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e) //skald
+        {
+            if (radioButton5.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = true;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e) //berserker
+        {
+            if (radioButton6.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = true;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e) //savage
+        {
+            if (radioButton7.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = true;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton8_CheckedChanged(object sender, EventArgs e) // spiritmaster
+        {
+            if (radioButton8.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = true;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e) //runemaster
+        {
+            if (radioButton9.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = true;
+                bonedancer = false;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e) //bonedancer
+        {
+            if (radioButton10.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = true;
+                thane = false;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e) //thane
+        {
+            if (radioButton11.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = true;
+                warrior = false;
+            }
+
+        }
+
+        private void radioButton12_CheckedChanged(object sender, EventArgs e) //warrior
+        {
+            if (radioButton12.Checked == true)
+            {
+                healer = false;
+                shaman = false;
+                hunter = false;
+                shadowblade = false;
+                skald = false;
+                berserker = false;
+                savage = false;
+                spiritmaster = false;
+                runemaster = false;
+                bonedancer = false;
+                thane = false;
+                warrior = true;
+            }
+
+        }
+
+
 
 
     }
