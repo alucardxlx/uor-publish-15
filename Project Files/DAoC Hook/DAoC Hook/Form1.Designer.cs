@@ -84,11 +84,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 8);
+            this.button1.Location = new System.Drawing.Point(93, 130);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 29);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
+            this.button1.Text = "Start / Stop";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -150,39 +150,42 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(124, 31);
             this.label3.TabIndex = 7;
             this.label3.Text = "::Status::";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 38);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(84, 69);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 31);
             this.label4.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(66, 16);
+            this.label5.Location = new System.Drawing.Point(164, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 13);
+            this.label5.Size = new System.Drawing.Size(54, 31);
             this.label5.TabIndex = 9;
             this.label5.Text = "Off";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(11, 46);
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(33, 162);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.Size = new System.Drawing.Size(196, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "**Un-Stuck**";
+            this.label6.Text = "Setup keys, select class and press start.";
             // 
             // groupBox1
             // 
@@ -220,9 +223,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(97, 8);
+            this.groupBox2.Location = new System.Drawing.Point(8, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(161, 80);
+            this.groupBox2.Size = new System.Drawing.Size(250, 116);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
@@ -361,7 +364,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(264, 183);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Classes";
+            this.tabPage3.Text = "XP Bot";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel1
