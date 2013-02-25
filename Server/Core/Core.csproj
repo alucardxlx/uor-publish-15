@@ -185,6 +185,7 @@
     <Compile Include="World.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="COPYING" />
   </ItemGroup>
   <ItemGroup>

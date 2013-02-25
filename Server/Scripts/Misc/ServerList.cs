@@ -39,7 +39,7 @@ namespace Server.Misc
          */
 
         public static readonly string Address = null;
-        public static readonly string ServerName = "UO Factions TC";
+        public static readonly string ServerName = "UO:R Factions";
 
         public static readonly bool AutoDetect = true;
 
@@ -81,8 +81,8 @@ namespace Server.Misc
                         localAddress = m_PublicAddress;
                 }
 
-                e.AddServer("UO Factions TC by IP", new IPEndPoint(IPAddress.Parse("24.131.28.213"), 2594));  //use actual ip... no-ip does not seem to work.
-                e.AddServer("UO factions TC by Variable", new IPEndPoint(m_PublicAddress, 2594)); //For second server in same network . .::set port correctly::. .
+                //e.AddServer("ANOTHER SERVER IN ANOTHER NETWORK", new IPEndPoint(IPAddress.Parse("24.131.28.213"), 2594));  //use actual ip... no-ip does not seem to work.
+                //e.AddServer("TEST SERVER IN SAME NETWORK", new IPEndPoint(m_PublicAddress, 2594)); //For second server in same network . .::set port correctly::. .
                 e.AddServer(ServerName, new IPEndPoint(localAddress, localPort)); //The reason this is last is because this is my development copy. On the main server this line is first.
                 
             }
