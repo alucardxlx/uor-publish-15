@@ -1,0 +1,13 @@
+c:\users\oogidaba\documents\visual studio 2012\Projects\DAoCCraft\DAoCCraft\bin\Debug\DAoCCraft.exe.config
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\bin\Debug\DAoCCraft.exe.config
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\obj\Debug\DAoCCraft.Properties.Resources.resources
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\obj\Debug\DAoCCraft.csproj.GenerateResource.Cache
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\bin\Debug\DAoCCraft.exe
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\bin\Debug\DAoCCraft.pdb
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\obj\Debug\DAoCCraft.exe
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\obj\Debug\DAoCCraft.pdb
+C:\Users\Oogidaba\Desktop\Projects\DAoCCraft\DAoCCraft\obj\Debug\DAoCCraft.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\DAoCHealBot\DAoCCraft\bin\Debug\DAoCCraft.exe.config
+C:\Users\Oogidaba\Desktop\Projects\DAoCHealBot\DAoCCraft\obj\Debug\DAoCCraft.exe
+C:\Users\Oogidaba\Desktop\Projects\DAoCHealBot\DAoCCraft\obj\Debug\DAoCCraft.pdb
