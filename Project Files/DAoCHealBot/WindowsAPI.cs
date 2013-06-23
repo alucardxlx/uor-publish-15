@@ -40,6 +40,8 @@ namespace WindowsFormsApplication1
 
         public const int VK_ESCAPE = 0x1b;
 
+        public const int VK_ALT = 0x38;
+
         /// <summary>
         /// 
         /// </summary>

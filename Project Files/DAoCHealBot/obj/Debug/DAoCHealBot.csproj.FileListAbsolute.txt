@@ -19,3 +19,15 @@ C:\Users\Oogidaba\Desktop\Projects\DAoCHealBot\DAoCHealBot\obj\Debug\DAoCHealBot
 C:\Users\Oogidaba\Desktop\Projects\DAoCHealBot\bin\Debug\DAoCCraft.exe.config
 C:\Users\Oogidaba\Desktop\Projects\DAoCHealBot\obj\Debug\DAoCCraft.exe
 C:\Users\Oogidaba\Desktop\Projects\DAoCHealBot\obj\Debug\DAoCCraft.pdb
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\bin\Debug\DAoCCraft.exe.config
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\obj\Debug\DAoCCraft.exe
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\obj\Debug\DAoCCraft.pdb
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\bin\Debug\DAoCCraft.exe
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\bin\Debug\DAoCCraft.pdb
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\obj\Debug\DAoCHealBot.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\obj\Debug\DAoCCraft.Properties.Resources.resources
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\obj\Debug\DAoCHealBot.csproj.GenerateResource.Cache
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\bin\Debug\InputSimulator.dll
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\bin\Debug\InputSimulator.pdb
+C:\Users\Oogidaba\Desktop\Projects\Google Code\DAoCHealBot\bin\Debug\InputSimulator.xml

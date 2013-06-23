@@ -13,6 +13,8 @@ using System.Threading;
 using System.Globalization;
 using System.Xml;
 using System.IO;
+using System.Timers;
+using WindowsInput;
 
 namespace WindowsFormsApplication1
 {
@@ -42,26 +44,37 @@ namespace WindowsFormsApplication1
 
 
         //Self Addresses
+        int LevelAddr = Addr.ToDec("00A1EB68");      //4byte  //Alternate 00A04168
         int LifeAddr = Addr.ToDec("0145CDF8");       //4byte
         int StamAddr = Addr.ToDec("0145CE00");       //4byte
+        int PowAddr = Addr.ToDec("0145CDFC");        //4byte
+        int EnemyNameAddr = Addr.ToDec("0145D280");  //String
         int EnemyLifeAddr = Addr.ToDec("0145CE0C");  //4byte
         int XCoOrdAddr = Addr.ToDec("00980520");     //float
         int YcoOrdAddr = Addr.ToDec("00980524");     //float
+
+
+
+        //Skill Addresses
+        int FirstSkillAddr = Addr.ToDec("00A12688");
+        int SixthSkillAddr = Addr.ToDec("00A129D0");
 
         //Party Adresses
 
         int life1Addr = Addr.ToDec("00A04538");     //4byte
         int life2Addr = Addr.ToDec("00A05514");     //4byte
-        int life3Addr = Addr.ToDec("0145CDF8");     //4byte
+        int life3Addr = Addr.ToDec("00A064F0");     //4byte
         int life4Addr = Addr.ToDec("0145CDF8");     //4byte
         int life5Addr = Addr.ToDec("0145CDF8");     //4byte
         int life6Addr = Addr.ToDec("0145CDF8");     //4byte
         int life7Addr = Addr.ToDec("0145CDF8");     //4byte
         int life8Addr = Addr.ToDec("0145CDF8");     //4byte
 
-
-        int stam;
+       // int sitting;
         int life;
+        int stam;
+        int pow;
+
         int life1;
         int life2;
         int life3;
@@ -71,6 +84,7 @@ namespace WindowsFormsApplication1
         int life7;
         int life8;
         int targetLife;
+
 
 
 
@@ -91,10 +105,25 @@ namespace WindowsFormsApplication1
         char stick;
         char face;
         char sit;
+        char combatKey;
 
+        char targetnearest;
+        char DD1;
+        char attack1;
+        char attack2;
+
+        char buff1;
+        char buff2;
+        char buff3;
+        char buff4;
+        char buff5;
+
+        public string enemyname;
+        public string className;
 
 
         delegate void SetTextCallback(string text);
+
 
         public Form1()
         {
@@ -119,6 +148,8 @@ namespace WindowsFormsApplication1
             face = faceKey[0];
             string sitKey = textBox15.Text;
             sit = sitKey[0];
+            string combatsKey = textBox20.Text;
+            combatKey = combatsKey[0];
 
 
             string member1Key = textBox7.Text;
@@ -138,14 +169,52 @@ namespace WindowsFormsApplication1
             string member8Key = textBox14.Text;
             member8 = member8Key[0];
 
+            string targetKey = textBox16.Text;
+            targetnearest = targetKey[0];
+            string DD1Key = textBox17.Text;
+            DD1 = DD1Key[0];
+            string attack1Key = textBox18.Text;
+            attack1 = attack1Key[0];
+            string attack2Key = textBox19.Text;
+            attack2 = attack2Key[0];
 
+            string buff1Key = textBox21.Text;
+            buff1 = buff1Key[0];
+            string buff2Key = textBox22.Text;
+            buff2 = buff2Key[0];
+            string buff3Key = textBox23.Text;
+            buff3 = buff3Key[0];
+            string buff4Key = textBox24.Text;
+            buff4 = buff4Key[0];
+            string buff5Key = textBox25.Text;
+            buff5 = buff5Key[0];
 
-
+            //string testKey = textBox26.Text;
+            //test = testKey[0];
 
         }
 
+        public int Level()
+        {
+            int levelBytesRead; //This will hold the number of bytes that were successfully read 
 
-         public int LifeStat()
+            byte[] LevelBytes = oMemory.Read((IntPtr)LevelAddr, 4, out  levelBytesRead); //Reads 4 bytes to a byte array 
+            int levelValue = BitConverter.ToInt32(LevelBytes, 0); //Converts the byte array to a single integer
+
+            return levelValue;
+        }
+
+        public string EnemyName()
+        {
+            int enemyNameBytesRead; //This will hold the number of bytes that were successfully read 
+
+            byte[] EnemyNameBytes = oMemory.Read((IntPtr)EnemyNameAddr, 4, out  enemyNameBytesRead); //Reads 4 bytes to a byte array 
+            string enemyNameValue = BitConverter.ToString(EnemyNameBytes, 0); //Converts the byte array to a single integer
+
+            return enemyNameValue;
+        }
+
+        public int LifeStat()
         {
             int lifeBytesRead; //This will hold the number of bytes that were successfully read 
 
@@ -165,6 +234,14 @@ namespace WindowsFormsApplication1
             return stamValue;
         }
 
+        public int PowStat()
+        {
+            int powBytesRead;
+            byte[] PowBytes = oMemory.Read((IntPtr)PowAddr, 4, out powBytesRead);
+            int powValue = BitConverter.ToInt32(PowBytes, 0);
+            return powValue;
+        }
+
         public int EnemyLife()
         {
             int enemyLifeBytesRead;
@@ -174,6 +251,26 @@ namespace WindowsFormsApplication1
 
             return enemyLifeValue;
 
+        }
+
+        public int FirstSkill()
+        {
+            int firstSkillBytesRead; //This will hold the number of bytes that were successfully read 
+
+            byte[] FirstSkillBytes = oMemory.Read((IntPtr)FirstSkillAddr, 4, out  firstSkillBytesRead); //Reads 4 bytes to a byte array 
+            int firstSkillValue = BitConverter.ToInt32(FirstSkillBytes, 0); //Converts the byte array to a single integer
+
+            return firstSkillValue;
+        }
+
+        public int SixthSkill()
+        {
+            int sixthSkillBytesRead; //This will hold the number of bytes that were successfully read 
+
+            byte[] SixthSkillBytes = oMemory.Read((IntPtr)SixthSkillAddr, 4, out  sixthSkillBytesRead); //Reads 4 bytes to a byte array 
+            int sixthSkillValue = BitConverter.ToInt32(SixthSkillBytes, 0); //Converts the byte array to a single integer
+
+            return sixthSkillValue;
         }
 
         public int Life1()
@@ -204,8 +301,8 @@ namespace WindowsFormsApplication1
             byte[] life3Bytes = oMemory.Read((IntPtr)life3Addr, 4, out life3BytesRead);
             int life3Value = BitConverter.ToInt32(life3Bytes, 0);
 
-            //return life3Value;
-            return 100;
+            return life3Value;
+           // return 100;
 
         }
 
@@ -269,6 +366,20 @@ namespace WindowsFormsApplication1
 
         }
 
+        public void CtrlKey()
+        {
+            Keys.AltKeyDown(17, 29); //ALT DOWN
+            Thread.Sleep(1000);
+            Keys.AltKeyUp(17, 29); //ALT UP
+        }
+
+        public void AltKey()
+        {
+            Keys.AltKeyDown(18, 38); //ALT DOWN
+            Thread.Sleep(1000);
+            Keys.AltKeyUp(18, 38); //ALT UP
+        }
+
         public int HealthCheck()
         {
             if (life1 < 70 && life1 < life2 && life1 < life3 && life1 < life4 && life1 < life5 && life1 < life6 && life1 < life7 && life1 < life8)
@@ -281,32 +392,32 @@ namespace WindowsFormsApplication1
               int check = 2;
               return check;
           }
-            if (life3 < life1 && life3 < life2 && life3 < life4 && life3 < life5 && life3 < life6 && life3 < life7 && life3 < life8)
+            if (life3 < 70 && life3 < life1 && life3 < life2 && life3 < life4 && life3 < life5 && life3 < life6 && life3 < life7 && life3 < life8)
           {
               int check = 3;
               return check;
           }
-            if (life4 < life1 && life4 < life2 && life4 < life3 && life4 < life5 && life4 < life6 && life4 < life7 && life4 < life8)
+            if (life4 < 70 && life4 < life1 && life4 < life2 && life4 < life3 && life4 < life5 && life4 < life6 && life4 < life7 && life4 < life8)
           {
               int check = 4;
               return check;
           }
-            if (life5 < life1 && life5 < life2 && life5 < life3 && life5 < life4 && life5 < life6 && life5 < life7 && life5 < life8)
+            if (life5 < 70 && life5 < life1 && life5 < life2 && life5 < life3 && life5 < life4 && life5 < life6 && life5 < life7 && life5 < life8)
           {
               int check = 5;
               return check;
           }
-            if (life6 < life1 && life6 < life2 && life6 < life3 && life6 < life4 && life6 < life5 && life6 < life7 && life6 < life8)
+            if (life6 < 70 && life6 < life1 && life6 < life2 && life6 < life3 && life6 < life4 && life6 < life5 && life6 < life7 && life6 < life8)
           {
               int check = 6;
               return check;
           }
-            if (life7 < life1 && life7 < life2 && life7 < life3 && life7 < life4 && life7 < life5 && life7 < life6 && life7 < life8)
+            if (life7 < 70 && life7 < life1 && life7 < life2 && life7 < life3 && life7 < life4 && life7 < life5 && life7 < life6 && life7 < life8)
           {
               int check = 7;
               return check;
           }
-            if (life8 < life1 && life8 < life2 && life8 < life3 && life8 < life4 && life8 < life5 && life8 < life6 && life8 < life7)
+            if (life8 < 70 && life8 < life1 && life8 < life2 && life8 < life3 && life8 < life4 && life8 < life5 && life8 < life6 && life8 < life7)
           {
               int check = 8;
               return check;
@@ -318,9 +429,7 @@ namespace WindowsFormsApplication1
           }
         }
 
-
-
-        public void MainLoop()
+        public void HealBot()
         {
 
             oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
@@ -397,7 +506,7 @@ namespace WindowsFormsApplication1
                             Keys.PressKey(iHeal, true);
                             Thread.Sleep(3000);
 
-                            newText = "Instant Healing Party Member 1"; // running on worker thread
+                            newText = "Instant Healing Member 1"; // running on worker thread
                             this.Invoke((MethodInvoker)delegate
                             {
                                 label5.Text = newText; // runs on UI thread
@@ -409,7 +518,7 @@ namespace WindowsFormsApplication1
                             Keys.PressKey(lgHeal, true);
                             Thread.Sleep(3000);
 
-                            newText = "Large Healing Party Member 2"; // running on worker thread
+                            newText = "Large Healing Member 1"; // running on worker thread
                             this.Invoke((MethodInvoker)delegate
                             {
                                 label5.Text = newText; // runs on UI thread
@@ -421,7 +530,7 @@ namespace WindowsFormsApplication1
                             Keys.PressKey(smHeal, true);
                             Thread.Sleep(3000);
 
-                            newText = "Small Healing Party Member 2"; // running on worker thread
+                            newText = "Small Healing Member 1"; // running on worker thread
                             this.Invoke((MethodInvoker)delegate
                             {
                                 label5.Text = newText; // runs on UI thread
@@ -470,7 +579,7 @@ namespace WindowsFormsApplication1
                             Thread.Sleep(3000);
 
 
-                             newText = "Instant Healing Party Member 2"; // running on worker thread
+                             newText = "Instant Healing Member 2"; // running on worker thread
                             this.Invoke((MethodInvoker)delegate
                             {
                                 label5.Text = newText; // runs on UI thread
@@ -481,7 +590,7 @@ namespace WindowsFormsApplication1
                             Keys.PressKey(lgHeal, true);
                             Thread.Sleep(3000);
 
-                            newText = "Large Healing Party Member 2"; // running on worker thread
+                            newText = "Large Healing Member 2"; // running on worker thread
                             this.Invoke((MethodInvoker)delegate
                             {
                                 label5.Text = newText; // runs on UI thread
@@ -492,7 +601,7 @@ namespace WindowsFormsApplication1
                             Keys.PressKey(smHeal, true);
                             Thread.Sleep(3000);
 
-                            newText = "Small Healing Party Member 2"; // running on worker thread
+                            newText = "Small Healing Member 2"; // running on worker thread
                             this.Invoke((MethodInvoker)delegate
                             {
                                 label5.Text = newText; // runs on UI thread
@@ -515,6 +624,12 @@ namespace WindowsFormsApplication1
                     // }
                     do
                     {
+                        string newText = "Healing Member 3"; // running on worker thread
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            label5.Text = newText; // runs on UI thread
+                        });
+
                         needheal = HealthCheck();
                         life1 = Life1();
                         life2 = Life2();
@@ -532,14 +647,30 @@ namespace WindowsFormsApplication1
 
                         if (life3 <= 10)
                         {
+                            newText = "Instant Healing Member 3"; // running on worker thread
+                            this.Invoke((MethodInvoker)delegate
+                            {
+                                label5.Text = newText; // runs on UI thread
+                            });
                             Keys.PressKey(iHeal, true);
                         }
                         else if (life3 <= 50)
                         {
+                            newText = "Large Healing Member 3"; // running on worker thread
+                            this.Invoke((MethodInvoker)delegate
+                            {
+                                label5.Text = newText; // runs on UI thread
+                            });
+
                             Keys.PressKey(lgHeal, true);
                         }
                         else if (life3 <= 80)
                         {
+                            newText = "Large Healing Member 3"; // running on worker thread
+                            this.Invoke((MethodInvoker)delegate
+                            {
+                                label5.Text = newText; // runs on UI thread
+                            });
                             Keys.PressKey(smHeal, true);
                         }
                     }
@@ -786,6 +917,12 @@ namespace WindowsFormsApplication1
                         life7 = Life7();
                         life8 = Life8();
 
+                        if (needheal != 9)
+                        {
+                            Keys.PressKey(sit, true); //Stand up
+                            Thread.Sleep(2000);
+                        }
+
                         if (label1.Text == "Off")
                         {
                             Thread.CurrentThread.Abort();
@@ -794,15 +931,413 @@ namespace WindowsFormsApplication1
                     while (needheal == 9);
 
                 }
-                else
-                {
-                    Keys.PressKey(sit, true);//Stand Up
-                    Thread.Sleep(1000);
-                }
 
                 
+            }
+        }
+
+        public void XpBot()
+        {
+            oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
+            oMemory.Open(); //Open Process 
+
+            life = LifeStat();
+            stam = StamStat();
+            bool On = true;
+
+            //StatusUpdate();
+
+            do
+            {
+
+                if (label7.Text == "Off")
+                {
+                    Thread.CurrentThread.Abort();
+                }
+
+                string newText = "XpBot Main"; // running on worker thread
+                this.Invoke((MethodInvoker)delegate
+                {
+                    label13.Text = newText; // runs on UI thread
+                });
+
+                    Resting();
+                    Buffing();
+                    Pull();
+                    MagicCombat();
+                    MeleeCombat();
+ 
 
             }
+            while (On == true);
+
+        }
+
+        public void Resting()
+        {
+            string newText = "Resting"; // running on worker thread
+            this.Invoke((MethodInvoker)delegate
+            {
+                label13.Text = newText; // runs on UI thread
+            });
+
+            bool resting = true;
+
+            Keys.PressKey('x', true); //Sit
+            Thread.Sleep(1000);
+
+            
+            do
+            {
+
+                stam = StamStat();
+                life = LifeStat();
+                pow = PowStat();
+                targetLife = EnemyLife();
+
+
+                if (label7.Text == "Off")
+                {
+                    Thread.CurrentThread.Abort();
+                }
+
+                if (resting == true && targetLife >= 0 && targetLife <= 100)
+                {
+                    resting = false;
+                }
+
+
+                if (resting == true && life == 100 && stam == 100 && pow == 100)
+                {
+                    Keys.PressKey('x', true); //stand
+                    Thread.Sleep(1000);
+                    resting = false;
+                }
+
+            }
+            while (resting == true);
+
+        }
+
+        public void Pull()
+        {
+            string newText = "Pulling"; // running on worker thread
+            this.Invoke((MethodInvoker)delegate
+            {
+                label13.Text = newText; // runs on UI thread
+            });
+
+            bool pulling = true;
+
+            targetLife = EnemyLife();
+
+            Keys.PressKey(targetnearest, true);
+            Thread.Sleep(1000);
+
+            newText = "Targeted"; // running on worker thread
+            this.Invoke((MethodInvoker)delegate
+            {
+                label13.Text = newText; // runs on UI thread
+            });
+
+            if (radioButton5.Checked)
+            {
+                do
+                {
+
+                    targetLife = EnemyLife();
+
+                    if (label7.Text == "Off")
+                    {
+                        Thread.CurrentThread.Abort();
+                    }
+
+                    if (targetLife == 100)
+                    {
+                        Keys.PressKey(face, true);
+                        Thread.Sleep(500);
+                        Keys.PressKey(DD1, true);
+                        Thread.Sleep(3000);
+                        pulling = false;
+
+                        newText = "Pulled?"; // running on worker thread
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            label13.Text = newText; // runs on UI thread
+                        });
+                    }
+
+                    if (targetLife != 100)
+                    {
+                        Keys.PressKey(targetnearest, true);
+                        Thread.Sleep(2000);
+
+                        newText = "Can't find a target";// running on worker thread
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            label13.Text = newText; // runs on UI thread
+                        });
+                    }
+                    else
+                    {
+                        newText = "Null Zone";// running on worker thread
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            label13.Text = newText; // runs on UI thread
+                        });
+                    }
+
+                }
+                while (pulling == true);
+            }
+        }
+
+        public void MagicCombat()
+        {
+            string newText = "Casting"; // running on worker thread
+            this.Invoke((MethodInvoker)delegate
+            {
+                label13.Text = newText; // runs on UI thread
+            });
+
+            bool magiccombat = true;
+            int precastLife = LifeStat();
+
+            targetLife = EnemyLife();
+
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                label13.Text = newText; // runs on UI thread
+            });
+
+            if (radioButton5.Checked)
+            {
+                do
+                {
+                    int currentLife = LifeStat();
+                    targetLife = EnemyLife();
+
+                    if (label7.Text == "Off")
+                    {
+                        Thread.CurrentThread.Abort();
+                    }
+
+                    if (targetLife > 0 && currentLife >= precastLife)
+                    {
+                        Keys.PressKey(DD1, true);
+                        Thread.Sleep(2500);
+                    }
+                    else
+                    {
+                        magiccombat = false;
+                    }
+
+                }
+                while (magiccombat == true);
+
+            }
+
+        }
+
+        public void MeleeCombat()
+        {
+            string newText = "Combat"; // running on worker thread
+            this.Invoke((MethodInvoker)delegate
+            {
+                label13.Text = newText; // runs on UI thread
+            });
+
+            bool combat = true;
+
+            Keys.PressKey(combatKey, true);
+
+            if (radioButton5.Checked) //Runemaster
+            {
+                do
+                {
+                    stam = StamStat();
+                    life = LifeStat();
+                    targetLife = EnemyLife();
+
+                    if (label7.Text == "Off")
+                    {
+                        Thread.CurrentThread.Abort();
+                    }
+
+                    if (targetLife >= 0 & targetLife <= 100)
+                    {
+                        Keys.PressKey(attack2, true);
+                        Thread.Sleep(50);
+                        Keys.PressKey(attack1, true);
+                        Thread.Sleep(2500); //Wait between sends
+
+                        newText = "Meleeing";// running on worker thread
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            label13.Text = newText; // runs on UI thread
+                        });
+                    }
+
+                    else
+                    {
+                        combat = false;
+                    }
+                }
+                while (combat == true);
+            }
+        }
+
+        public void Buffing()
+        {
+
+            if (label16.Text == "True")
+            {
+
+                StatusUpdate();
+
+                string buffed = "False"; // running on worker thread
+                this.Invoke((MethodInvoker)delegate
+                {
+                    label16.Text = buffed; // runs on UI thread
+                });
+
+                if (label7.Text == "Off")
+                {
+                    Thread.CurrentThread.Abort();
+                }
+
+                string newText = "Buffing"; // running on worker thread
+                this.Invoke((MethodInvoker)delegate
+                {
+                    label13.Text = newText; // runs on UI thread
+                });
+
+                if (checkBox15.Checked)
+                {
+                    if (checkBox4.Checked)
+                    {
+                        Thread alt = new Thread(AltKey);
+                        alt.Start();
+                        Thread.Sleep(500);
+                        Keys.PressKey(buff1, true);
+                        Thread.Sleep(3000);
+                    }
+
+                    if (checkBox5.Checked)
+                    {
+                        Thread ctrl = new Thread(CtrlKey);
+                        ctrl.Start();
+                        Keys.PressKey(buff1, true);
+                        Thread.Sleep(3000);
+                    }
+
+                }
+
+                if (checkBox16.Checked)
+                {
+                    if (checkBox6.Checked)
+                    {
+                        Thread alt = new Thread(AltKey);
+                        alt.Start();
+                        Thread.Sleep(500);
+                        Keys.PressKey(buff2, true);
+                        Thread.Sleep(3000);
+                    }
+
+                    if (checkBox7.Checked)
+                    {
+                        Thread ctrl = new Thread(CtrlKey);
+                        ctrl.Start();
+                        Thread.Sleep(500);
+                        Keys.PressKey(buff2, true);
+                        Thread.Sleep(3000);
+                    }
+                }
+
+                if (checkBox17.Checked)
+                {
+                    if (checkBox8.Checked)
+                    {
+                        Thread alt = new Thread(AltKey);
+                        alt.Start();
+                        Thread.Sleep(500);
+                        Keys.PressKey(buff3, true);
+                        Thread.Sleep(3000);
+                    }
+
+                    if (checkBox9.Checked)
+                    {
+                        Thread ctrl = new Thread(CtrlKey);
+                        ctrl.Start();
+                        Thread.Sleep(500);
+                        Keys.PressKey(buff3, true);
+                        Thread.Sleep(3000);
+                    }
+
+                    if (checkBox18.Checked)
+                    {
+                        if (checkBox10.Checked)
+                        {
+                            Thread alt = new Thread(AltKey);
+                            alt.Start();
+                            Thread.Sleep(500);
+                            Keys.PressKey(buff4, true);
+                            Thread.Sleep(3000);
+                        }
+
+                        if (checkBox11.Checked)
+                        {
+                            Thread ctrl = new Thread(CtrlKey);
+                            ctrl.Start();
+                            Thread.Sleep(500);
+                            Keys.PressKey(buff4, true);
+                            Thread.Sleep(3000);
+                        }
+                    }
+
+                    if (checkBox19.Checked)
+                    {
+                        if (checkBox12.Checked)
+                        {
+                            Thread alt = new Thread(AltKey);
+                            alt.Start();
+                            Thread.Sleep(500);
+                            Keys.PressKey(buff5, true);
+                            Thread.Sleep(3000);
+                        }
+
+                        if (checkBox13.Checked)
+                        {
+                            Thread ctrl = new Thread(CtrlKey);
+                            ctrl.Start();
+                            Thread.Sleep(500);
+                            Keys.PressKey(buff5, true);
+                            Thread.Sleep(3000);
+                        }
+                    }
+
+
+
+                }
+
+            }
+        }
+
+
+
+
+
+        private void timer_Elapsed(object myobject, System.Timers.ElapsedEventArgs e)
+        {
+           // string newText = "True"; // running on worker thread
+           // this.Invoke((MethodInvoker)delegate
+           // {
+           //     label13.Text = newText; // runs on UI thread
+           // });
+
+
+            Invoke(new Action(() => label16.Text = "True"));
         }
 
         private void button1_Click(object sender, EventArgs e) //Start Button
@@ -816,7 +1351,7 @@ namespace WindowsFormsApplication1
                 WindowsAPI.SwitchWindow(WindowHandle);
                 Thread.Sleep(2000); //wait while window is switched
 
-                Thread mainLoop = new Thread(MainLoop);
+                Thread mainLoop = new Thread(HealBot);
                 mainLoop.Start();
             }
             else
@@ -864,7 +1399,7 @@ namespace WindowsFormsApplication1
             this.TopMost = checkBox3.Checked;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //HealBot Save
         {
             XmlWriter xmlWriter = XmlWriter.Create(PATH);
 
@@ -936,7 +1471,7 @@ namespace WindowsFormsApplication1
             xmlWriter.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //HealBot Load
         {
             doc = new XmlDocument();
             doc.Load(PATH);
@@ -959,496 +1494,647 @@ namespace WindowsFormsApplication1
             textBox15.Text = root.GetElementsByTagName("sit")[0].InnerText;
             textBox6.Text = root.GetElementsByTagName("face")[0].InnerText;
         }
-
-
-
-
-
-
-
-/*
-        public void Resting()
+//-----------------------------------XP BOT------------------------------------------//
+//-----------------------------------------------------------------------------------//
+        private void button5_Click(object sender, EventArgs e) //XP BOT
         {
-
-            while (resting == true)
+            if (processes.Length != 0) //Checks to see if DAoC is running
             {
-                stam = StamStat();
-                life = LifeStat();
-                enemyLife = EnemyLife();
+                label7.Text = "On";
+                label7.ForeColor = System.Drawing.Color.Green;
 
-                if (resting == true && enemyLife >= 0 && enemyLife <= 100)
+                if (checkBox14.Checked)
                 {
-                    resting = false;
-                    restingLoop = false;
-                    return;
-                }
+                    System.Timers.Timer needBuff = new System.Timers.Timer();
 
-                if (On == false)
-                {
-                    resting = false;
-                    restingLoop = false;
-                    return;
-                }
+                    needBuff.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
+                    needBuff.Interval = 600000; //10 minutes
 
-                if (restingLoop == false && life < 100 | stam < 100)
-                {
-                    Keys.PressKey('x', true); //sit
-                    resting = true;
-                    restingLoop = true;
-                    combat = false;
-                    //Thread.Sleep(1000);
-                }
-
-
-                else if (restingLoop == true && life == 100 & stam == 100)
-                {
-                    Keys.PressKey('x', true); //stand
-                    resting = false;
-                    restingLoop = false;
-                    //Thread.Sleep(1000);
-                    return;
+                    needBuff.Enabled = true;
+                    needBuff.Start();
 
                 }
-
-
-            }
-
-        }
-
-
-        public void Pull()
-        {
-            if (healer == true)
-            {
-                pulling = true;
-                while (pulling == true)
-                {
-                    Keys.PressKey(nearesttarget, true);
-                    Thread.Sleep(1000);
-
-                    enemyLife = EnemyLife();
-                    if (enemyLife == 100)
-                    {
-                        Keys.PressKey(face, true);
-                        Thread.Sleep(500);
-                        Keys.PressKey(pull, true);
-                        Thread.Sleep(2000);
-                        pulling = false;
-                    }
-                }
-            }
-
-            else if (shaman == true)
-            {
-                pulling = true;
-
-                while (pulling == true)
-                {
-                    Keys.PressKey(nearesttarget, true);
-                    Thread.Sleep(1000);
-
-                    enemyLife = EnemyLife();
-
-                    if (enemyLife == 100)
-                    {
-                        Keys.PressKey(face, true);
-                        Thread.Sleep(500);
-                        Keys.PressKey(pull, true);
-                        Thread.Sleep(1000);
-                        Keys.PressKey(DD1, true);
-                        Thread.Sleep(7000);
-                        pulling = false;
-                    }
-
-                }
-            }
-        }
-
-        public void Healer()
-        {
-            while (combat == true)
-            {
-                stam = StamStat();
-                life = LifeStat();
-                enemyLife = EnemyLife();
-
-                if (On == false)
-                {
-                    inCombat = false;
-                    combat = false;
-                    return;
-                }
-
-                else if (inCombat == true && enemyLife >= 0 & enemyLife <= 100)
-                {
-                    Thread.Sleep(2000);
-                }
-
-                else if (enemyLife >= 0 && enemyLife <= 100 && inCombat == false)
-                {
-                    combat = true;
-                    resting = false;
-                    inCombat = true;
-                    Keys.PressKey('`', true);
-                    Thread.Sleep(1000);
-                }
-
-
-                else
-                {
-                    inCombat = false;
-                    combat = false;
-                    return;
-                }
-            }
-
-        }
-
-        public void Shaman()
-        {
-            while (combat == true)
-            {
-                stam = StamStat();
-                life = LifeStat();
-                enemyLife = EnemyLife();
-
-                if (On == false)
-                {
-                    inCombat = false;
-                    combat = false;
-                    return;
-                }
-
-                else if (inCombat == true && enemyLife >= 0 & enemyLife <= 100)
-                {
-                    Thread.Sleep(2000);
-                }
-
-                else if (enemyLife >= 0 && enemyLife <= 100 && inCombat == false)
-                {
-                    combat = true;
-                    resting = false;
-                    inCombat = true;
-                    Keys.PressKey('`', true);
-                    Thread.Sleep(1000);
-                }
-
-
-                else
-                {
-                    inCombat = false;
-                    combat = false;
-                    return;
-                }
-            }
-
-        }
-
-
-
-        public void Combat()
-        {
-            while (combat == true)
-            {
-                stam = StamStat();
-                life = LifeStat();
-                enemyLife = EnemyLife();
-
-
-                if (enemyLife >= 0 & enemyLife <= 100)
-                {
-                    combat = true;
-                    resting = false;
-                    Keys.PressKey(attack2, true);
-                    Thread.Sleep(50);
-                    Keys.PressKey(attack1, true);
-                    Thread.Sleep(2500); //Wait between sends
-                }
-                if (On == false)
-                {
-                    combat = false;
-                    return;
-                }
-
-                else
-                {
-                    combat = false;
-                    return;
-                }
-            }
-
-        }
-
-
-        private void SetText(string text)
-        {
-            // InvokeRequired required compares the thread ID of the
-            // calling thread to the thread ID of the creating thread.
-            // If these threads are different, it returns true.
-            if (this.label4.InvokeRequired && text == ("Resting") | text == ("Waiting"))
-            {
-                label4.ForeColor = System.Drawing.Color.Green;
-                SetTextCallback d = new SetTextCallback(SetText);
-                this.Invoke(d, new object[] { text });
-            }
-
-            else if (this.label4.InvokeRequired && text == ("In Combat"))
-            {
-                label4.ForeColor = System.Drawing.Color.Red;
-                SetTextCallback d = new SetTextCallback(SetText);
-                this.Invoke(d, new object[] { text });
-            }
-
-            else
-            {
-                this.label4.Text = text;
-            }
-        }
-
-
-
-
-        private void StatusUpdate()
-        {
-            string attackKey1 = textBox1.Text;
-            attack1 = attackKey1[0];
-
-            string attackKey2 = textBox3.Text;
-            attack2 = attackKey2[0];
-
-            string stickKey = textBox2.Text;
-            stick = stickKey[0];
-
-            string pullKey = textBox4.Text;
-            pull = pullKey[0];
-
-            string nearestTarget = textBox5.Text;
-            nearesttarget = nearestTarget[0];
-
-            string faceKey = textBox6.Text;
-            face = faceKey[0];
-
-            string DD1Key = textBox7.Text;
-            DD1 = DD1Key[0];
-
-
-
-            if (combat == true)
-                this.SetText("In Combat");
-            if (resting == true)
-                this.SetText("Resting");
-            if (combat == false & resting == false)
-                this.SetText("Waiting");
-        }
-
-        public void MainLoop()
-        {
-            while (On == true)
-            {
-                oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
-                oMemory.Open(); //Open Process 
-
-                stam = StamStat();
-                life = LifeStat();
-                enemyLife = EnemyLife();
-
-                Thread s = new Thread(new ThreadStart(StatusUpdate));
-                s.Start();
-
-
-
-                if (enemyLife >= 0 & enemyLife <= 100 && combat == false)
-                {
-                    if (healer == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Healer));
-                        c.Start();
-                    }
-
-                    else if (shaman == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Shaman));
-                        c.Start();
-                    }
-                    else if (hunter == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-                    else if (shadowblade == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    else if (skald == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-
-                    else if (berserker == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    else if (savage == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    else if (spiritmaster == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    else if (runemaster == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    else if (bonedancer == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    else if (thane == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    else if (warrior == true)
-                    {
-                        combat = true;
-                        Thread c = new Thread(new ThreadStart(Combat));
-                        c.Start();
-                    }
-
-                    //combat = true;
-                    //Thread c = new Thread(new ThreadStart(Combat));
-                    //c.Start();
-                    //Combat();
-                }
-                else if (life < 80 | stam < 100 & enemyLife < 0 && combat == false)
-                {
-                    resting = true;
-                    Thread r = new Thread(new ThreadStart(Resting));
-                    r.Start();
-                    //Resting();
-                }
-
-                else if (combat == false & resting == false & enemyLife < 0)
-                {
-                    Pull();
-                }
-
-            }
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-            if (processes.Length != 0)
-            {
 
                 IntPtr WindowHandle = processes[0].MainWindowHandle;
                 WindowsAPI.SwitchWindow(WindowHandle);
                 Thread.Sleep(2000); //wait while window is switched
 
-
-                if (On == false)
-                {
-                    On = true;
-                    Thread Main = new Thread(new ThreadStart(MainLoop));
-                    Main.Start();
-                    label5.Text = ("On");
-                    label5.ForeColor = System.Drawing.Color.Green;
-
-                }
-
-
-                else
-                {
-                    On = false;
-                    combat = false;
-                    resting = false;
-                    label5.Text = ("Off");
-                    label5.ForeColor = System.Drawing.Color.Red;
-
-                }
+                Thread mainLoop = new Thread(XpBot);
+                mainLoop.Start();
             }
+            else
+            {
+                MessageBox.Show("Dark Age of Camelot is not running!");
+            }
+
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            label7.Text = "Off";
+            label7.ForeColor = System.Drawing.Color.Red;
         }
 
+        //BUFF 1
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked == true)
+            {
+                checkBox5.Checked = false;
+            }
 
+        }
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked == true)
+            {
+                checkBox4.Checked = false;
+            }
 
-        private void button2_Click(object sender, EventArgs e)
+        }
+        //BUFF 2
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked == true)
+            {
+                checkBox7.Checked = false;
+            }
+
+        }
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox7.Checked == true)
+            {
+                checkBox6.Checked = false;
+            }
+
+        }
+        //BUFF 3
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox8.Checked == true)
+            {
+                checkBox9.Checked = false;
+            }
+
+        }
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox9.Checked == true)
+            {
+                checkBox8.Checked = false;
+            }
+
+        }
+        //BUFF 4
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox10.Checked == true)
+            {
+                checkBox11.Checked = false;
+            }
+
+        }
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox11.Checked == true)
+            {
+                checkBox10.Checked = false;
+            }
+
+        }
+        //BUFF 5
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox12.Checked == true)
+            {
+                checkBox13.Checked = false;
+            }
+
+        }
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox13.Checked == true)
+            {
+                checkBox12.Checked = false;
+            }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (processes.Length != 0) //If the process exists 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)//Berserker
+        {
+            if (radioButton1.Checked)
             {
-                IntPtr WindowHandle = processes[0].MainWindowHandle;
-                WindowsAPI.SwitchWindow(WindowHandle);
-                //Thread.Sleep(1000); //wait while window is switched
-
-
-                if (healthcheckloop == true)
-                    healthcheckloop = false;
-                else
-                {
-                    healthcheckloop = true;
-                    do
-                    {
-                        oMemory.ReadProcess = processes[0]; //Sets the Process to Read/Write From/To 
-                        oMemory.Open(); //Open Process 
-
-
-                        int panicPercent = 20;
-                        int enemyLife = EnemyLife();
-                        int life = LifeStat();
-                        int stam = StamStat();
-
-
-
-
-                        /* string message = life.ToString();
-                         MessageBox.Show("bytes read are {0}", message); */
-                        //Debug Message 
-
- /*                       if (panicPercent >= life)
-                        {
-                            Keys.PressKey('1', true);
-                            //Thread.Sleep(2000);
-                        }
-                        //Thread.Sleep(1000);
-                    }
-
-                    while (healthcheckloop == true);
-
-                }
-                oMemory.CloseHandle(); //Close Memory Handle 
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
             }
         }
 
-*/
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)//Bonedancer
+        {
+            if (radioButton2.Checked)
+            {
+                radioButton1.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)//Healer
+        {
+            if (radioButton3.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton1.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)//Hunter
+        {
+            if (radioButton4.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton1.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)//Runemaster
+        {
+            if (radioButton5.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton1.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)//Savage
+        {
+            if (radioButton6.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton1.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)//Shadowblade  /Vale Walker Temporary
+        {
+
+            className = "Valewalker";
+             
+            if (radioButton7.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton1.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton8_CheckedChanged(object sender, EventArgs e)//Shaman
+        {
+            if (radioButton8.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton1.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e)//Skald
+        {
+            if (radioButton9.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton1.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)//Spiritmaster
+        {
+            if (radioButton10.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton1.Checked = false;
+                radioButton11.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)//Thane
+        {
+            if (radioButton11.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton1.Checked = false;
+                radioButton12.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)//Warrior
+        {
+            if (radioButton12.Checked)
+            {
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                radioButton5.Checked = false;
+                radioButton6.Checked = false;
+                radioButton7.Checked = false;
+                radioButton8.Checked = false;
+                radioButton9.Checked = false;
+                radioButton10.Checked = false;
+                radioButton11.Checked = false;
+                radioButton1.Checked = false;
+                radioButton13.Checked = false;
+                radioButton14.Checked = false;
+                radioButton15.Checked = false;
+                radioButton16.Checked = false;
+                radioButton17.Checked = false;
+                radioButton18.Checked = false;
+                radioButton19.Checked = false;
+                radioButton20.Checked = false;
+                radioButton21.Checked = false;
+                radioButton22.Checked = false;
+                radioButton23.Checked = false;
+                radioButton24.Checked = false;
+                radioButton25.Checked = false;
+                radioButton26.Checked = false;
+                radioButton27.Checked = false;
+                radioButton28.Checked = false;
+                radioButton29.Checked = false;
+                radioButton30.Checked = false;
+                radioButton31.Checked = false;
+                radioButton32.Checked = false;
+                radioButton33.Checked = false;
+                radioButton34.Checked = false;
+                radioButton35.Checked = false;
+                radioButton36.Checked = false;
+            }
+        }
+
+
+
+
 
     }
 
