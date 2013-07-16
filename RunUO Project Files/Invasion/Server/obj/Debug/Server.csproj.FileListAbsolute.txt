@@ -1,0 +1,5 @@
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Server\obj\Debug\RunUO.exe
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Server\obj\Debug\RunUO.pdb
+C:\Users\Oogidaba\Desktop\Projects\Invasion\RunUO.exe
+C:\Users\Oogidaba\Desktop\Projects\Invasion\RunUO.pdb

@@ -1,0 +1,7 @@
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Scripts\Output\Scripts.dll
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Scripts\Output\Scripts.pdb
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Scripts\Output\RunUO.exe
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Scripts\Output\RunUO.pdb
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Scripts\obj\Debug\Scripts.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Scripts\obj\Debug\Scripts.dll
+C:\Users\Oogidaba\Desktop\Projects\Invasion\Scripts\obj\Debug\Scripts.pdb
