@@ -294,7 +294,7 @@ namespace Server.Engines.VeteranRewards
 		{
 			RewardCategory monsterStatues = new RewardCategory( 1049750 );
 			RewardCategory cloaksAndRobes = new RewardCategory( 1049752 );
-			RewardCategory etherealSteeds = new RewardCategory( 1049751 );
+			//RewardCategory etherealSteeds = new RewardCategory( 1049751 );
 			RewardCategory specialDyeTubs = new RewardCategory( 1049753 );
 			RewardCategory houseAddOns    = new RewardCategory( 1049754 );
 			RewardCategory miscellaneous  = new RewardCategory( 1078596 );
@@ -303,7 +303,7 @@ namespace Server.Engines.VeteranRewards
 				{
 					monsterStatues,
 					cloaksAndRobes,
-					etherealSteeds,
+					//etherealSteeds,
 					specialDyeTubs,
 					houseAddOns,
 					miscellaneous
@@ -380,9 +380,9 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( monsterStatues, 1006038, typeof( MonsterStatuette ), MonsterStatuetteType.Cow ),
 						new RewardEntry( monsterStatues, 1006039, typeof( MonsterStatuette ), MonsterStatuetteType.Zombie ),
 						new RewardEntry( monsterStatues, 1006040, typeof( MonsterStatuette ), MonsterStatuetteType.Llama ),
-						new RewardEntry( etherealSteeds, 1006019, typeof( EtherealHorse ) ),
-						new RewardEntry( etherealSteeds, 1006050, typeof( EtherealOstard ) ),
-						new RewardEntry( etherealSteeds, 1006051, typeof( EtherealLlama ) ),
+						//new RewardEntry( etherealSteeds, 1006019, typeof( EtherealHorse ) ),
+						//new RewardEntry( etherealSteeds, 1006050, typeof( EtherealOstard ) ),
+						//new RewardEntry( etherealSteeds, 1006051, typeof( EtherealLlama ) ),
 						new RewardEntry( houseAddOns,	 1080407, typeof( PottedCactusDeed ), Expansion.ML )
 
 					} ),
@@ -402,9 +402,9 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( monsterStatues, 1049742, typeof( MonsterStatuette ), MonsterStatuetteType.Ophidian ),
 						new RewardEntry( monsterStatues, 1049743, typeof( MonsterStatuette ), MonsterStatuetteType.Reaper ),
 						new RewardEntry( monsterStatues, 1049744, typeof( MonsterStatuette ), MonsterStatuetteType.Mongbat ),
-						new RewardEntry( etherealSteeds, 1049746, typeof( EtherealKirin ) ),
-						new RewardEntry( etherealSteeds, 1049745, typeof( EtherealUnicorn ) ),
-						new RewardEntry( etherealSteeds, 1049747, typeof( EtherealRidgeback ) ),
+						//new RewardEntry( etherealSteeds, 1049746, typeof( EtherealKirin ) ),
+						//new RewardEntry( etherealSteeds, 1049745, typeof( EtherealUnicorn ) ),
+						//new RewardEntry( etherealSteeds, 1049747, typeof( EtherealRidgeback ) ),
 						new RewardEntry( houseAddOns,    1049737, typeof( DecorativeShieldDeed ) ),
 						new RewardEntry( houseAddOns, 	 1049738, typeof( HangingSkeletonDeed ) )
 					} ),
@@ -423,8 +423,8 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( monsterStatues, 1049768, typeof( MonsterStatuette ), MonsterStatuetteType.Gazer ),
 						new RewardEntry( monsterStatues, 1049769, typeof( MonsterStatuette ), MonsterStatuetteType.FireElemental ),
 						new RewardEntry( monsterStatues, 1049770, typeof( MonsterStatuette ), MonsterStatuetteType.Wolf ),
-						new RewardEntry( etherealSteeds, 1049749, typeof( EtherealSwampDragon ) ),
-						new RewardEntry( etherealSteeds, 1049748, typeof( EtherealBeetle ) ),
+						//new RewardEntry( etherealSteeds, 1049749, typeof( EtherealSwampDragon ) ),
+						//new RewardEntry( etherealSteeds, 1049748, typeof( EtherealBeetle ) ),
 						new RewardEntry( houseAddOns,    1049739, typeof( StoneAnkhDeed ) ),
 						new RewardEntry( houseAddOns,    1080384, typeof( BloodyPentagramDeed ), Expansion.ML )
 					} ),					
@@ -446,7 +446,7 @@ namespace Server.Engines.VeteranRewards
 					} ),
 					new RewardList( RewardInterval, 9, new RewardEntry[]
 					{
-						new RewardEntry( etherealSteeds,	1076159, typeof( RideablePolarBear ), Expansion.ML ),
+						//new RewardEntry( etherealSteeds,	1076159, typeof( RideablePolarBear ), Expansion.ML ),
 						new RewardEntry( houseAddOns,		1080549, typeof( WallBannerDeed ), Expansion.ML )
 					} ),
 					new RewardList( RewardInterval, 10, new RewardEntry[]
@@ -461,7 +461,7 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( cloaksAndRobes,	1080381, typeof( RewardRobe ), Expansion.ML, Crimson, 1080381 ),						
 						new RewardEntry( cloaksAndRobes,	1080379, typeof( RewardDress ), Expansion.ML, Crimson, 1080379 ),
 						
-						new RewardEntry( etherealSteeds,	1080386, typeof( EtherealCuSidhe ), Expansion.ML ),
+						//new RewardEntry( etherealSteeds,	1080386, typeof( EtherealCuSidhe ), Expansion.ML ),
 
 						new RewardEntry( houseAddOns,		1080548, typeof( MiningCartDeed ), Expansion.ML ),
 						new RewardEntry( houseAddOns,		1080397, typeof( AnkhOfSacrificeDeed ), Expansion.ML )
@@ -469,12 +469,12 @@ namespace Server.Engines.VeteranRewards
 
 					new RewardList( RewardInterval, 11, new RewardEntry[]
 					{
-						new RewardEntry( etherealSteeds,	1113908, typeof( EtherealReptalon ), Expansion.ML ),
+						//new RewardEntry( etherealSteeds,	1113908, typeof( EtherealReptalon ), Expansion.ML ),
 					} ),
 
 					new RewardList( RewardInterval, 12, new RewardEntry[]
 					{
-						new RewardEntry( etherealSteeds,	1113813, typeof( EtherealHiryu ), Expansion.ML ),
+						//new RewardEntry( etherealSteeds,	1113813, typeof( EtherealHiryu ), Expansion.ML ),
 					} ),
 			};
 		}
@@ -502,8 +502,8 @@ namespace Server.Engines.VeteranRewards
 
 				if ( SkillCapRewards )
 					e.Mobile.SkillsCap = 7000 + (level * 50);
-				else
-					e.Mobile.SkillsCap = 7000;
+				//else
+				//	e.Mobile.SkillsCap = 7000;
 			}
 
 			if ( Core.ML && e.Mobile is PlayerMobile && !((PlayerMobile)e.Mobile).HasStatReward && HasHalfLevel( e.Mobile ) )

@@ -130,7 +130,7 @@ namespace Server.Misc
 			gc += ( 1.0 - chance ) * ( success ? 0.5 : (Core.AOS ? 0.0 : 0.2) );
 			gc /= 2;
 
-			gc *= skill.Info.GainFactor;
+            gc *= (skill.Info.GainFactor / 2); // default is skill.Info.GainFactor;
 
 			if ( gc < 0.01 )
 				gc = 0.01;
@@ -242,11 +242,11 @@ namespace Server.Misc
 			{
 				SkillInfo info = skill.Info;
 
-				if ( from.StrLock == StatLockType.Up && (info.StrGain / 33.3) > Utility.RandomDouble() )
+				if ( from.StrLock == StatLockType.Up && (info.StrGain / 66.6) > Utility.RandomDouble() )     //default 33.3
 					GainStat( from, Stat.Str );
-				else if ( from.DexLock == StatLockType.Up && (info.DexGain / 33.3) > Utility.RandomDouble() )
+                else if (from.DexLock == StatLockType.Up && (info.DexGain / 66.6) > Utility.RandomDouble())  //default 33.3
 					GainStat( from, Stat.Dex );
-				else if ( from.IntLock == StatLockType.Up && (info.IntGain / 33.3) > Utility.RandomDouble() )
+                else if (from.IntLock == StatLockType.Up && (info.IntGain / 66.6) > Utility.RandomDouble())  //default 33.3
 					GainStat( from, Stat.Int );
 			}
 		}
@@ -273,9 +273,9 @@ namespace Server.Misc
 
 			switch ( stat )
 			{
-				case Stat.Str: return ( from.StrLock == StatLockType.Up && from.RawStr < 125 );
-				case Stat.Dex: return ( from.DexLock == StatLockType.Up && from.RawDex < 125 );
-				case Stat.Int: return ( from.IntLock == StatLockType.Up && from.RawInt < 125 );
+				case Stat.Str: return ( from.StrLock == StatLockType.Up && from.RawStr < 1250 );  //default 125
+				case Stat.Dex: return ( from.DexLock == StatLockType.Up && from.RawDex < 1250 );  //default 125
+				case Stat.Int: return ( from.IntLock == StatLockType.Up && from.RawInt < 1250 );  //default 125
 			}
 
 			return false;

@@ -17,6 +17,14 @@ namespace Server.Misc
 
 		private static void AddBackpack( Mobile m )
 		{
+            m.StatCap = 2500; //default 250
+            m.SkillsCap = 14000; //default is 7000
+
+            for (int i = 0; i < 52; i++)
+            {
+                m.Skills[i].Cap = 200;  //default is 100
+            }
+
 			Container pack = m.Backpack;
 
 			if ( pack == null )
@@ -67,7 +75,7 @@ namespace Server.Misc
 			for ( int i = 0; i < PowerScroll.Skills.Count; ++i )
 				m.Skills[PowerScroll.Skills[ i ]].Cap = 120.0;
 
-			m.StatCap = 250;
+			m.StatCap = 2500; //default 250
 
 
 			Container cont;
@@ -804,6 +812,7 @@ namespace Server.Misc
 				intel = 10;
 
 			m.InitStats( str, dex, intel );
+
 		}
 
 		private static void SetName( Mobile m, string name )

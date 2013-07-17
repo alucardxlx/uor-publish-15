@@ -1352,7 +1352,7 @@ namespace Server.Mobiles
 					strOffs = AosAttributes.GetValue( this, AosAttribute.BonusHits );
 
 					if ( Core.ML && strOffs > 25 && AccessLevel <= AccessLevel.Player )
-						strOffs = 25;
+						strOffs = 250;
 
 					if ( AnimalForm.UnderTransformation( this, typeof( BakeKitsune ) ) || AnimalForm.UnderTransformation( this, typeof( GreyWolf ) ) )
 						strOffs += 20;
@@ -1387,7 +1387,7 @@ namespace Server.Mobiles
 			get
 			{
 				if( Core.ML && this.AccessLevel == AccessLevel.Player )
-					return Math.Min( base.Str, 150 );
+					return Math.Min( base.Str, 1500 );
 
 				return base.Str;
 			}
@@ -1403,7 +1403,7 @@ namespace Server.Mobiles
 			get
 			{
 				if( Core.ML && this.AccessLevel == AccessLevel.Player )
-					return Math.Min( base.Int, 150 );
+					return Math.Min( base.Int, 1500 );
 
 				return base.Int;
 			}
@@ -1419,7 +1419,7 @@ namespace Server.Mobiles
 			get
 			{
 				if( Core.ML && this.AccessLevel == AccessLevel.Player )
-					return Math.Min( base.Dex, 150 );
+					return Math.Min( base.Dex, 1500 );
 
 				return base.Dex;
 			}
