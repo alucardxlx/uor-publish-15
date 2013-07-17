@@ -28,7 +28,9 @@ namespace Server.Mobiles
 		{
 			public InternalSellInfo()
 			{
+                /*
 				Add( typeof( FletcherTools ), 1 );
+                 */
 			}
 		}
 	}

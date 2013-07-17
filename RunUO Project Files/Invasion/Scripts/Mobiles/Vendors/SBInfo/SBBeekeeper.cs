@@ -28,9 +28,10 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( JarHoney ), 1 );
 				Add( typeof( Beeswax ), 1 );
+              */
 			}
 		}
 	}

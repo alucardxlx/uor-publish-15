@@ -32,7 +32,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( BlankScroll ), 6 );
 				Add( typeof( MapmakersPen ), 4 );
 				Add( typeof( BlankMap ), 2 );
@@ -41,6 +41,7 @@ namespace Server.Mobiles
 				Add( typeof( WorldMap ), 3 );
 				Add( typeof( PresetMapEntry ), 3 );
 				//TODO: Buy back maps that the mapmaker sells!!!
+              */
 			}
 		}
 	}

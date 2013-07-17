@@ -34,7 +34,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( PlateHatsuburi ), 38 );
 				Add( typeof( HeavyPlateJingasa ), 38 );
 				Add( typeof( DecorativePlateKabuto ), 47 );
@@ -42,7 +42,7 @@ namespace Server.Mobiles
 				Add( typeof( PlateHiroSode ), 111 );
 				Add( typeof( PlateSuneate ), 112 );
 				Add( typeof( PlateHaidate), 117 );
-				Add( typeof( ChainHatsuburi ), 38 );
+				Add( typeof( ChainHatsuburi ), 38 );*/
 
 			}
 		}

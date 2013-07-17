@@ -28,7 +28,7 @@ namespace Server.Misc
 			}
 
 			PackItem( new RedBook( "a book", m.Name, 20, true ) );
-			PackItem( new Gold( 1000 ) ); // Starting gold can be customized here
+			PackItem( new Gold( 1 ) ); // default is 1000
 			PackItem( new Dagger() );
 			PackItem( new Candle() );
 		}
@@ -739,100 +739,11 @@ namespace Server.Misc
 		}
 
 		private static readonly CityInfo m_NewHavenInfo = new CityInfo( "New Haven", "The Bountiful Harvest Inn", 3503, 2574, 14, Map.Trammel );
+        private static readonly CityInfo m_Britain = new CityInfo("Britain", "The Sweet Dreams Inn", 1495, 1629, 10, Map.Felucca);
 
 		private static CityInfo GetStartLocation( CharacterCreatedEventArgs args, bool isYoung )
 		{
-			if( Core.ML )
-			{
-				//if( args.State != null && args.State.NewHaven )
-				return m_NewHavenInfo;	//We don't get the client Version until AFTER Character creation
-
-				//return args.City;  TODO: Uncomment when the old quest system is actually phased out
-			}
-
-			bool useHaven = isYoung;
-
-			ClientFlags flags = args.State == null ? ClientFlags.None : args.State.Flags;
-			Mobile m = args.Mobile;
-
-			switch ( args.Profession )
-			{
-				case 4: //Necro
-				{
-					if ( (flags & ClientFlags.Malas) != 0 )
-					{
-						return new CityInfo( "Umbra", "Mardoth's Tower", 2114, 1301, -50, Map.Malas );
-					}
-					else
-					{
-						useHaven = true; 
-
-						new BadStartMessage( m, 1062205 );
-						/*
-						 * Unfortunately you are playing on a *NON-Age-Of-Shadows* game 
-						 * installation and cannot be transported to Malas.  
-						 * You will not be able to take your new player quest in Malas 
-						 * without an AOS client.  You are now being taken to the city of 
-						 * Haven on the Trammel facet.
-						 * */
-					}
-
-					break;
-				}
-				case 5:	//Paladin
-				{
-					return m_NewHavenInfo;
-				}
-				case 6:	//Samurai
-				{
-					if ( (flags & ClientFlags.Tokuno) != 0 )
-					{
-						return new CityInfo( "Samurai DE", "Haoti's Grounds", 368, 780, -1, Map.Malas );
-					}
-					else
-					{
-						useHaven = true;
-
-						new BadStartMessage( m, 1063487 );
-						/*
-						 * Unfortunately you are playing on a *NON-Samurai-Empire* game 
-						 * installation and cannot be transported to Tokuno. 
-						 * You will not be able to take your new player quest in Tokuno 
-						 * without an SE client. You are now being taken to the city of 
-						 * Haven on the Trammel facet.
-						 * */
-					}
-
-					break;
-				}
-				case 7:	//Ninja
-				{
-					if ( (flags & ClientFlags.Tokuno) != 0 )
-					{
-						return new CityInfo( "Ninja DE", "Enimo's Residence", 414,	823, -1, Map.Malas );
-					}
-					else
-					{
-						useHaven = true;
-
-						new BadStartMessage( m, 1063487 );
-						/*
-						 * Unfortunately you are playing on a *NON-Samurai-Empire* game 
-						 * installation and cannot be transported to Tokuno. 
-						 * You will not be able to take your new player quest in Tokuno 
-						 * without an SE client. You are now being taken to the city of 
-						 * Haven on the Trammel facet.
-						 * */
-					}
-
-					break;
-				}
-			}
-
-			if( useHaven )
-				return m_NewHavenInfo;
-			else
-				return args.City;
+                return m_Britain;	//We don't get the client Version until AFTER Character creation
 		}
 
 		private static void FixStats( ref int str, ref int dex, ref int intel, int max )
@@ -888,12 +799,9 @@ namespace Server.Misc
 
 			FixStats( ref str, ref dex, ref intel, max );
 
-			if ( str < 10 || str > 60 || dex < 10 || dex > 60 || intel < 10 || intel > 60 || (str + dex + intel) != max )
-			{
 				str = 10;
 				dex = 10;
 				intel = 10;
-			}
 
 			m.InitStats( str, dex, intel );
 		}
@@ -908,7 +816,7 @@ namespace Server.Misc
 			m.Name = name;
 		}
 
-		private static bool ValidSkills( SkillNameValue[] skills )
+		/*private static bool ValidSkills( SkillNameValue[] skills )
 		{
 			int total = 0;
 
@@ -927,7 +835,7 @@ namespace Server.Misc
 			}
 
 			return ( total == 100 || total == 120 );
-		}
+		} */
 
 		private static Mobile m_Mobile;
 
@@ -939,10 +847,10 @@ namespace Server.Misc
 				{
 					skills = new SkillNameValue[]
 						{
-							new SkillNameValue( SkillName.Anatomy, 30 ),
-							new SkillNameValue( SkillName.Healing, 45 ),
-							new SkillNameValue( SkillName.Swords, 35 ),
-							new SkillNameValue( SkillName.Tactics, 50 )
+							new SkillNameValue( SkillName.Anatomy, 0 ),
+							new SkillNameValue( SkillName.Healing, 0 ),
+							new SkillNameValue( SkillName.Swords, 0 ),
+							new SkillNameValue( SkillName.Tactics, 0 )
 						};
 
 					break;
@@ -951,10 +859,10 @@ namespace Server.Misc
 				{
 					skills = new SkillNameValue[]
 						{
-							new SkillNameValue( SkillName.EvalInt, 30 ),
-							new SkillNameValue( SkillName.Wrestling, 30 ),
-							new SkillNameValue( SkillName.Magery, 50 ),
-							new SkillNameValue( SkillName.Meditation, 50 )
+							new SkillNameValue( SkillName.EvalInt, 0 ),
+							new SkillNameValue( SkillName.Wrestling, 0 ),
+							new SkillNameValue( SkillName.Magery, 0 ),
+							new SkillNameValue( SkillName.Meditation, 0 )
 						};
 
 					break;
@@ -963,10 +871,10 @@ namespace Server.Misc
 				{
 					skills = new SkillNameValue[]
 						{
-							new SkillNameValue( SkillName.Mining, 30 ),
-							new SkillNameValue( SkillName.ArmsLore, 30 ),
-							new SkillNameValue( SkillName.Blacksmith, 50 ),
-							new SkillNameValue( SkillName.Tinkering, 50 )
+							new SkillNameValue( SkillName.Mining, 0 ),
+							new SkillNameValue( SkillName.ArmsLore, 0 ),
+							new SkillNameValue( SkillName.Blacksmith, 0 ),
+							new SkillNameValue( SkillName.Tinkering, 0 )
 						};
 
 					break;
@@ -975,11 +883,11 @@ namespace Server.Misc
 				{
 					skills = new SkillNameValue[]
 						{
-							new SkillNameValue( SkillName.Necromancy, 50 ),
-							new SkillNameValue( SkillName.Focus, 30 ),
-							new SkillNameValue( SkillName.SpiritSpeak, 30 ),
-							new SkillNameValue( SkillName.Swords, 30 ),
-							new SkillNameValue( SkillName.Tactics, 20 )
+							new SkillNameValue( SkillName.Necromancy, 0 ),
+							new SkillNameValue( SkillName.Focus, 0 ),
+							new SkillNameValue( SkillName.SpiritSpeak, 0 ),
+							new SkillNameValue( SkillName.Swords, 0 ),
+							new SkillNameValue( SkillName.Tactics, 0 )
 						};
 
 					break;
@@ -988,10 +896,10 @@ namespace Server.Misc
 				{
 					skills = new SkillNameValue[]
 						{
-							new SkillNameValue( SkillName.Chivalry, 51 ),
-							new SkillNameValue( SkillName.Swords, 49 ),
-							new SkillNameValue( SkillName.Focus, 30 ),
-							new SkillNameValue( SkillName.Tactics, 30 )
+							new SkillNameValue( SkillName.Chivalry, 0 ),
+							new SkillNameValue( SkillName.Swords, 0 ),
+							new SkillNameValue( SkillName.Focus, 0 ),
+							new SkillNameValue( SkillName.Tactics, 0 )
 						};
 
 					break;
@@ -1000,10 +908,10 @@ namespace Server.Misc
 				{
 					skills = new SkillNameValue[]
 						{
-							new SkillNameValue( SkillName.Bushido, 50 ),
-							new SkillNameValue( SkillName.Swords, 50 ),
-							new SkillNameValue( SkillName.Anatomy, 30 ),
-							new SkillNameValue( SkillName.Healing, 30 )
+							new SkillNameValue( SkillName.Bushido, 0 ),
+							new SkillNameValue( SkillName.Swords, 0 ),
+							new SkillNameValue( SkillName.Anatomy, 0 ),
+							new SkillNameValue( SkillName.Healing, 0 )
 					};
 					break;
 				}
@@ -1011,19 +919,19 @@ namespace Server.Misc
 				{
 					skills = new SkillNameValue[]
 						{
-							new SkillNameValue( SkillName.Ninjitsu, 50 ),
-							new SkillNameValue( SkillName.Hiding, 50 ),
-							new SkillNameValue( SkillName.Fencing, 30 ),
-							new SkillNameValue( SkillName.Stealth, 30 )
+							new SkillNameValue( SkillName.Ninjitsu, 0 ),
+							new SkillNameValue( SkillName.Hiding, 0 ),
+							new SkillNameValue( SkillName.Fencing, 0 ),
+							new SkillNameValue( SkillName.Stealth, 0 )
 						};
 					break;
 				}
 				default:
 				{
-					if ( !ValidSkills( skills ) )
+					//if ( !ValidSkills( skills ) )
 						return;
 
-					break;
+					//break;
 				}
 			}
 
@@ -1042,7 +950,7 @@ namespace Server.Misc
 				}
 				case 4: // Necromancer
 				{
-					Container regs = new BagOfNecroReagents( 50 );
+					/*Container regs = new BagOfNecroReagents( 50 );
 
 					if ( !Core.AOS )
 					{
@@ -1053,7 +961,7 @@ namespace Server.Misc
 					PackItem( regs );
 
 					regs.LootType = LootType.Regular;
-
+                    */
 					EquipItem( new BoneHelm() );
 
 					if ( elf )
@@ -1079,11 +987,11 @@ namespace Server.Misc
 						EquipItem( new Sandals( 0x8FD ) );
 					}
 
-					Spellbook book = new NecromancerSpellbook( (ulong)0x8981 ); // animate dead, evil omen, pain spike, summon familiar, wraith form
+					//Spellbook book = new NecromancerSpellbook( (ulong)0x8981 ); // animate dead, evil omen, pain spike, summon familiar, wraith form
 
-					PackItem( book );
+					//PackItem( book );
 
-					book.LootType = LootType.Blessed;
+					//book.LootType = LootType.Blessed;
 
 					addSkillItems = false;
 
@@ -1114,11 +1022,11 @@ namespace Server.Misc
 						EquipItem( new BodySash( 0xCF ) );
 					}
 
-					Spellbook book = new BookOfChivalry( (ulong)0x3FF );
+					//Spellbook book = new BookOfChivalry( (ulong)0x3FF );
 
-					PackItem( book );
+					//PackItem( book );
 
-					book.LootType = LootType.Blessed;
+					//book.LootType = LootType.Blessed;
 
 					addSkillItems = false;
 
@@ -1142,8 +1050,8 @@ namespace Server.Misc
 					PackItem( new Scissors() );
 					PackItem( new Bandage( 50 ) );
 
-					Spellbook book = new BookOfBushido();
-					PackItem( book );
+					//Spellbook book = new BookOfBushido();
+					//PackItem( book );
 
 					break;
 				}
@@ -1167,8 +1075,8 @@ namespace Server.Misc
 
 					PackItem( new SmokeBomb() );
 
-					Spellbook book = new BookOfNinjitsu();
-					PackItem( book );
+					//Spellbook book = new BookOfNinjitsu();
+					//PackItem( book );
 
 					break;
 				}
@@ -1390,7 +1298,7 @@ namespace Server.Misc
 					PackItem( new Tongs() );
 					PackItem( new Pickaxe() );
 					PackItem( new Pickaxe() );
-					PackItem( new IronIngot( 50 ) );
+					PackItem( new IronIngot( 10 ) );
 					EquipItem( new HalfApron( Utility.RandomYellowHue() ) );
 					break;
 				}
@@ -1398,12 +1306,12 @@ namespace Server.Misc
 				{
 					EquipItem( new Hakama() );
 					EquipItem( new Kasa() );
-					EquipItem( new BookOfBushido() );
+					//EquipItem( new BookOfBushido() );
 					break;
 				}
 				case SkillName.Fletching:
 				{
-					PackItem( new Board( 14 ) );
+					PackItem( new Board( 10 ) );
 					PackItem( new Feather( 5 ) );
 					PackItem( new Shaft( 5 ) );
 					break;
@@ -1442,8 +1350,8 @@ namespace Server.Misc
 				}
 				case SkillName.Chivalry:
 				{
-					if( Core.ML )
-						PackItem( new BookOfChivalry( (ulong)0x3FF ) );
+					//if( Core.ML )
+					//	PackItem( new BookOfChivalry( (ulong)0x3FF ) );
 
 					break;
 				}
@@ -1487,7 +1395,7 @@ namespace Server.Misc
 				}
 				case SkillName.Healing:
 				{
-					PackItem( new Bandage( 50 ) );
+					PackItem( new Bandage( 3 ) );
 					PackItem( new Scissors() );
 					break;
 				}
@@ -1521,7 +1429,7 @@ namespace Server.Misc
 				}
 				case SkillName.Lockpicking:
 				{
-					PackItem( new Lockpick( 20 ) );
+					PackItem( new Lockpick( 10 ) );
 					break;
 				}
 				case SkillName.Lumberjacking:
@@ -1540,27 +1448,28 @@ namespace Server.Misc
 				}
 				case SkillName.Magery:
 				{
-					BagOfReagents regs = new BagOfReagents( 30 );
+				   /*	BagOfReagents regs = new BagOfReagents( 30 );
 
 					if ( !Core.AOS )
 					{
 						foreach ( Item item in regs.Items )
 							item.LootType = LootType.Newbied;
-					}
+					} 
 
-					PackItem( regs );
+					PackItem( regs ); 
 
 					regs.LootType = LootType.Regular;
+                    */
 
 					PackScroll( 0 );
 					PackScroll( 1 );
 					PackScroll( 2 );
-
+                /*
 					Spellbook book = new Spellbook( (ulong)0x382A8C38 );
 
 					EquipItem( book );
 
-					book.LootType = LootType.Blessed;
+					book.LootType = LootType.Blessed; */
 
 					if ( elf )
 					{
@@ -1591,7 +1500,7 @@ namespace Server.Misc
 				}
 				case SkillName.Necromancy:
 				{
-					if( Core.ML )
+					/*if( Core.ML )
 					{
 						Container regs = new BagOfNecroReagents( 50 );
 
@@ -1599,6 +1508,7 @@ namespace Server.Misc
 
 						regs.LootType = LootType.Regular;
 					}
+                      */
 
 					break;
 				}
@@ -1606,7 +1516,7 @@ namespace Server.Misc
 				{
 					EquipItem( new Hakama( 0x2C3 ) );	//Only ninjas get the hued one.
 					EquipItem( new Kasa() );
-					EquipItem( new BookOfNinjitsu() );
+					//EquipItem( new BookOfNinjitsu() );
 					break;
 				}
 				case SkillName.Parry:
@@ -1632,7 +1542,7 @@ namespace Server.Misc
 				}
 				case SkillName.Snooping:
 				{
-					PackItem( new Lockpick( 20 ) );
+					PackItem( new Lockpick( 10 ) );
 					break;
 				}
 				case SkillName.SpiritSpeak:
@@ -1642,7 +1552,7 @@ namespace Server.Misc
 				}
 				case SkillName.Stealing:
 				{
-					PackItem( new Lockpick( 20 ) );
+					PackItem( new Lockpick( 10 ) );
 					break;
 				}
 				case SkillName.Swords:
@@ -1691,7 +1601,7 @@ namespace Server.Misc
 				}
 				case SkillName.Veterinary:
 				{
-					PackItem( new Bandage( 5 ) );
+					PackItem( new Bandage( 3 ) );
 					PackItem( new Scissors() );
 					break;
 				}

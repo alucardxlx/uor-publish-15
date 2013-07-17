@@ -66,9 +66,14 @@ namespace Server.Misc
 			if ( points < 0 )
 				points = 0;
 
-			if( Core.ML && from is PlayerMobile )	//does racial bonus go before/after?
-				points = Math.Min( points, 18 );
-
+            if (Core.ML && from is PlayerMobile && from.Hunger >= 15 && from.Thirst >= 15)
+            {
+                points = Math.Min(points, 18);
+            }
+            else if (Core.ML && from is PlayerMobile && from.Hunger < 15 && from.Thirst < 15)
+            {
+                return TimeSpan.FromHours(1.0);
+            }
 			if ( CheckTransform( from, typeof( HorrificBeastSpell ) ) )
 				points += 20;
 
@@ -98,8 +103,14 @@ namespace Server.Misc
 			if ( CheckAnimal( from, typeof( Kirin ) ) )
 				cappedPoints += 20;
 
-			if( Core.ML && from is PlayerMobile )
-				cappedPoints = Math.Min( cappedPoints, 24 );
+            if (Core.ML && from is PlayerMobile && from.Hunger >= 15 && from.Thirst >= 15)
+            {
+                cappedPoints = Math.Min(cappedPoints, 24);
+            }
+            else if (Core.ML && from is PlayerMobile && from.Hunger < 15 && from.Thirst < 15)
+            {
+                return TimeSpan.FromHours(1.0);
+            }
 
 			points += cappedPoints;
 
@@ -145,8 +156,14 @@ namespace Server.Misc
 				else if ( CheckTransform( from, typeof( LichFormSpell ) ) )
 					cappedPoints += 13;
 
-				if( Core.ML && from is PlayerMobile )
-					cappedPoints = Math.Min( cappedPoints, 18 );
+                if (Core.ML && from is PlayerMobile && from.Hunger >= 15 && from.Thirst >= 15)
+                {
+                    cappedPoints = Math.Min(cappedPoints, 18);
+                }
+                else if (Core.ML && from is PlayerMobile && from.Hunger < 15 && from.Thirst < 15)
+                {
+                    return TimeSpan.FromHours(1.0);
+                }
 
 				totalPoints += cappedPoints;
 

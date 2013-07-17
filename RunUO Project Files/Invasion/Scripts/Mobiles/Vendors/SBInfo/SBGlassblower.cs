@@ -53,7 +53,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( BlackPearl ), 3 ); 
 				Add( typeof( Bloodmoss ), 3 ); 
 				Add( typeof( MandrakeRoot ), 2 ); 
@@ -77,6 +77,7 @@ namespace Server.Mobiles
 				Add( typeof( GlassblowingBook ), 5000 );
 				Add( typeof( SandMiningBook ), 5000 );
 				Add( typeof( Blowpipe ), 10 );
+              */
 			}
 		}
 	}

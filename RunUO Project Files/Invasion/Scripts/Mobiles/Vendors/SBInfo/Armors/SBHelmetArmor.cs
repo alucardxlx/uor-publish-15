@@ -35,12 +35,12 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Bascinet ), 9 );
 				Add( typeof( CloseHelm ), 9 );
 				Add( typeof( Helmet ), 9 );
 				Add( typeof( NorseHelm ), 9 );
-				Add( typeof( PlateHelm ), 10 );
+				Add( typeof( PlateHelm ), 10 );*/
 			}
 		}
 	}

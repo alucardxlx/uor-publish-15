@@ -20,7 +20,7 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				Add( new GenericBuyInfo( typeof( BookOfNinjitsu ), 335, 20, 0x23A0, 0 ) );
+				Add( new GenericBuyInfo( typeof( BookOfNinjitsu ), 1000, 20, 0x23A0, 0 ) );
 			}
 		}
 

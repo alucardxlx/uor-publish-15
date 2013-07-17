@@ -27,8 +27,8 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
-				Add( typeof( WoodenShield ), 15 );
+			{/*
+				Add( typeof( WoodenShield ), 15 );*/
 			}
 		}
 	}

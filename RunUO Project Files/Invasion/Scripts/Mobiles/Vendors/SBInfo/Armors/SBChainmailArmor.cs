@@ -29,10 +29,11 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( ChainCoif ), 6 );
 				Add( typeof( ChainChest ), 71 );
 				Add( typeof( ChainLegs ), 74 );
+              */
 			}
 		}
 	}

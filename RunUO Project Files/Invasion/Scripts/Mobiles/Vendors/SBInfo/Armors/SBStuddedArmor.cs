@@ -33,14 +33,14 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( StuddedArms ), 43 );
 				Add( typeof( StuddedChest ), 64 );
 				Add( typeof( StuddedGloves ), 39 );
 				Add( typeof( StuddedGorget ), 36 );
 				Add( typeof( StuddedLegs ), 51 );
 				Add( typeof( FemaleStuddedChest ), 71 );
-				Add( typeof( StuddedBustierArms ), 60 );
+				Add( typeof( StuddedBustierArms ), 60 );*/
 			}
 		}
 	}

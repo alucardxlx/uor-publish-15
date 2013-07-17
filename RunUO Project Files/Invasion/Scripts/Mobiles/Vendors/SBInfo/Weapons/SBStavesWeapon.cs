@@ -30,11 +30,11 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( BlackStaff ), 11 );
 				Add( typeof( GnarledStaff ), 8 );
 				Add( typeof( QuarterStaff ), 9 );
-				Add( typeof( ShepherdsCrook ), 10 );
+				Add( typeof( ShepherdsCrook ), 10 );*/
 			}
 		}
 	}

@@ -29,10 +29,10 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Spear ), 15 );
 				Add( typeof( Pitchfork ), 9 );
-				Add( typeof( ShortSpear ), 11 );
+				Add( typeof( ShortSpear ), 11 );*/
 			}
 		}
 	}

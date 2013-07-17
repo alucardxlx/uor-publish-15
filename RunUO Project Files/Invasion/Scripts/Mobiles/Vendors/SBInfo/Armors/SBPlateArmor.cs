@@ -31,14 +31,14 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( PlateArms ), 94 );
 				Add( typeof( PlateChest ), 121 );
 				Add( typeof( PlateGloves ), 72 );
 				Add( typeof( PlateGorget ), 52 );
 				Add( typeof( PlateLegs ), 109 );
 
-				Add( typeof( FemalePlateChest ), 113 );
+				Add( typeof( FemalePlateChest ), 113 );*/
 
 			}
 		}

@@ -44,11 +44,12 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( RawFishSteak ), 1 );
 				Add( typeof( Fish ), 1 );
 				//TODO: Add( typeof( SmallFish ), 1 );
 				Add( typeof( FishingPole ), 7 );
+               */
 			} 
 		} 
 	} 

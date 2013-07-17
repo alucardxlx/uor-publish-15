@@ -31,11 +31,11 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( RingmailArms ), 42 );
 				Add( typeof( RingmailChest ), 60 );
 				Add( typeof( RingmailGloves ), 26 );
-				Add( typeof( RingmailLegs ), 45 );
+				Add( typeof( RingmailLegs ), 45 );*/
 			}
 		}
 	}

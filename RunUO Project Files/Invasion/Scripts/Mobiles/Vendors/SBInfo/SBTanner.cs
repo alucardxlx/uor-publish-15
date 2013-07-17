@@ -57,7 +57,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Bag ), 3 );
 				Add( typeof( Pouch ), 3 );
 				Add( typeof( Backpack ), 7 );
@@ -86,6 +86,7 @@ namespace Server.Mobiles
 				Add( typeof( LeatherBustierArms ), 12 );
 				Add( typeof( LeatherShorts ), 14 );
 				Add( typeof( LeatherSkirt ), 12 );
+              */
 			}
 		}
 	}

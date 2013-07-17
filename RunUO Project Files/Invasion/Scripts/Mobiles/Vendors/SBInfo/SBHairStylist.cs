@@ -29,10 +29,11 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( HairDye ), 30 ); 
 				Add( typeof( SpecialBeardDye ), 250000 ); 
 				Add( typeof( SpecialHairDye ), 250000 ); 
+               */
 			} 
 		} 
 	} 

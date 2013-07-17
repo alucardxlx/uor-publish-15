@@ -37,7 +37,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Wasabi ), 1 );
 				Add( typeof( BentoBox ), 3 );
 				Add( typeof( GreenTea ), 1 );
@@ -47,6 +47,7 @@ namespace Server.Mobiles
 				Add( typeof( RedMisoSoup ), 1 );
 				Add( typeof( WhiteMisoSoup ), 1 );
 				Add( typeof( AwaseMisoSoup ), 1 );
+              */
 			}
 		}
 	}

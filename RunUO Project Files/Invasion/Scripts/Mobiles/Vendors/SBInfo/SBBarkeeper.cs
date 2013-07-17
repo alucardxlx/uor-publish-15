@@ -73,7 +73,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( WoodenBowlOfCarrots ), 1 );
 				Add( typeof( WoodenBowlOfCorn ), 1 );
 				Add( typeof( WoodenBowlOfLettuce ), 1 );
@@ -103,6 +103,7 @@ namespace Server.Mobiles
 				Add( typeof( Backgammon ), 1 );
 				Add( typeof( Dices ), 1 );
 				Add( typeof( ContractOfEmployment ), 626 );
+              */
 			}
 		}
 	}

@@ -69,7 +69,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Scissors ), 6 );
 				Add( typeof( SewingKit ), 1 );
 				Add( typeof( Dyes ), 4 );
@@ -116,6 +116,7 @@ namespace Server.Mobiles
 				Add( typeof( Flax ), 51 );
 				Add( typeof( Cotton ), 51 );
 				Add( typeof( Wool ), 31 );
+              */
 			}
 		}
 	}

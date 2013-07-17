@@ -35,7 +35,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Backpack ), 7 );
 				Add( typeof( Pouch ), 3 );
 				Add( typeof( Torch ), 3 );
@@ -44,6 +44,7 @@ namespace Server.Mobiles
 				Add( typeof( Lockpick ), 6 );
 				Add( typeof( WoodenBox ), 7 );
 				Add( typeof( HairDye ), 19 );
+              */
 			}
 		}
 	}

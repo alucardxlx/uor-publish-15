@@ -28,9 +28,10 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( ScribesPen ), 4 );
 				Add( typeof( BlankScroll ), 2 );
+              */
 			}
 		}
 	}

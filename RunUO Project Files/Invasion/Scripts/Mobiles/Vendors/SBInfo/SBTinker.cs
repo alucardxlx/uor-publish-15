@@ -80,7 +80,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( Drums ), 10 );
 				Add( typeof( Tambourine ), 10 );
 				Add( typeof( LapHarp ), 10 );
@@ -124,6 +124,7 @@ namespace Server.Mobiles
 				Add( typeof( Hammer ), 3 );
 				Add( typeof( SmithHammer ), 11 );
 				Add( typeof( ButcherKnife ), 6 );
+               */
 			} 
 		} 
 	} 

@@ -109,7 +109,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Arrow ), 1 );
 				Add( typeof( Bolt ), 2 );
 				Add( typeof( Backpack ), 7 );
@@ -168,6 +168,7 @@ namespace Server.Mobiles
 
 				if( !Guild.NewGuildSystem )
 					Add( typeof( GuildDeed ), 6225 );
+              */
 			}
 		}
 	}

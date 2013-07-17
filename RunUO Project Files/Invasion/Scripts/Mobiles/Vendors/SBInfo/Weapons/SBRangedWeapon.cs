@@ -38,7 +38,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Bolt ), 1 );
 				Add( typeof( Arrow ), 1 );
 				Add( typeof( Shaft ), 1 );
@@ -51,7 +51,7 @@ namespace Server.Mobiles
 				if( Core.AOS )
 				{
 					Add( typeof( CompositeBow ), 23 );
-					Add( typeof( RepeatingCrossbow ), 22 );
+					Add( typeof( RepeatingCrossbow ), 22 );*/
 				}
 			}
 		}

@@ -31,12 +31,12 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Yumi ), 26 );
 				Add( typeof( Fukiya ), 10 );
 				Add( typeof( Nunchaku ), 17 );
 				Add( typeof( FukiyaDarts ), 1 );
-				Add( typeof( Bokuto ), 10 );
+				Add( typeof( Bokuto ), 10 );*/
 			}
 		}
 	}

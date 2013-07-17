@@ -121,7 +121,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( Tongs ), 7 ); 
 				Add( typeof( IronIngot ), 4 ); 
 
@@ -227,7 +227,7 @@ namespace Server.Mobiles
 				Add( typeof( ThinLongsword ), 13 );
 				Add( typeof( VikingSword ), 27 );
 
-
+*/
 			} 
 		} 
 	} 

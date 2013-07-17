@@ -85,7 +85,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Bandage ), 1 );
 
 				Add( typeof( BlankScroll ), 3 );
@@ -130,6 +130,7 @@ namespace Server.Mobiles
 
 				for ( int i = 0; i < types.Length; ++i )
 					Add( types[i], ((i / 8) + 2) * 5 );
+              */
 			}
 		}
 	}

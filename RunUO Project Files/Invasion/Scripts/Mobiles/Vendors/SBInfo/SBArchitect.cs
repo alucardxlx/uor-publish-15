@@ -29,11 +29,12 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( InteriorDecorator ), 5000 );
 
 				if ( Core.AOS )
 					Add( typeof( HousePlacementTool ), 301 );
+              */
 			}
 		}
 	}

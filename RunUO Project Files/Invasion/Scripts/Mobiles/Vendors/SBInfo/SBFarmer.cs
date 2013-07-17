@@ -49,7 +49,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( Pitcher ), 5 );
 				Add( typeof( Eggs ), 1 );
 				Add( typeof( Apple ), 1 );
@@ -70,6 +70,7 @@ namespace Server.Mobiles
 				Add( typeof( Peach ), 1 );
 				Add( typeof( Pear ), 1 );
 				Add( typeof( SheafOfHay ), 1 );
+               */
 			} 
 		} 
 	} 

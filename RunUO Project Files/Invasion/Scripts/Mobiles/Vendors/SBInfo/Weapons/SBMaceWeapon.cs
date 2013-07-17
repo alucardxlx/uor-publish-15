@@ -32,13 +32,13 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Club ), 8 );
 				Add( typeof( HammerPick ), 13 );
 				Add( typeof( Mace ), 14 );
 				Add( typeof( Maul ), 10 );
 				Add( typeof( WarHammer ), 12 );
-				Add( typeof( WarMace ), 15 );
+				Add( typeof( WarMace ), 15 );*/
 			}
 		}
 	}

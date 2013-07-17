@@ -1542,8 +1542,10 @@ namespace Server
 
 					EventSink.InvokeHungerChanged( new HungerChangedEventArgs( this, oldValue ) );
 				}
+
 			}
 		}
+
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public int Thirst
@@ -1912,9 +1914,10 @@ namespace Server
 
 		public virtual bool RegenThroughPoison { get { return m_GlobalRegenThroughPoison; } }
 
-		public virtual bool CanRegenHits { get { return this.Alive && (RegenThroughPoison || !this.Poisoned); } }
-		public virtual bool CanRegenStam { get { return this.Alive; } }
-		public virtual bool CanRegenMana { get { return this.Alive; } }
+        public virtual bool CanRegenHits { get { return this.Alive && (RegenThroughPoison || !this.Poisoned); } }
+        public virtual bool CanRegenStam { get { return this.Alive; } }
+        public virtual bool CanRegenMana { get { return this.Alive; } }
+
 
 		#region Timers
 
@@ -7604,7 +7607,7 @@ namespace Server
 		{
 			get
 			{
-				return 50 + (Str / 2);
+                return 50 + (Str / 2); //Need something to update this.
 			}
 		}
 

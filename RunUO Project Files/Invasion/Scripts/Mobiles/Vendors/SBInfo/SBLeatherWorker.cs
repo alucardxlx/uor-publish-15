@@ -28,9 +28,10 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( Hides ), 2 ); 
 				Add( typeof( ThighBoots ), 28 ); 
+               */
 			} 
 		} 
 	} 

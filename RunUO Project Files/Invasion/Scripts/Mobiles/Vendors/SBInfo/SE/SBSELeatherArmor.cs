@@ -39,7 +39,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( LeatherJingasa ), 5 );
 				Add( typeof( LeatherDo ), 42 );
 				Add( typeof( LeatherHiroSode ), 23 );
@@ -51,7 +51,7 @@ namespace Server.Mobiles
 				Add( typeof( StuddedDo ), 66 );
 				Add( typeof( StuddedHiroSode ), 32 );
 				Add( typeof( StuddedSuneate ), 40 );
-				Add( typeof( StuddedHaidate ), 37 );
+				Add( typeof( StuddedHaidate ), 37 );*/
 			}
 		}
 	}

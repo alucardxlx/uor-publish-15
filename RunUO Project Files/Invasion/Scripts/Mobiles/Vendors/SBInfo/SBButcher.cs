@@ -36,7 +36,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( RawRibs ), 8 ); 
 				Add( typeof( RawLambLeg ), 4 ); 
 				Add( typeof( RawChickenLeg ), 3 ); 
@@ -47,6 +47,7 @@ namespace Server.Mobiles
 				Add( typeof( ButcherKnife ), 7 ); 
 				Add( typeof( Cleaver ), 7 ); 
 				Add( typeof( SkinningKnife ), 7 ); 
+               */
 			} 
 		} 
 	} 

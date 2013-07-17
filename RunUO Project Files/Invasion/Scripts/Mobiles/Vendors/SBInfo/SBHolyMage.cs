@@ -20,7 +20,7 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				Add( new GenericBuyInfo( typeof( Spellbook ), 18, 10, 0xEFA, 0 ) );
+				Add( new GenericBuyInfo( typeof( Spellbook ), 1000, 10, 0xEFA, 0 ) );
 				Add( new GenericBuyInfo( typeof( ScribesPen ), 8, 10, 0xFBF, 0 ) );
 				Add( new GenericBuyInfo( typeof( BlankScroll ), 5, 20, 0x0E34, 0 ) );
 
@@ -43,27 +43,13 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( Nightshade ), 3, 20, 0xF88, 0 ) );
 				Add( new GenericBuyInfo( typeof( SpidersSilk ), 3, 20, 0xF8D, 0 ) );
 				Add( new GenericBuyInfo( typeof( SulfurousAsh ), 3, 20, 0xF8C, 0 ) );
-
-				Type[] types = Loot.RegularScrollTypes;
-
-				for ( int i = 0; i < types.Length && i < 8; ++i )
-				{
-					int itemID = 0x1F2E + i;
-
-					if ( i == 6 )
-						itemID = 0x1F2D;
-					else if ( i > 6 )
-						--itemID;
-
-					Add( new GenericBuyInfo( types[i], 12 + ((i / 8) * 10), 20, itemID, 0 ) );
-				}
 			}
 		}
 
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( BlackPearl ), 3 ); 
 				Add( typeof( Bloodmoss ), 3 ); 
 				Add( typeof( MandrakeRoot ), 2 ); 
@@ -87,6 +73,7 @@ namespace Server.Mobiles
 
 				for ( int i = 0; i < types.Length; ++i )
 					Add( types[ i ], ( ( i / 8 ) + 2 ) * 2 );
+              */
 			}
 		}
 	}

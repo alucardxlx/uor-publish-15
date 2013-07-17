@@ -46,7 +46,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Broadsword ), 17 );
 				Add( typeof( Cutlass ), 12 );
 				Add( typeof( Katana ), 16 );
@@ -65,7 +65,7 @@ namespace Server.Mobiles
 					Add( typeof( Pike ), 19 );
 					Add( typeof( DoubleBladedStaff ), 17 );
 					Add( typeof( Lance ), 17 );
-					Add( typeof( CrescentBlade ), 18 );
+					Add( typeof( CrescentBlade ), 18 );*/
 				}
 			}
 		}

@@ -43,7 +43,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( WoodenBox ), 7 );
 				Add( typeof( SmallCrate ), 5 );
 				Add( typeof( MediumCrate ), 6 );
@@ -86,6 +86,7 @@ namespace Server.Mobiles
 				Add( typeof( Drums ), 10 );
 
 				Add( typeof( Log ), 1 );
+              */
 			}
 		}
 	}

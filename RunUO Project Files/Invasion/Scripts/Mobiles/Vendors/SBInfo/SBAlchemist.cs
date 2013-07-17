@@ -49,7 +49,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( BlackPearl ), 3 ); 
 				Add( typeof( Bloodmoss ), 3 ); 
 				Add( typeof( MandrakeRoot ), 2 ); 
@@ -70,6 +70,7 @@ namespace Server.Mobiles
 				Add( typeof( LesserHealPotion ), 7 );
 				Add( typeof( LesserPoisonPotion ), 7 );
 				Add( typeof( LesserExplosionPotion ), 10 );
+              */
 			}
 		}
 	}

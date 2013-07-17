@@ -30,12 +30,13 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( LapHarp ), 10 ); 
 				Add( typeof( Lute ), 10 ); 
 				Add( typeof( Drums ), 10 ); 
 				Add( typeof( Harp ), 10 ); 
 				Add( typeof( Tambourine ), 10 ); 
+               */
 			} 
 		} 
 	} 

@@ -45,7 +45,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 
+			{ /*
 				Add( typeof( Scissors ), 6 ); 
 				Add( typeof( Dyes ), 4 ); 
 				Add( typeof( DyeTub ), 4 ); 
@@ -54,6 +54,7 @@ namespace Server.Mobiles
 				Add( typeof( LightYarnUnraveled ), 9 );
 				Add( typeof( LightYarn ), 9 );
 				Add( typeof( DarkYarn ), 9 );
+               */
 			} 
 		} 
 	} 

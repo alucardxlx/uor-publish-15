@@ -50,7 +50,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Amber ), 25 );
 				Add( typeof( Amethyst ), 50 );
 				Add( typeof( Citrine ), 25 );
@@ -72,6 +72,7 @@ namespace Server.Mobiles
 				Add( typeof( SilverBracelet ), 10 );
 				Add( typeof( GoldEarrings ), 13 );
 				Add( typeof( SilverEarrings ), 10 );
+              */
 			}
 		}
 	}

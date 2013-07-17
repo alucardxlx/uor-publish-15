@@ -109,7 +109,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo 
 		{ 
 			public InternalSellInfo() 
-			{ 	
+			{ 	/*
 				Add( typeof( BattleAxe ), 13 );
 				Add( typeof( DoubleAxe ), 26 );
 				Add( typeof( ExecutionersAxe ), 15 );
@@ -176,6 +176,7 @@ namespace Server.Mobiles
 
 				Add( typeof( Hatchet ), 13 );
 				Add( typeof( WarFork ), 16 );
+                 */
 			} 
 		} 
 	} 

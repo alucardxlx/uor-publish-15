@@ -28,9 +28,9 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( Bardiche ), 30 );
-				Add( typeof( Halberd ), 21 );
+				Add( typeof( Halberd ), 21 );*/
 			}
 		}
 	}

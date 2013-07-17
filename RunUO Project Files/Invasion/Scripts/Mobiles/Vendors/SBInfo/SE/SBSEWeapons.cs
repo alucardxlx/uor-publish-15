@@ -37,7 +37,7 @@ namespace Server.Mobiles
 		public class InternalSellInfo : GenericSellInfo
 		{
 			public InternalSellInfo()
-			{
+			{/*
 				Add( typeof( NoDachi ), 41 );
 				Add( typeof( Tessen ), 41 );
 				Add( typeof( Wakizashi ), 19 );
@@ -47,7 +47,7 @@ namespace Server.Mobiles
 				Add( typeof( Tekagi ), 22 );
 				Add( typeof( Shuriken), 9 );
 				Add( typeof( Kama ), 30 );
-				Add( typeof( Sai ), 28 );
+				Add( typeof( Sai ), 28 );*/
 			}
 		}
 	}
