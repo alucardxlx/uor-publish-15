@@ -1760,11 +1760,13 @@ namespace Server.Items
 		{
 			int damage = Utility.Dice( dice, sides, bonus ) * 100;
 			int damageBonus = 0;
+            int fameBonus = (attacker.Fame / 1000);  //Custom Damage increase based on fame
+            int karmaBonus = (attacker.Karma / 1000); //Custom Damage increase based on karma
 
 			// Inscription bonus
 			int inscribeSkill = attacker.Skills[SkillName.Inscribe].Fixed;
 
-			damageBonus += inscribeSkill / 200;
+			damageBonus += (inscribeSkill / 200) + fameBonus; //Adds upto 20% for inscription and 20% for fame
 
 			if ( inscribeSkill >= 1000 )
 				damageBonus += 5;
