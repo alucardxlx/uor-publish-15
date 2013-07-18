@@ -70,9 +70,9 @@ namespace Server.Misc
             {
                 points = Math.Min(points, 18);
             }
-            else if (Core.ML && from is PlayerMobile && from.Hunger < 15 && from.Thirst < 15)
+            if (Core.ML && from is PlayerMobile && (from.Hunger < 15 || from.Thirst < 15))
             {
-                return TimeSpan.FromHours(1.0);
+                return TimeSpan.FromMinutes(1.0);
             }
 			if ( CheckTransform( from, typeof( HorrificBeastSpell ) ) )
 				points += 20;
@@ -107,9 +107,9 @@ namespace Server.Misc
             {
                 cappedPoints = Math.Min(cappedPoints, 24);
             }
-            else if (Core.ML && from is PlayerMobile && from.Hunger < 15 && from.Thirst < 15)
+            if (Core.ML && from is PlayerMobile && (from.Hunger < 15 || from.Thirst < 15))
             {
-                return TimeSpan.FromHours(1.0);
+                return TimeSpan.FromMinutes(1.0);
             }
 
 			points += cappedPoints;
@@ -160,9 +160,9 @@ namespace Server.Misc
                 {
                     cappedPoints = Math.Min(cappedPoints, 18);
                 }
-                else if (Core.ML && from is PlayerMobile && from.Hunger < 15 && from.Thirst < 15)
+                if (Core.ML && from is PlayerMobile && (from.Hunger < 15 || from.Thirst < 15))
                 {
-                    return TimeSpan.FromHours(1.0);
+                    return TimeSpan.FromMinutes(1.0);
                 }
 
 				totalPoints += cappedPoints;

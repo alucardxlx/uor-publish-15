@@ -978,7 +978,7 @@ namespace Server
 				v += Utility.Random( 1, m_Sides );
 			
 			
-			//i love amy
+			//Economy Multiplier Addon
 			foreach (Item item in World.Items.Values)
             		{
 				

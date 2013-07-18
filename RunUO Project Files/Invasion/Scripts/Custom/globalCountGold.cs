@@ -19,7 +19,7 @@ namespace Server.Items
 			Movable = false;
 			Hue = 6;
 			Name = "Gold Counting Stone";
-			EconomyMultiplier = 100;
+			EconomyMultiplier = 5; //default is 100 = 100%
 			
 			next_GoldCount = (DateTime.Now + TimeSpan.FromMinutes( 1 ));
 		}

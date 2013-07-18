@@ -221,6 +221,8 @@ namespace Server.Misc
 
 		public static bool CanCreate( IPAddress ip )
 		{
+            if (ip.ToString() == "127.0.0.1")
+                return true;
 			if ( !IPTable.ContainsKey( ip ) )
 				return true;
 

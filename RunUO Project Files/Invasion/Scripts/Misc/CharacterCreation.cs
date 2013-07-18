@@ -807,9 +807,9 @@ namespace Server.Misc
 
 			FixStats( ref str, ref dex, ref intel, max );
 
-				str = 10;
-				dex = 10;
-				intel = 10;
+				str = 30;
+				dex = 20;
+				intel = 20;
 
 			m.InitStats( str, dex, intel );
 

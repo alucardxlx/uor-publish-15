@@ -756,7 +756,7 @@ namespace Server.Mobiles
 			UpdateResistances();
 		}
 
-		public override int MaxWeight { get { return (((Core.ML && this.Race == Race.Human) ? 100 : 40) + (int)(3.5 * this.Str)); } }
+		public override int MaxWeight { get { return (((Core.ML && this.Race == Race.Human) ? 100 : 40) + (int)(1.0 * this.Str)); } }  //default is (3.5 * this.Str)
 
 		private int m_LastGlobalLight = -1, m_LastPersonalLight = -1;
 
@@ -1362,7 +1362,7 @@ namespace Server.Mobiles
 					strBase = this.RawStr;
 				}
 
-				return (strBase / 2) + 50 + strOffs;
+				return ((strBase *7)/10) + 50 + strOffs;  //70% + 50
 			}
 		}
 

@@ -35,7 +35,19 @@ namespace Server.Misc
 			if ( m != null && m.Hunger >= 1 )
 				m.Hunger -= 1;
 
-            if (m != null && m.Hunger <= 5)
+            if (m != null && m.Hunger == 0)
+            {
+                m.SendMessage("You are dying of hunger.");
+                m.Hits -= (m.HitsMax / 4);
+                m.Mana -= (m.ManaMax / 4);
+                m.Stam -= (m.StamMax / 4);
+
+                if (m.Hits == 0)
+                {
+                    m.Kill();
+                }
+            }
+            else if (m != null && m.Hunger <= 5)
             {
                 m.SendMessage("You are extremely hungry.");
             }
@@ -48,13 +60,7 @@ namespace Server.Misc
                     m.SendMessage("You begin to feel the effects of hunger.");
             }
 
-            if (m != null && m.Hunger == 0)
-            {
-                m.SendMessage("You are dying of hunger.");
-                m.Hits -= 25;
-                m.Mana -= 10;
-                m.Stam -= 10;
-            }
+
 		}
 
 		public static void ThirstDecay( Mobile m )
@@ -62,7 +68,20 @@ namespace Server.Misc
 			if ( m != null && m.Thirst >= 1 )
 				m.Thirst -= 1;
 
-            if (m != null && m.Thirst <= 5)
+            if (m != null && m.Thirst == 0)
+            {
+                m.SendMessage("You are dying of thirst.");
+                m.Hits -= (m.HitsMax / 4);
+                m.Mana -= (m.ManaMax / 4);
+                m.Stam -= (m.StamMax / 4);
+
+                if (m.Hits == 0)
+                {
+                    m.Kill();  
+                }
+
+            }
+            else if (m != null && m.Thirst <= 5)
             {
                 m.SendMessage("You are extremely thirsty.");
             }
@@ -75,14 +94,7 @@ namespace Server.Misc
                 m.SendMessage("You begin to feel the effects of thirst.");
             }
 
-            if (m != null && m.Thirst == 0)
-            {
-                m.SendMessage("You are dying of thirst.");
-                m.Hits -= 25;
-                m.Mana -= 10;
-                m.Stam -= 10;
 
-            }
 
 
 		}
