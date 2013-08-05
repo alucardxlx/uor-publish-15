@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<root>
+  <Server>
+    <Port>10300</Port>
+    <IP>0.0.0.0</IP>
+    <RegionIP>0.0.0.0</RegionIP>
+    <RegionPort>10400</RegionPort>
+    <UdpIP>0.0.0.0</UdpIP>
+    <UdpPort>10400</UdpPort>
+    <EnableUPnP>True</EnableUPnP>
+    <DetectRegionIP>True</DetectRegionIP>
+    <ServerName>Invasion</ServerName>
+    <ServerNameShort>Invasion</ServerNameShort>
+    <LogConfigFile>.\config\logconfig.xml</LogConfigFile>
+    <RegionConfigFile>.\config\regions.xml</RegionConfigFile>
+    <ZoneConfigFile>.\config\zones.xml</ZoneConfigFile>
+    <ScriptCompilationTarget>.\lib\GameServerScripts.dll</ScriptCompilationTarget>
+    <ScriptAssemblies>DOLBase.dll,GameServer.dll,DOLDatabase.dll,System.dll,log4net.dll,System.Xml.dll</ScriptAssemblies>
+    <AutoAccountCreation>True</AutoAccountCreation>
+    <GameType>Normal</GameType>
+    <CheatLoggerName>cheats</CheatLoggerName>
+    <GMActionLoggerName>gmactions</GMActionLoggerName>
+    <InvalidNamesFile>.\config\invalidnames.txt</InvalidNamesFile>
+    <DBType>MYSQL</DBType>
+    <DBConnectionString>server=localhost;port=3306;database=Invasion;User Id=root;password=carterJoseph123;Treat Tiny As Boolean=False</DBConnectionString>
+    <DBAutosave>True</DBAutosave>
+    <DBAutosaveInterval>10</DBAutosaveInterval>
+    <CpuUse>1</CpuUse>
+  </Server>
+</root>

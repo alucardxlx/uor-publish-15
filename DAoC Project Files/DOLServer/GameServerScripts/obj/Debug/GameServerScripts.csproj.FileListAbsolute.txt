@@ -1,0 +1,6 @@
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServerScripts\obj\Debug\GameServerScripts.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServerScripts\obj\Debug\GameServerScripts.dll
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServerScripts\obj\Debug\GameServerScripts.pdb
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServerScripts\obj\GameServerScripts.dll
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServerScripts\obj\GameServerScripts.pdb
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServerScripts\obj\log4net.dll

@@ -1,0 +1,31 @@
+21:44:27,966 - [MAIN] - ERROR - DOL.GS.Region - Error loading the following NPC ClassType(s), GameNPC used instead: DOL.GS.Scripts.RockyGolem, DOL.GS.Scripts.BefuddledGolem
+21:44:31,158 - [MAIN] - ERROR - DOL.WeakMulticastDelegate - InvokeSafe
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentNullException: No object given!
+Parameter name: obj
+   at DOL.Events.GameEventMgr.AddHandler(Object obj, DOLEvent e, DOLEventHandler del, Boolean unique) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\events\GameEventMgr.cs:line 234
+   at DOL.Events.GameEventMgr.AddHandler(Object obj, DOLEvent e, DOLEventHandler del) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\events\GameEventMgr.cs:line 211
+   at DOL.GS.Quests.Hibernia.ImportantDelivery.ScriptLoaded(DOLEvent e, Object sender, EventArgs args) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\ImportantDelivery.cs:line 403
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at DOL.WeakMulticastDelegate.InvokeSafe(Object[] args) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLBase\WeakMulticastDelegate.cs:line 307
+23:23:20,501 - [41] - ERROR - DOL.GS.WorldMgr - Trying to access inexistent ZoneID 65535    at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at DOL.GS.WorldMgr.GetZone(UInt16 zoneID) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\world\WorldMgr.cs:line 1259
+   at DOL.GS.PacketHandler.Client.v168.PlayerPositionUpdateHandler.HandlePacket(GameClient client, GSPacketIn packet) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\packets\Client\168\PlayerPositionUpdateHandler.cs:line 129
+   at DOL.GS.PacketHandler.PacketProcessor.HandlePacket(GSPacketIn packet) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\packets\Server\PacketProcessor.cs:line 925
+   at DOL.GS.PacketHandler.PacketProcessor.ReceiveBytes(Int32 numBytes) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\packets\Server\PacketProcessor.cs:line 722
+   at DOL.GS.GameClient.OnReceive(Int32 numBytes) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\GameClient.cs:line 471
+   at DOL.Network.BaseClient.OnReceiveHandler(IAsyncResult ar) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLBase\Network\BaseClient.cs:line 207
+   at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+   at System.Net.ContextAwareResult.CompleteCallback(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Net.ContextAwareResult.Complete(IntPtr userToken)
+   at System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object result, IntPtr userToken)
+   at System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+23:23:20,503 - [41] - ERROR - DOL.GS.PacketHandler.Client.v168.PlayerPositionUpdateHandler - Gofuckurself's position in unknown zone! => 65535

@@ -1,0 +1,7 @@
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\lib\config\regions.xml
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\lib\config\zones.xml
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\lib\GameServer.dll
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\lib\GameServer.pdb
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\obj\Debug\GameServer.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\obj\Debug\GameServer.dll
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\obj\Debug\GameServer.pdb

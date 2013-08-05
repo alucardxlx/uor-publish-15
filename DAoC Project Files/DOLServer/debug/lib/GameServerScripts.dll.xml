@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\AssemblyInfo.cs">
+    <size>1395</size>
+    <lastmodified>130165736322486633</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\globals.cs">
+    <size>2745</size>
+    <lastmodified>130165736344567896</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\behaviour\examples\TestBehaviour.cs">
+    <size>3136</size>
+    <lastmodified>130165736322726647</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\commands\serverinfo.cs">
+    <size>2178</size>
+    <lastmodified>130165736322556637</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\commands\SwitchCommandHandler.cs">
+    <size>2842</size>
+    <lastmodified>130165736322526636</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\commands\version.cs">
+    <size>1375</size>
+    <lastmodified>130165736322596640</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\Custom Scripts\KeepManager.cs">
+    <size>26958</size>
+    <lastmodified>130016422160000000</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\Custom Scripts\ThidRules.cs">
+    <size>78834</size>
+    <lastmodified>130196187538785904</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\customnpc\RegionTestNpc.cs">
+    <size>3391</size>
+    <lastmodified>130165736344777908</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\customnpc\TownCrier.cs">
+    <size>3748</size>
+    <lastmodified>130165736344597898</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\customnpc\Desmona harpies\AtlantisVisualModelNPC.cs">
+    <size>1600</size>
+    <lastmodified>130165736344657901</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\customnpc\Desmona harpies\DesmonaCoin.cs">
+    <size>1896</size>
+    <lastmodified>130165736344627900</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\customnpc\Desmona harpies\DesmonaHarpy.cs">
+    <size>3738</size>
+    <lastmodified>130191686662406924</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\examples\CustomInventoryLoggingExample.cs">
+    <size>1255</size>
+    <lastmodified>130165736344887915</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\DOLTestServer.cs">
+    <size>5245</size>
+    <lastmodified>130165736345667959</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\FightingNPC.cs">
+    <size>11010</size>
+    <lastmodified>130165736345517951</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\FollowingNPC.cs">
+    <size>7040</size>
+    <lastmodified>130165736345547952</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\HorseRace.cs">
+    <size>21308</size>
+    <lastmodified>130165736345457947</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\PlayerEnterExit.cs">
+    <size>4737</size>
+    <lastmodified>130165736345637957</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\StartupGuilds.cs">
+    <size>2922</size>
+    <lastmodified>130165736345727963</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\StartupLocations.cs">
+    <size>35332</size>
+    <lastmodified>130165736345487949</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\TalkingNPC.cs">
+    <size>6397</size>
+    <lastmodified>130165736345757964</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\TutorialJumpPointHandler.cs">
+    <size>1903</size>
+    <lastmodified>130165736345697961</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\WebUIGenerator.cs">
+    <size>16867</size>
+    <lastmodified>130165736345577954</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\gameevents\XMLWebUIGenerator.cs">
+    <size>9532</size>
+    <lastmodified>130165736345607956</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\AFewRepairs.cs">
+    <size>31894</size>
+    <lastmodified>130165736327126899</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\AfterTheAccident.cs">
+    <size>17697</size>
+    <lastmodified>130165736332527208</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\AgainstTheGrain.cs">
+    <size>22334</size>
+    <lastmodified>130165736332977233</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\Aiding_Guard_Alakyrr.cs">
+    <size>30048</size>
+    <lastmodified>130165736332687217</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\AMessageToTheManes.cs">
+    <size>22035</size>
+    <lastmodified>130165736329677045</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\AndrewsSkins.cs">
+    <size>30049</size>
+    <lastmodified>130165736326316852</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ANewHeroesWelcome.cs">
+    <size>16377</size>
+    <lastmodified>130165736326386856</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ArgussArrows.cs">
+    <size>26050</size>
+    <lastmodified>130165736326996891</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ArleighsAssistant.cs">
+    <size>29811</size>
+    <lastmodified>130165736326626870</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ArrowsForYettaFletcher.cs">
+    <size>21586</size>
+    <lastmodified>130165736327086896</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\BaseFrederickQuest.cs">
+    <size>7112</size>
+    <lastmodified>130165736327186902</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\BeginningOfWar.cs">
+    <size>54067</size>
+    <lastmodified>130165736326896886</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\BoarStew.cs">
+    <size>20161</size>
+    <lastmodified>130165736326566867</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\BoulderlingBalm.cs">
+    <size>24914</size>
+    <lastmodified>130165736332717218</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\BreakingTheBandits.cs">
+    <size>22565</size>
+    <lastmodified>130165736326666872</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\BuildingABetterBow.cs">
+    <size>21916</size>
+    <lastmodified>130165736326356855</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\Cellar_Infestation.cs">
+    <size>18632</size>
+    <lastmodified>130165736332887228</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\CemmethsOrders.cs">
+    <size>19513</size>
+    <lastmodified>130165736330237077</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ChildsPlay.cs">
+    <size>76177</size>
+    <lastmodified>130165736326856883</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\CityOfCamelot.cs">
+    <size>42850</size>
+    <lastmodified>130165736332657215</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ClericMulgrut.cs">
+    <size>17606</size>
+    <lastmodified>130165736329817053</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\Collection.cs">
+    <size>28849</size>
+    <lastmodified>130165736326826882</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\Culmination.cs">
+    <size>45235</size>
+    <lastmodified>130165736330207075</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\Disenchanted.cs">
+    <size>26509</size>
+    <lastmodified>130165736332457204</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\DredgeUpAPledge.cs">
+    <size>12004</size>
+    <lastmodified>130165736329777050</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\Frontiers.cs">
+    <size>41295</size>
+    <lastmodified>130165736326286851</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\GodelevasNeed.cs">
+    <size>23544</size>
+    <lastmodified>130165736327016892</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\GreenerPastures.cs">
+    <size>25933</size>
+    <lastmodified>130165736326466861</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\GreetingsArmsman.cs">
+    <size>23489</size>
+    <lastmodified>130165736327056895</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\GreetingsPaladin.cs">
+    <size>23402</size>
+    <lastmodified>130165736329707046</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\HalfOgreAllMan.cs">
+    <size>65086</size>
+    <lastmodified>130165736329637042</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\HeartOfSephucoth.cs">
+    <size>22534</size>
+    <lastmodified>130165736327156900</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\HuntForArachneida.cs">
+    <size>34849</size>
+    <lastmodified>130165736330267078</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\HuntForSlith.cs">
+    <size>17277</size>
+    <lastmodified>130165736332497206</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ImportantDelivery.cs">
+    <size>32746</size>
+    <lastmodified>130165736329897057</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\IreFairyIre.cs">
+    <size>38547</size>
+    <lastmodified>130165736333297252</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\LawrencesOil.cs">
+    <size>23097</size>
+    <lastmodified>130165736326596868</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\MarlinsSalesPitch.cs">
+    <size>22876</size>
+    <lastmodified>130165736326526864</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\MovementAndInteraction.cs">
+    <size>9787</size>
+    <lastmodified>130165736326436859</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\NoHopeForTheHopeful.cs">
+    <size>14401</size>
+    <lastmodified>130165736326496863</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\Nuisances.cs">
+    <size>27396</size>
+    <lastmodified>130165736326696874</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\RecruitingNothingButTrouble.cs">
+    <size>20157</size>
+    <lastmodified>130165736333317253</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\RevengeTheOtherWhiteMeat.cs">
+    <size>22389</size>
+    <lastmodified>130165736332917230</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ShakenSquire.cs">
+    <size>23953</size>
+    <lastmodified>130165736332747220</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\TombWithAView.cs">
+    <size>18025</size>
+    <lastmodified>130165736326726876</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\ToReachTheBreach.cs">
+    <size>16140</size>
+    <lastmodified>130165736326786879</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\TraitorInCotswold.cs">
+    <size>32975</size>
+    <lastmodified>130165736326756878</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\TreviansBestFriend.cs">
+    <size>61674</size>
+    <lastmodified>130165736326956889</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\WhenBloodSpeaks.cs">
+    <size>19513</size>
+    <lastmodified>130165736330307081</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\WhenGoodBrowniesGoBad.cs">
+    <size>16199</size>
+    <lastmodified>130165736329747049</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\WolfPeltCloak.cs">
+    <size>28262</size>
+    <lastmodified>130165736332947232</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\YdeniasCrush.cs">
+    <size>26374</size>
+    <lastmodified>130165736326926887</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\epic\Academy50.cs">
+    <size>44630</size>
+    <lastmodified>130165736327316910</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\epic\Church50.cs">
+    <size>30241</size>
+    <lastmodified>130165736327256906</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\epic\Defenders50.cs">
+    <size>43466</size>
+    <lastmodified>130165736327286908</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Albion\epic\Shadows50.cs">
+    <size>58069</size>
+    <lastmodified>130165736327226904</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Examples and  Tutorials\Artifact encounter\BasicEncounterMob.cs">
+    <size>8661</size>
+    <lastmodified>130165736343637843</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Examples and  Tutorials\Artifact encounter\TetheredEncounterMob.cs">
+    <size>2684</size>
+    <lastmodified>130165736343667845</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Examples and  Tutorials\Classic quest\HelpSirQuait.cs">
+    <size>15709</size>
+    <lastmodified>130165736343777851</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Examples and  Tutorials\MasterLevel encounter\EncounterMgr.cs">
+    <size>8110</size>
+    <lastmodified>130165736343937860</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Examples and  Tutorials\MasterLevel encounter\ML1FireIsland.cs">
+    <size>31009</size>
+    <lastmodified>130165736343967862</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Examples and  Tutorials\Search quest\WingsOfTheIsleHibernia.cs">
+    <size>21454</size>
+    <lastmodified>130165736344077868</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\BaseAddrirQuest.cs">
+    <size>6405</size>
+    <lastmodified>130165736324516749</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\BonesToBlades.cs">
+    <size>24981</size>
+    <lastmodified>130165736324546751</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\ChildsPlay.cs">
+    <size>94336</size>
+    <lastmodified>130165736323356683</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\CityOfTirnaNog.cs">
+    <size>46242</size>
+    <lastmodified>130165736324446745</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\ImportantDelivery.cs">
+    <size>33003</size>
+    <lastmodified>130165736324486748</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\MagicalBacklash.cs">
+    <size>20134</size>
+    <lastmodified>130165736324606755</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\Nuisances.cs">
+    <size>27127</size>
+    <lastmodified>130165736324636756</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\SearchForKnowledge.cs">
+    <size>15293</size>
+    <lastmodified>130165736323846711</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\ToReachTheBreach.cs">
+    <size>16438</size>
+    <lastmodified>130165736323316681</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\TraitorInMagMell.cs">
+    <size>32292</size>
+    <lastmodified>130165736324696760</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\epic\Essence50.cs">
+    <size>52471</size>
+    <lastmodified>130165736323946717</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\epic\Focus50.cs">
+    <size>53325</size>
+    <lastmodified>130165736323916715</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\epic\Harmony50.cs">
+    <size>62517</size>
+    <lastmodified>130165736323876713</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Amoras_Aid.cs">
+    <size>19226</size>
+    <lastmodified>130165736343337826</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\A_Beary_Bad_Problem.cs">
+    <size>16339</size>
+    <lastmodified>130165736342977805</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Bad_Food.cs">
+    <size>15357</size>
+    <lastmodified>130165736343237820</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\BaseDalikorQuest.cs">
+    <size>7222</size>
+    <lastmodified>130165736343397829</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Bear Skins.cs">
+    <size>13095</size>
+    <lastmodified>130165736342857798</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\BeginningOfWar.cs">
+    <size>56216</size>
+    <lastmodified>130165736343297824</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Childs_Play.cs">
+    <size>89113</size>
+    <lastmodified>130165736343207818</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\CityOfJordheim.cs">
+    <size>43837</size>
+    <lastmodified>130165736342817796</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Collection.cs">
+    <size>30953</size>
+    <lastmodified>130165736343147815</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Culmination.cs">
+    <size>45490</size>
+    <lastmodified>130165736342917802</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Essence_of_Life.cs">
+    <size>17793</size>
+    <lastmodified>130165736343437832</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Frontiers.cs">
+    <size>42030</size>
+    <lastmodified>130165736340467662</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\ImportantDelivery.cs">
+    <size>32763</size>
+    <lastmodified>130165736342887800</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Learn_The_Hunt.cs">
+    <size>13836</size>
+    <lastmodified>130165736343267822</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Mauler_Invasion.cs">
+    <size>19913</size>
+    <lastmodified>130165736343177817</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Mead_Run.cs">
+    <size>16429</size>
+    <lastmodified>130165736343117813</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Nuisances.cs">
+    <size>27141</size>
+    <lastmodified>130165736342947804</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Rindas_Lost_Key.cs">
+    <size>24323</size>
+    <lastmodified>130165736343017808</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\StolenEggs.cs">
+    <size>39541</size>
+    <lastmodified>130165736343457833</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Sveabone_Hilt_Sword.cs">
+    <size>19917</size>
+    <lastmodified>130165736343367828</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\The_Birthday_Gift.cs">
+    <size>24205</size>
+    <lastmodified>130165736342787794</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\TraitorInMularn.cs">
+    <size>32546</size>
+    <lastmodified>130165736343077811</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\Trial_of_Strength.cs">
+    <size>22363</size>
+    <lastmodified>130165736342757793</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\epic\MidgardRogue50.cs">
+    <size>36411</size>
+    <lastmodified>130165736340717676</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\epic\Mystic50.cs">
+    <size>57665</size>
+    <lastmodified>130165736340527665</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\epic\Seer50.cs">
+    <size>36082</size>
+    <lastmodified>130165736340747678</lastmodified>
+  </param>
+  <param name="C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Midgard\epic\Viking50.cs">
+    <size>77194</size>
+    <lastmodified>130165736340497663</lastmodified>
+  </param>
+</root>

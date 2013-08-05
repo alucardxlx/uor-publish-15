@@ -1,0 +1,9 @@
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\DOLServer.exe.config
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\DOLServer.exe
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\DOLServer.pdb
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLServer\obj\Debug\DOLServer.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLServer\obj\Debug\DOL.DOLServer.GameServerService.resources
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLServer\obj\Debug\DOL.DOLServer.GameServerServiceInstaller.resources
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLServer\obj\Debug\DOLServer.csproj.GenerateResource.Cache
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLServer\obj\Debug\DOLServer.exe
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLServer\obj\Debug\DOLServer.pdb

@@ -1,0 +1,10 @@
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\DOLConfig.exe.config
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\DOLConfig.exe
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\DOLConfig.pdb
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLConfig\obj\Debug\DOLConfig.csprojResolveAssemblyReference.cache
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLConfig\obj\Debug\DOLConfig.DolConfig.resources
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLConfig\obj\Debug\DOLConfig.ExtraPropertiesEditor.resources
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLConfig\obj\Debug\DOLConfig.Resources.resources
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLConfig\obj\Debug\DOLConfig.csproj.GenerateResource.Cache
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLConfig\obj\Debug\DOLConfig.exe
+C:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLConfig\obj\Debug\DOLConfig.pdb

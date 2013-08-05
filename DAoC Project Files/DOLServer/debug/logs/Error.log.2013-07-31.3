@@ -1,0 +1,13 @@
+20:21:40,953 - [MAIN] - ERROR - DOL.GS.Region - Error loading the following NPC ClassType(s), GameNPC used instead: DOL.GS.Scripts.RockyGolem, DOL.GS.Scripts.BefuddledGolem
+20:21:44,216 - [MAIN] - ERROR - DOL.WeakMulticastDelegate - InvokeSafe
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentNullException: No object given!
+Parameter name: obj
+   at DOL.Events.GameEventMgr.AddHandler(Object obj, DOLEvent e, DOLEventHandler del, Boolean unique) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\events\GameEventMgr.cs:line 234
+   at DOL.Events.GameEventMgr.AddHandler(Object obj, DOLEvent e, DOLEventHandler del) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\GameServer\events\GameEventMgr.cs:line 211
+   at DOL.GS.Quests.Hibernia.ImportantDelivery.ScriptLoaded(DOLEvent e, Object sender, EventArgs args) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\debug\scripts\quests\Hibernia\ImportantDelivery.cs:line 403
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at DOL.WeakMulticastDelegate.InvokeSafe(Object[] args) in c:\Users\Oogidaba\Desktop\Projects\DOLServer\DOLBase\WeakMulticastDelegate.cs:line 307
